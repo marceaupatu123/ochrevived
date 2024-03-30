@@ -1,0 +1,30 @@
+spriteTypes = {	
+	SpriteType = {
+		name = "GFX_idea_lateran_treaty"
+		texturefile = "gfx/interface/ideas/idea_lateran_treaty.dds"	
+	}
+		SpriteType = {
+		name = "GFX_idea_archaic_institution"
+		texturefile = "gfx/interface/ideas/idea_archaic_institution.dds"	
+	}
+		SpriteType = {
+		name = "GFX_idea_holy_grail"
+		texturefile = "gfx/interface/ideas/idea_holy_grail.dds"	
+	}
+		SpriteType = {
+		name = "GFX_idea_owl"
+		texturefile = "gfx/interface/ideas/idea_owl.dds"	
+	}
+		SpriteType = {
+		name = "GFX_idea_ark_covenant"
+		texturefile = "gfx/interface/ideas/idea_ark_covenant.dds"	
+	}
+		SpriteType = {
+		name = "GFX_idea_manna_christ"
+		texturefile = "gfx/interface/ideas/idea_manna_christ.dds"	
+	}
+		SpriteType = {
+		name = "GFX_idea_seeking_recognition"
+		texturefile = "gfx/interface/ideas/idea_seeking_recognition.dds"	
+	}
+}

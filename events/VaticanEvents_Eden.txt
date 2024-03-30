@@ -1,0 +1,765 @@
+﻿###########################
+# Vatican Events
+###########################
+
+add_namespace = EdenDiplo
+
+
+country_event = {
+	id = EdenDiplo.1
+	title = "The Son of Man Invites us to his Court"
+	desc = "The Kingdom of Man has recently reached out to our government with the suggestion of forming a mutually beneficially military pact. It is a tempting offer, but we must not rush into anything before we have considered our options."
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "Absolutely!"
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				OR = {
+					is_in_faction = yes
+					has_war_with = VAT
+				}
+			}
+		}
+		effect_tooltip = {
+			custom_effect_tooltip = "[From.GetNameDefCap] will welcome us into their faction."
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.46 days = 1 } }
+		}
+	}
+	option = {
+		name = "We're not interested."
+		ai_chance = { factor = 10 }
+		effect_tooltip = {
+
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.47 days = 1 } }
+		}
+	}
+}
+
+country_event = {
+	id = EdenDiplo.2
+	title = "The Son of Man Invites us to his Court"
+	desc = "The Kingdom of Man has recently reached out to our government with the suggestion of forming a mutually beneficially military pact. It is a tempting offer, but we must not rush into anything before we have considered our options."
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "Absolutely!"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				OR = {
+					is_in_faction = yes
+					has_war_with = VAT
+				}
+			}
+		}
+		effect_tooltip = {
+			custom_effect_tooltip = "[From.GetNameDefCap] will welcome us into their faction."
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.48 days = 1 } }
+		}
+	}
+	option = {
+		name = "We're not interested."
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				democratic > 30
+			}
+			modifier = {
+				factor = 0.9
+				has_government = democratic
+			}
+		}
+		effect_tooltip = {
+
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.49 days = 1 } }
+		}
+	}
+}
+
+country_event = {
+	id = EdenDiplo.3
+	title = "The Son of Man Suggests Union Between our Kingdoms"
+	desc = "The Kingdom of Man has recently reached out to our government with the suggestion of combining our nations into one state, transfering most of the executive powers to Rome. It is a tempting offer, but we must not rush into anything before we have considered our options."
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "Absolutely!"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				OR = {
+					is_in_faction = yes
+					has_war_with = VAT
+				}
+			}
+		}
+		effect_tooltip = {
+			custom_effect_tooltip = "[From.GetNameDefCap] will annex us."
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.50 days = 1 } }
+		}
+	}
+	option = {
+		name = "We're not interested."
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				democratic > 30
+			}
+			modifier = {
+				factor = 0.9
+				has_government = democratic
+			}
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.51 days = 1 } }
+		}
+	}
+}
+
+country_event = {
+	id = EdenDiplo.4
+	title = "The Son of Man Invites us to his Court"
+	desc = "The Kingdom of Man has recently reached out to our government with the suggestion of forming a mutually beneficially military pact. It is a tempting offer, but we must not rush into anything before we have considered our options."
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "Absolutely!"
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				OR = {
+					is_in_faction = yes
+					has_war_with = VAT
+				}
+			}
+		}
+		effect_tooltip = {
+			custom_effect_tooltip = "Our country will join the [FROM.GetFactionName]."
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.52 days = 1 } }
+		}
+	}
+	option = {
+		name = "We're not interested."
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				democratic > 30
+			}
+			modifier = {
+				factor = 0.9
+				has_government = democratic
+			}
+		}
+		effect_tooltip = {
+
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.53 days = 1 } }
+		}
+	}
+}
+country_event = {
+	id = EdenDiplo.5	# UNITED KINGDOM
+	title = "The Son of Man Demands the Holy Land"
+	desc = "The Kingdom of Man has recently reached out to our government to insist that our Middle Eastern claims are injust. They demand the immediate transferal of our eastern settlements, and our refusal could mean war."
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "Very well."
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0
+				has_war_with = VAT
+			}
+			modifier = {
+				factor = 0.2
+				has_opinion = { target = VAT value < 50 }
+			}
+			modifier = {
+				factor = 2
+				has_opinion = { target = VAT value > 79 }
+			}
+		}
+		454 = { set_state_owner_to = VAT }
+		455 = { set_state_owner_to = VAT }
+		453 = { set_state_owner_to = VAT }
+		183 = { set_state_owner_to = VAT }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.54 days = 1 } }
+		}
+	}
+	option = {
+		name = "Is this a joke?"
+		ai_chance = { factor = 40 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.37 days = 1 } }
+		}
+	}
+}
+country_event = {
+	id = EdenDiplo.6	# FRANCE
+	title = "The Son of Man Demands the Holy Land"
+	desc = "The Kingdom of Man has recently reached out to our government to insist that our control over the Holy Land is unjustified. They demand the immediate transferal of our eastern settlements, and our refusal could mean war."
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "Those dustbowls are of no great importance to us anyway."
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0
+				has_war_with = VAT
+			}
+			modifier = {
+				factor = 0.2
+				has_opinion = { target = VAT value < 50 }
+			}
+			modifier = {
+				factor = 2
+				has_opinion = { target = VAT value > 79 }
+			}
+			modifier = {
+				factor = 2
+				NOT = { controls_state = 16 }
+			}
+		}
+		799 = { set_state_owner_to = VAT }
+		677 = { set_state_owner_to = VAT }
+		680 = { set_state_owner_to = VAT }
+		553 = { set_state_owner_to = VAT }
+		554 = { set_state_owner_to = VAT }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.55 days = 1 } }
+		}
+	}
+	option = {
+		name = "When hell freezes over."
+		ai_chance = { factor = 40 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.38 days = 1 } }
+		}
+	}
+}
+
+country_event = {
+	id = EdenDiplo.7	# POLAND
+	title = "The Son of Man Invites us into the Concordat"
+	desc = "The Kingdom of Man has recently reached out to our government to propose a military alliance between our nations, a bulwark against vicious German expansionism. It is a very attractive proposal in these dark times."
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "It is an excellent idea."
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0
+				has_war_with = VAT
+			}
+			modifier = {
+				factor = 0
+				is_in_faction = yes
+			}
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.56 days = 1 } }
+		}
+	}
+	option = {
+		name = "We do not need any friends."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.57 days = 1 } }
+		}
+	}
+}
+
+country_event = {
+	id = EdenDiplo.8
+	title = "The Council of Worms"
+	desc = EdenDiplo.8.d
+	picture = GFX_report_event_generic_sign_treaty1	
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	
+	option = {
+		name = "We have little choice in the matter."
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				has_war_with = VAT
+			}
+			modifier = {
+				factor = 0
+				NOT = { is_in_faction = no is_in_faction_with = VAT }
+			}
+		}
+		effect_tooltip = {
+			custom_effect_tooltip = "Our country will be annexed by [From.GetNameDefCap]."
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.58 days = 1 } }
+		}
+	}
+	option = {
+		name = "These claims date back millennia! Is this some sort of joke?"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_in_faction_with = VAT
+			}
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.59 days = 1 } }
+		}
+	}
+}
+
+country_event = {
+	id = EdenDiplo.9
+	title = "[From.GetNameDefCap] Suggests Vassalisation as a Compromise"
+	desc = "[From.GetNameDefCap] is peristent indeed - they offer us the option to join their union as a vassal instead."
+	picture = GFX_report_event_generic_sign_treaty1	
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	
+	option = {
+		name = "That is more reasonable."
+		ai_chance = {
+			factor = 50
+			
+		}
+		effect_tooltip = {
+			custom_effect_tooltip = "We will become [From.GetNameDefCap]'s vassal."
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.60 days = 1 } }
+		}
+	}
+	option = {
+		name = "No means no."
+		ai_chance = {
+			factor = 1
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.61 days = 1 } }
+		}
+	}
+}
+
+country_event = {
+	id = EdenDiplo.10
+	title = "[From.GetNameDefCap] Insists on Reform"
+	desc = "[From.GetNameDefCap] has just now sent an envoy to Berlin carrying a peculiar message. The Son does not want war between our nations, and so he proposes that the Reichstag move towards democratic rejuvenation."
+	picture = GFX_report_event_generic_sign_treaty1	
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	
+	option = {
+		name = "Are they mad?"
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				strength_ratio = {
+					tag = VAT
+					ratio > 0.70
+				}
+			}
+		}
+		add_stability = -0.05
+		add_war_support = 0.05
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.62 days = 1 } }
+		}
+	}
+	option = {
+		name = "They should have kept their mouths shut."
+		ai_chance = {
+			factor = 5
+		}
+		create_wargoal = { type = puppet_wargoal_focus target = VAT }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.63 days = 1 } }
+		}
+	}
+}
+country_event = {
+	id = EdenDiplo.11
+	desc = "In only a short time, the Son of Man has opened the eyes of our nation to the glory of God. It is time for our politicians to step aside and allow divinity to take command!"
+	title = "A Holy State"
+	picture = GFX_report_event_crowd_in_prague
+	trigger = {
+		AND = {
+			is_puppet_of = VAT
+			NOT = { OR = { original_tag = FRA original_tag = ENG original_tag = SOV original_tag = ITA original_tag = USA } }
+			has_government = democratic
+			NOT = { has_country_flag = puppetofvatican }
+		}
+	}
+	is_triggered_only = no
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	immediate = {
+		hidden_effect = {
+			set_country_leader_ideology = socialism
+			set_country_leader_name = {
+				name = "Commons of Eden"
+			}
+			set_country_leader_portrait = {
+				portrait = GFX_Portrait_eden_commons_large
+			}
+			set_country_flag = puppetofvatican
+			if = { limit = { tag = POR } remove_ideas = POR_unstable_republic }
+			remove_ideas_with_trait = communism_drift
+			remove_ideas_with_trait = neutrality_drift
+			remove_ideas_with_trait = fascism_drift
+		}
+	}
+	option = {
+		name = "Through Him, all things are possible!"
+		ai_chance = {
+			factor = 30
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			load_focus_tree = generic_focus
+			add_ideas = papal_influence
+		}
+	}
+}
+country_event = {
+	id = EdenDiplo.12
+	desc = "As a direct result of the return of the Son, our Orthodox Africans in Egypt and Sudan have only become more rowdy by the day. The Son, naturally, has requested the transfer of these regions."
+	title = "The Son of Man Requests North-East Africa"
+	picture = GFX_report_event_generic_riot
+	is_triggered_only = yes
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	immediate = {
+	}
+	option = {
+		name = "It is not worth the trouble."
+		ai_chance = {
+			factor = 10
+		}
+		VAT = { country_event = { id = vatican.114 days = 1 } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "We do not cave in so easily."
+		ai_chance = {
+			factor = 6
+		}
+		add_stability = -0.1
+		447 = { add_resistance = 30 }
+		452 = { add_resistance = 30 }
+		446 = { add_resistance = 30 }
+		552 = { add_resistance = 30 }
+		453 = { add_resistance = 30 }
+		456 = { add_resistance = 30 }
+		457 = { add_resistance = 30 }
+		767 = { add_resistance = 30 }
+		551 = { add_resistance = 30 }
+		549 = { add_resistance = 30 }
+		VAT = { country_event = { id = vatican.115 days = 1 } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = EdenDiplo.13
+	desc = "The alliance in the west, a partnership of Christian democratic peoples, has naturally caught the Son's attention, and he humbly asks to join us in our efforts to defend liberty."
+	title = "The Son of Man Requests to Join [ENG.GetFactionName]"
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	immediate = {
+	}
+	option = {
+		name = "We welcome him with open arms."
+		ai_chance = {
+			factor = 100
+		}
+		ENG = { add_to_faction = VAT }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "We are not interested."
+		ai_chance = {
+			factor = 0
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = EdenDiplo.14
+	desc = "The Son of Man has turned his gaze towards us, acknowledging the threat we face from Germany. He has suggested an emergency alliance."
+	title = "The Son of Man Suggests an Alliance"
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	immediate = {
+	}
+	option = {
+		name = "Absolutely!"
+		ai_chance = {
+			factor = 100
+		}
+		VAT = { country_event = vatican.119 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "We are not interested."
+		ai_chance = {
+			factor = 0
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = EdenDiplo.15
+	desc = "Much to our dismay, the Son of Man has scrambled to secure a defence alliance with Czechoslovakia. We may have to reconsider our plans to expand into Czech lands."
+	title = "The Latin Concordat Declares a Mutual Defence Agreement"
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	immediate = {
+	}
+	option = {
+		name = "We cannot risk a war - not now, at least."
+		ai_chance = {
+			factor = 100
+		}
+		unlock_national_focus = GER_demand_sudetenland
+		unlock_national_focus = GER_end_of_czechoslovakia
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "We stick to the plan."
+		ai_chance = {
+			factor = 0
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = EdenDiplo.16
+	desc = "It is the greatest honour that the Son of Man Himself has reached out to us for friendship. It is the dream of many within our nation that we seek unity with Him and His holy kingdom."
+	title = "The Son of Man Extends the Hand of Friendship"
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	immediate = {
+	}
+	option = {
+		name = "It is our destiny."
+		ai_chance = {
+			factor = 100
+		}
+		VAT = { country_event = vatican.123 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Not so fast..."
+		ai_chance = {
+			factor = 0
+		}
+		VAT = { country_event = vatican.124 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = EdenDiplo.17
+	desc = "Our presence in Malta has loosened day by day as the ardent and pious Christian population demand closer union with the Son of Man. We could resist it, but is it worth it?"
+	title = "Maltese Christians Grow Restless"
+	picture = GFX_report_event_generic_riot
+	is_triggered_only = yes
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	immediate = {
+	}
+	option = {
+		name = "Let them go."
+		ai_chance = {
+			factor = 100
+		}
+		VAT = { country_event = vatican.125 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "They think they have a choice?"
+		ai_chance = {
+			factor = 0
+		}
+		VAT = { country_event = vatican.126 }
+		add_stability = -0.05
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = EdenDiplo.18
+	desc = "This event should be hidden."
+	title = "EDENDIPLO.18"
+	picture = GFX_
+	trigger = {
+		AND = {
+			is_puppet_of = VAT
+			has_government = democratic
+			NOT = { has_country_flag = focusreset }
+		}
+	}
+	is_triggered_only = no
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	hidden = yes
+	immediate = {
+		hidden_effect = {
+			set_politics = { ruling_party = democratic elections_allowed = no }
+			load_focus_tree = generic_focus
+			set_country_flag = focusreset
+		}
+	}
+}

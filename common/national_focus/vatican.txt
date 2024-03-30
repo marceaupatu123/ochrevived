@@ -1,0 +1,4476 @@
+focus_tree = {
+	id = vatican_tree
+	continuous_focus_position = { x = 20 y = 850 }
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = VAT
+		}
+	}
+
+	default = no
+
+	#MILITARY TREE
+	#Grand Ambitions
+	focus = {
+		id = VAT_grand_ambitions
+		icon = GFX_focus_generic_air_defense
+		x = 2
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = VAT_wargaming  }
+		mutually_exclusive = { focus = VAT_grounded_ambitions  }
+		completion_reward = {
+			add_ideas = {
+				grand_ambitions_idea
+			}
+		}
+	}
+
+	#Grounded Ambitions
+	focus = {
+		id = VAT_grounded_ambitions
+		icon = GFX_goal_generic_defence
+		x = 0
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_wargaming  }
+		mutually_exclusive = { focus = VAT_grand_ambitions  }
+		completion_reward = {
+			add_ideas = {
+				grounded_ambitions_idea
+			}
+			add_tech_bonus = {
+  				bonus = 1
+				uses = 1
+				category = engineers_tech
+			}
+		}
+	}
+
+	#Wargaming
+	focus = {
+		id = VAT_wargaming
+		icon = GFX_VAT_wargaming-412
+		x = 1
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_expand_the_vatican_forces  }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			
+			army_experience = 15
+		}
+	}
+
+	#Develop the Palatine Guard
+	focus = {
+		id = VAT_develop_the_palatine_guard
+		icon = GFX_focus_mex_restore_the_army_of_christ
+		x = 1
+		y = 0
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_tech_bonus = {
+  				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			army_experience = 10
+		}
+	}
+
+	#Expand the Vatican Forces
+	focus = {
+		id = VAT_expand_the_vatican_forces
+		icon = GFX_VAT_expandtheswissguard
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = VAT_develop_the_palatine_guard  }
+		completion_reward = {
+			add_ideas = militarisation_papal
+		}
+	}
+
+	#Study Foreign Designs
+	focus = {
+		id = VAT_study_foreign_designs
+		icon = GFX_focus_generic_combined_arms
+		x = -1
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_develop_the_palatine_guard  }
+		completion_reward = {
+			add_tech_bonus = {
+  				bonus = 1
+				uses = 1
+				category = support_tech
+			}
+			add_tech_bonus = {
+  				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	#expand foreign cooperation
+	focus = {
+		id = VAT_expand_foreign_cooperation
+		icon = GFX_goal_generic_army_artillery2
+		x = -1
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = VAT_study_foreign_designs  }
+		completion_reward = {
+			add_tech_bonus = {
+  				bonus = 1
+				uses = 1
+				category = artillery
+			}
+			add_offsite_building = { type = arms_factory level = 1 }
+		}
+	}
+
+	#Motorise the Guard
+	focus = {
+		id = VAT_motorise_the_guard
+		icon = GFX_goal_generic_army_motorized
+		x = 3
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_develop_the_palatine_guard  }
+		completion_reward = {
+			add_tech_bonus = {
+ 				bonus = 1.0
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	#Vatican Defence Array
+	focus = {
+		id = VAT_vatican_defence_array
+		icon = GFX_goal_generic_fortify_city
+		x = -1
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_grounded_ambitions  }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cat_anti_air
+			}		
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cat_anti_tank
+			}
+			970 = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Mechanised Army of God
+	focus = {
+		id = VAT_mechanised_army_of_god
+		icon = GFX_goal_continuous_reduce_training_time
+		x = 3
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_grand_ambitions  }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = 	motorized_equipment
+			}		
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = maintenance_company_tech
+			}
+		}
+	}
+
+	#Papal Peachmakers
+	focus = {
+		id = VAT_papal_peacemakers
+		icon = GFX_focus_generic_tank_production
+		x = 2
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_grand_ambitions focus = VAT_grounded_ambitions  }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = armor
+			}
+		}
+	}
+
+	#Arditi Pontificia
+	focus = {
+		id = VAT_arditi_pontificia
+		icon = GFX_goal_generic_special_forces
+		x = 0
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_grand_ambitions focus = VAT_grounded_ambitions }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = para_tech
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = mountaineers_tech
+			}
+		}
+	}
+
+
+##########################################################################################
+##########################################################################################
+##########################################################################################
+##########################################################################################
+##########################################################################################
+
+
+
+
+	#INDUSTRIAL TREE
+	#Rapid Modernisation
+	focus = {
+		id = VAT_rapid_modernisation
+		icon = GFX_goal_continuous_non_factory_construct
+		x = 16
+		y = 0
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_tech_bonus = {
+  				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+			
+			random_owned_controlled_state = {
+			     add_building_construction = {						 
+			      type = infrastructure						
+			       level = 2
+			      instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Establish an Engineering Commission
+	focus = {
+		id = VAT_establish_an_engineering_commission
+		icon = GFX_goal_generic_production2
+		x = 15
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = VAT_rapid_modernisation  }
+		completion_reward = {
+			add_ideas = engineering_commission
+			add_offsite_building = { type = industrial_complex level = 1 }
+		}
+	}
+
+	#Production Boost
+	focus = {
+		id = VAT_production_boost
+		icon = GFX_goal_continuous_reduce_training_time
+		x = 15
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = VAT_establish_an_engineering_commission  }
+		completion_reward = {
+			add_timed_idea = {
+			    idea = production_standardisation
+			    days = 365
+			}
+		}
+	}
+
+	#Establish the Pontifical Academy
+	focus = {
+		id = VAT_establish_the_pontifical_academy
+		icon = GFX_goal_continuous_research
+		x = 13
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_rapid_modernisation  }
+		completion_reward = {
+			remove_ideas = archaic_institution
+		}
+	}
+
+	#Invite Foreign Experts
+	focus = {
+		id = VAT_invite_foreign_experts
+		icon = GFX_focus_research
+		x = 13
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_establish_the_pontifical_academy  }
+		completion_reward = {
+			add_research_slot = 1
+			
+		}
+	}
+
+	#Embrace Modern Technology
+	focus = {
+		id = VAT_embrace_modern_technology
+		icon = GFX_goal_continuous_repairments
+		x = 14
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_rapid_modernisation }
+		completion_reward = {
+			add_tech_bonus = {
+  				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	#Improve Amenities
+	focus = {
+		id = VAT_improve_amenities
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 17
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = VAT_rapid_modernisation  }
+		completion_reward = {
+			random_owned_controlled_state ={
+			       add_extra_state_shared_building_slots = 1
+			       add_building_construction = {
+			        type = industrial_complex
+			        level = 1
+			       instant_build = yes
+			       }
+			 }
+			random_owned_controlled_state ={
+			        add_extra_state_shared_building_slots = 1
+			       add_building_construction = {
+			        type = infrastructure
+			        level = 1
+			       instant_build = yes
+			       }
+			 }
+		}
+	}
+	
+	#Maximise Production Efficiency
+	focus = {
+		id = VAT_maximise_production_efficiency
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 17
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = VAT_improve_amenities  }
+		completion_reward = {
+			random_owned_controlled_state ={
+			        add_extra_state_shared_building_slots = 2
+			       add_building_construction = {
+			        type = industrial_complex
+			        level = 2
+			       instant_build = yes
+			       }
+			 }
+		}
+	}
+
+	#Palatine Armaments
+	focus = {
+		id = VAT_palatine_armaments
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 19
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = VAT_rapid_modernisation  }
+		completion_reward = {
+			random_owned_controlled_state ={
+			        add_extra_state_shared_building_slots = 1
+			       add_building_construction = {
+			        type = arms_factory
+			        level = 1
+			       instant_build = yes
+			       }
+			 }
+		}
+	}
+
+	#Expand Arms Manufacturing
+	focus = {
+		id = VAT_expand_arms_manufacturing
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 19
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = VAT_palatine_armaments  }
+		completion_reward = {
+			random_owned_controlled_state ={
+			        add_extra_state_shared_building_slots = 2
+			       add_building_construction = {
+			        type = arms_factory
+			        level = 2
+			       instant_build = yes
+			       }
+			 }
+		}
+	}
+
+	#Reorganise Italian Industry
+	focus = {
+		id = VAT_reorganise_italian_industry
+		icon = GFX_focus_generic_industry_3
+		x = 17
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = VAT_maximise_production_efficiency  }
+		available = { 
+			OR = { 
+				159 = { is_owned_by = VAT }
+				AND = {
+					ITA = { is_puppet_of = VAT } 
+					159 = { is_owned_by = ITA }
+				}
+			} 
+		}
+		completion_reward = {
+			random_owned_controlled_state ={
+			        add_extra_state_shared_building_slots = 2
+			       add_building_construction = {
+			        type = industrial_complex
+			        level = 2
+			       instant_build = yes
+			       }
+			 }
+			add_resource = {
+			    type = steel
+			    amount = 9
+			    state = 159
+			}
+		}
+	}
+
+	#Integrate Italian Production Lines
+	focus = {
+		id = VAT_integrate_italian_production_lines
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 19
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_expand_arms_manufacturing  }
+		available = { OR = { 2 = { is_owned_by = VAT } } }
+		completion_reward = {
+			random_owned_controlled_state ={
+			        add_extra_state_shared_building_slots = 2
+			       add_building_construction = {
+			        type = arms_factory
+			        level = 2
+			       instant_build = yes
+			       }
+			 }
+			add_tech_bonus = {
+			    bonus = 0.5
+			    uses = 2
+			    category = excavation_tech
+			}
+		}
+	}
+
+	#Restructure Italian Universities
+	focus = {
+		id = VAT_restructure_italian_universities
+
+		icon = GFX_focus_research2
+		x = 14
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_invite_foreign_experts }
+		prerequisite = { focus = VAT_embrace_modern_technology }
+		available = { num_of_factories > 50 }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Develop the Papal Colonies
+	focus = {
+		id = VAT_develop_papal_colonies
+
+		icon = GFX_goal_generic_oil_refinery
+		x = 18
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available = {
+			OR = {
+				448 = { is_owned_by = VAT }
+				AND = {
+					448 = { is_owned_by = ITA }
+					ITA = { is_puppet_of = VAT }
+				}
+				AND = {
+					448 = { is_owned_by = LBA }
+					LBA = { is_puppet_of = VAT }
+				}
+			}
+		}
+		prerequisite = { focus = VAT_rapid_modernisation }
+		completion_reward = {
+			add_tech_bonus = {
+			    bonus = 1
+			    uses = 2
+			    category = synth_resources
+			}
+			add_resource = {
+			    type = oil
+			    amount = 8
+			    state = 448
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_INTEGRATE_ITA
+		icon = GFX_focus_SOV_merge_plants
+		x = 8
+		y = 4
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_denounce_tyranny focus = VAT_dinner_with_mussolini }
+		available = {
+			ITA = {
+				all_core_state = {
+					owner = {
+						OR = {
+							is_in_faction_with = VAT
+							is_puppet_of = VAT
+							tag = VAT
+						}
+					}
+				}
+			}
+		}
+		completion_reward = {
+			ITA = {
+				every_core_state = { add_core_of = VAT }
+				if = { limit = { is_puppet_of = VAT VAT = { has_government = democratic } }
+					add_popularity = { ideology = democratic popularity = 0.25 }
+					set_politics = { ruling_party = democratic }
+					create_country_leader = {
+						name = "Eugenio Pacelli"
+						picture = GFX_Portrait_Pacelli_large
+						expire = "1965.1.1"
+						ideology = socialism
+					}
+				}
+				if = { limit = { is_puppet_of = VAT VAT = { has_government = communism } }
+					add_popularity = { ideology = communism popularity = 0.25 }
+					set_politics = { ruling_party = communism }
+					create_country_leader = {
+						name = "Eugenio Pacelli"
+						picture = GFX_Portrait_Pacelli_large
+						expire = "1965.1.1"
+						ideology = anarchist_communism
+					}
+				}
+			}
+		}
+	}
+
+##########################################################################################
+##########################################################################################
+##########################################################################################
+##########################################################################################
+##########################################################################################
+
+
+	#AIR
+	#Expand Offensive Capabilities
+	focus = {
+		id = VAT_expand_offensive_capabilities
+		icon = GFX_goal_generic_build_airforce
+		x = 22
+		y = 0
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = {   }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1
+				uses = 1
+				category = air_doctrine
+			}
+			970 = {
+				add_building_construction = {
+				    type = air_base
+				    level = 2
+				    instant_build = yes
+				}
+			}
+			add_advisor_role = {
+			 	character = VAT_italo_balbo
+			   		advisor = {
+						slot = air_chief
+						ledger = air
+						cost = 50
+						idea_token = italo_balbo
+						traits = {
+							air_chief_ground_support_2
+						}
+						allowed = {
+							always = yes
+						}
+			  	    }
+			}
+			hidden_effect = {
+				ITA = { retire_character = ITA_italo_balbo }
+			}
+		}
+	}
+
+	#Ground Support Efforts
+	focus = {
+		id = VAT_ground_support_efforts
+
+		icon = GFX_goal_generic_air_bomber
+		x = 21
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_expand_offensive_capabilities }
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+			    bonus = 1
+			    uses = 1
+			    category = cas_bomber
+			}
+			add_tech_bonus = {
+			    bonus = 1
+			    uses = 1
+			    category = tactical_bomber
+			}
+		}
+	}
+
+	#Dominate the Skies
+	focus = {
+		id = VAT_dominate_skies
+
+		icon = GFX_focus_SOV_flying_clubs
+		x = 21
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_ground_support_efforts }
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+			    bonus = 1
+			    uses = 1
+			    category = cat_strategic_bomber
+			}
+			add_tech_bonus = {
+			    uses = 1
+			    ahead_reduction = 1
+			    category = cas_bomber
+			}
+		}
+	}
+
+#	#Heaven's Shield Program
+#	focus = {
+#		id = VAT_heavens_shield_program
+#
+#		icon = GFX_focus_rocketry
+#		x = 20
+#		y = 4
+#		cost = 5
+#		search_filters = {
+#			FOCUS_FILTER_RESEARCH
+#		}
+#		prerequisite = { focus = VAT_dominate_skies }
+#		prerequisite = { focus = VAT_integrate_italian_production_lines }
+#		completion_reward = {
+#			add_tech_bonus = {
+#			    bonus = 1
+#			    uses = 1
+#			    category = rocketry
+#			}
+#		}
+#	}
+	#Establish the Corpo Aeronautico Militare
+	focus = {
+		id = VAT_corpo_aero_militare
+
+		icon = GFX_goal_generic_air_fighter2
+		x = 23
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_expand_offensive_capabilities }
+		completion_reward = {
+			add_tech_bonus = {
+			    bonus = 1
+			    uses = 2
+			    category = light_fighter
+			}
+			air_experience = 25
+		}
+	}
+	#Angels of Death
+	focus = {
+		id = VAT_angels_death
+
+		icon = GFX_goal_generic_air_fighter
+		x = 23
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_corpo_aero_militare }
+		completion_reward = {
+			add_tech_bonus = {
+			    bonus = 1
+			    uses = 1
+			    category = medium_air
+			}
+			add_tech_bonus = {
+			    bonus = 1
+			    uses = 1
+			    category = heavy_air
+			}
+		}
+	}
+	#Palatine Aerial Supremacy
+	focus = {
+		id = VAT_palatine_aerial_supremacy
+
+		icon = GFX_goal_generic_air_doctrine
+		x = 22
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = VAT_expand_offensive_capabilities }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1
+				uses = 1
+				category = air_doctrine
+			}
+			970 = {
+				add_building_construction = {
+				    type = air_base
+				    level = 1
+				    instant_build = yes
+				}
+			}
+			add_ideas = aerial_supremacy
+		}
+	}
+	#Masters of Heaven and Sea
+	focus = {
+		id = VAT_heaven_and_sea
+
+		icon = GFX_goal_generic_air_naval_bomber
+		x = 24
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_expand_offensive_capabilities }
+		prerequisite = { focus = VAT_revive_the_marina_pontificia }
+		completion_reward = {
+			add_tech_bonus = {
+ 				bonus = 1
+				uses = 2
+				category = naval_bomber
+			}
+			add_tech_bonus = {
+ 				bonus = 1
+				uses = 1
+				category = radar_tech
+			}
+		}
+	}
+
+##########################################################################################
+##########################################################################################
+##########################################################################################
+##########################################################################################
+##########################################################################################
+
+
+	#NAVAL
+
+	#Revive the Marina Pontificia
+	focus = {
+		id = VAT_revive_the_marina_pontificia
+
+		icon = GFX_goal_generic_build_navy
+		x = 26
+		y = 0
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = {  }
+		# suizo - for some reason in the original mod you don't need sea access to start a navy (???????)
+		available = { 2 = { is_owned_by = VAT } }
+		completion_reward = {
+			navy_experience = 10
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1
+				uses = 1
+				category = naval_doctrine
+			}
+			2 = {
+				add_building_construction = {
+				    type = dockyard
+				    level = 2
+				    instant_build = yes
+				}
+			}
+				add_naval_commander_role = {
+					character = VAT_inigo_campioni
+					traits={ battleship_adherent superior_tactician spotter }
+					skill=2
+					attack_skill=2
+					defense_skill=1
+					maneuvering_skill=2
+					coordination_skill=2
+					legacy_id=0
+				}
+					add_advisor_role = {
+						character = VAT_inigo_campioni
+						advisor={
+							ledger = navy
+							slot = navy_chief
+							idea_token = inigo_campioni
+							allowed = {
+								original_tag = VAT
+							}
+							traits = {
+								navy_chief_decisive_battle_1
+							}
+							cost =  50
+							ai_will_do = {
+								factor = 1.000
+							}
+						}
+					}
+			hidden_effect = {
+				ITA = { retire_character = ITA_inigo_campioni }
+			}
+		}
+	}
+	#Una Nuova 'Capitana'
+	focus = {
+		id = VAT_una_nuova_capitana
+
+		icon = GFX_focus_generic_navy_battleship2
+		x = 25
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_revive_the_marina_pontificia }
+		completion_reward = {
+			2 = {
+				add_building_construction = {
+				    type = dockyard
+				    level = 2
+				    instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+ 				bonus = 1
+				uses = 1
+				category = cl_tech
+			}
+			add_tech_bonus = {
+ 				bonus = 1
+				uses = 1
+				category = ca_tech
+			}
+			add_tech_bonus = {
+ 				bonus = 1
+				uses = 1
+				category = bb_tech
+			}
+		}
+	}
+	#Mare Nostrum Policy
+	focus = {
+		id = VAT_mare_nostrum_policy
+
+		icon = GFX_goal_generic_navy_carrier
+		x = 25
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_una_nuova_capitana }
+		completion_reward = {
+			navy_experience = 10
+			add_tech_bonus = {
+ 				bonus = 1
+				uses = 2
+				category = cv_tech
+			}
+			add_tech_bonus = {
+ 				bonus = 1
+				uses = 1
+				category = bb_tech
+			}
+		}
+	}
+	#Marina Subnautico
+	focus = {
+		id = VAT_marina_subnautico
+
+		icon = GFX_goal_generic_navy_submarine
+		x = 26
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_revive_the_marina_pontificia }
+		completion_reward = {
+			navy_experience = 20
+			add_tech_bonus = {
+ 				bonus = 1
+				uses = 2
+				category = ss_tech
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1
+				uses = 1
+				category = submarine_doctrine
+			}
+		}
+	}
+	#Secure Mediterranean Trade Routes
+	focus = {
+		id = VAT_secure_trade_routes
+
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 27
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_revive_the_marina_pontificia }
+		available = { 849 = { is_owned_by = VAT } }
+		completion_reward = {
+			add_tech_bonus = {
+ 				bonus = 0.5
+				uses = 2
+				category = convoy_defense_tree
+			}
+			849 = {
+				add_building_construction = {
+				    type = dockyard
+				    level = 2
+				    instant_build = yes
+				}
+			}
+		}
+	}
+	#Overseas Combat
+	focus = {
+		id = VAT_overseas_combat
+
+		icon = GFX_goal_generic_navy_battleship
+		x = 26
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = VAT_marina_subnautico }
+		completion_reward = {
+			add_tech_bonus = {
+ 				bonus = 0.5
+				uses = 2
+				category = marine_tech
+			}
+			add_tech_bonus = {
+ 				bonus = 1
+				uses = 1
+				category = tp_tech
+			}
+		}
+	}
+
+#####################################################################
+#####################################################################
+#####################################################################
+######██████╗░██████╗░███████╗██╗░░░░░██╗░░░██╗██████╗░███████╗######
+######██╔══██╗██╔══██╗██╔════╝██║░░░░░██║░░░██║██╔══██╗██╔════╝######
+######██████╔╝██████╔╝█████╗░░██║░░░░░██║░░░██║██║░░██║█████╗░░######
+######██╔═══╝░██╔══██╗██╔══╝░░██║░░░░░██║░░░██║██║░░██║██╔══╝░░######
+######██║░░░░░██║░░██║███████╗███████╗╚██████╔╝██████╔╝███████╗######
+######╚═╝░░░░░╚═╝░░╚═╝╚══════╝╚══════╝░╚═════╝░╚═════╝░╚══════╝######
+#####################################################################
+#####################################################################
+#####################################################################
+
+
+
+	#POLITICAL TREE
+
+	#The Voices
+	focus = {
+		id = VAT_the_voices
+		icon = GFX_VAT_the_voices-422
+		x = 8
+		y = 0
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+			hidden_effect = {
+				ITA = {
+					set_party_name = {
+   						ideology = neutrality
+						long_name = ITA_neutrality_papal_party 
+   						name =  ITA_neutrality_papal_party
+					}
+				}
+			}
+		}
+	}
+	#Dinner with Mussolini
+	focus = {
+		id = VAT_dinner_with_mussolini
+		icon = GFX_focus_ger_assassinate_mussolini
+		x = 6
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_the_voices  }
+		mutually_exclusive = { focus = VAT_denounce_tyranny  }
+		completion_reward = {
+			country_event = { id = vatican.22 days = 1 }
+		}
+	}
+
+	#The Civitavecchia Conference
+	focus = {
+		id = VAT_the_civitavecchia_conference
+		icon = GFX_focus_generic_treaty
+		x = 7
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = VAT_dinner_with_mussolini  }
+		completion_reward = {
+			
+			transfer_state = 2
+			
+			add_state_core = 2
+			
+			set_cosmetic_tag = VST_VAT			
+		}
+	}
+
+	#Denounce Tyranny
+	focus = {
+		id = VAT_denounce_tyranny
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 10
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_the_voices  }
+		mutually_exclusive = { focus = VAT_dinner_with_mussolini  }
+		completion_reward = {
+			country_event = { id = vatican.23 days = 1 }
+			ITA = { country_event = { id = vatican.122 days = 1 } }
+		}
+	}
+
+	#The Grosseto Conference
+	focus = {
+		id = VAT_the_grosseto_conference
+		icon = GFX_focus_generic_treaty
+		x = 7
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = VAT_the_civitavecchia_conference  }
+		completion_reward = {
+			transfer_state = 157
+			add_state_core = 157
+			remove_ideas = seeking_recognition
+		}
+	}
+
+	#The Two Romes Pact
+	focus = {
+		id = VAT_the_two_romes_pact
+		icon = GFX_VAT_tworomes
+		x = 6
+		y = 4
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = VAT_the_grosseto_conference }
+		prerequisite = { focus = VAT_promote_clerical_fascism }
+		completion_reward = {
+			remove_ideas = lateran_treaty
+			
+			transfer_state = 162
+			
+			add_state_core = 162
+		}
+	}
+
+	#Promote Clerical Fascism
+	focus = {
+		id = VAT_promote_clerical_fascism
+		icon = GFX_focus_generic_italy_first
+		x = 5
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_dinner_with_mussolini  }
+		completion_reward = {
+			add_stability = 0.05
+			
+			ITA = {
+			           add_opinion_modifier = {
+			            target = VAT
+			            modifier = medium_increase
+			          }
+			}
+		}
+	}
+
+	#Radicalise the Masses
+	focus = {
+		id = VAT_radicalise_the_masses
+		icon = GFX_goal_generic_radar
+		x = 10
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = VAT_denounce_tyranny }
+		completion_reward = {
+			add_war_support = 0.1
+			ITA = {
+			        add_stability = -0.2
+			}
+		}
+	}
+
+	#Pacelli's State Visit
+	focus = {
+		id = VAT_pacellisstatevisit
+		icon = GFX_focus_por_concordat
+		x = 9
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_denounce_tyranny  }
+		completion_reward = {
+			add_war_support = 0.05
+			remove_ideas = seeking_recognition
+		}
+	}
+
+	#Declare the Papal States
+	focus = {
+		id = VAT_declare_the_papal_states
+		icon = GFX_VAT_declarepapalstates
+		x = 8
+		y = 6
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_despose_il_duce  focus = VAT_restore_order  }
+		available = {
+			has_war = no
+			
+		}
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+			set_rule = { can_guarantee_other_ideologies = yes }
+			add_political_power = 50
+			set_cosmetic_tag = PAP_VAT
+		}
+	}
+
+	#Despose Il Duce
+	focus = {
+		id = VAT_despose_il_duce
+		icon = GFX_VAT_deposeilduce
+		x = 7
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = VAT_the_two_romes_pact }
+		available = {
+			has_army_manpower = { size > 50000 }
+			# suizo - i removed the requirement for the AI so it will do the focus instead of procastinating it
+			if = {
+				limit = { is_AI = no }
+				ITA = {
+					has_opinion = {
+						target = VAT
+						value > 69
+					}
+				}
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				ITA = {
+					kill_ideology_leader = fascism
+					promote_character = {
+						character = ITA_eugenio_pacelli
+						ideology = papacy
+					}
+					set_cosmetic_tag = PAP_ITA
+				}
+			}
+			
+			transfer_state = 158
+			add_state_core = 158
+			transfer_state = 159
+			add_state_core = 159
+			transfer_state = 160
+			add_state_core = 160
+			transfer_state = 39
+			add_state_core = 39
+			transfer_state = 736
+			add_state_core = 736
+			transfer_state = 161
+			add_state_core = 161
+			transfer_state = 850
+			add_state_core = 850
+			transfer_state = 852
+			transfer_state = 163
+			puppet = ITA
+			hidden_effect = {
+				ITA = {
+					set_party_name = {
+   						ideology = communism
+						long_name = ITA_communism_papal_party 
+   						name =  ITA_communism_papal_party
+					}
+					set_party_name = {
+   						ideology = democratic
+						long_name = ITA_democratic_papal_party 
+   						name =  ITA_democratic_papal_party
+					}
+					set_party_name = {
+   						ideology = fascism
+						long_name = ITA_fascism_papal_party 
+   						name =  ITA_fascism_papal_party
+					}
+					load_focus_tree = generic_focus
+				}
+			}
+		}
+	}
+
+	#Embrace Political Refugees
+	focus = {
+		id = VAT_embrace_political_refugees
+		icon = GFX_focus_generic_military_academy
+		x = 11
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER
+		}
+		prerequisite = { focus = VAT_denounce_tyranny  }
+		completion_reward = {
+			add_timed_idea = {
+			          idea = safe_haven
+			         days = 200
+			}
+		}
+	}
+
+	#The Papal Revolution
+	focus = {
+		id = VAT_the_papal_revolution
+		icon = GFX_VAT_papalrevolution
+		x = 10
+		y = 4
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = VAT_radicalise_the_masses }
+		prerequisite = { focus = VAT_pacellisstatevisit }
+		prerequisite = { focus = VAT_embrace_political_refugees }
+		completion_reward = {
+			custom_effect_tooltip = papal_revolution_tooltip
+			declare_war_on = {
+			    target = ITA
+			    type = annex_everything
+			}
+			remove_ideas = lateran_treaty
+			hidden_effect = {
+				load_oob = VAT_Revolution_1
+				ITA = {
+					# suizo - changed the way the civil war breaks out
+					kill_ideology_leader = neutrality
+					delete_unit = {
+						state = 117
+						disband = yes
+					}
+					delete_unit = {
+						state = 156
+						disband = yes
+					}
+					delete_unit = {
+						state = 2
+						disband = yes
+					}
+					create_dynamic_country = {
+						original_tag = ITA
+						set_politics = {
+							ruling_party = neutrality
+							elections_allowed = no
+							last_election = "1935.12.17"
+							election_frequency = 48
+							long_name = "Italian Curia"
+							name = "Italian Curia"
+						}
+						VAT = {
+							diplomatic_relation = {
+								country = PREV
+								relation = puppet
+								active = yes
+							}
+						}
+						set_popularities = {
+							neutrality = 100
+						}
+						declare_war_on = {
+							target = ITA
+						}
+						transfer_state = 115
+						transfer_state = 156
+						transfer_state = 117
+						transfer_state = 161
+						create_country_leader = {
+							name = "Catholic Uprising"
+							picture = GFX_Portrait_Uprising_large
+							expire = "1965.1.1"
+							ideology = despotism
+						}
+						country_event = OCH_devevents.1
+						set_cosmetic_tag = PAP_ITA
+						ITA = {
+							transfer_units_fraction= {
+								target = PREV
+								size = 0.3
+							}
+						}
+					}
+					ITA = { ITA_ugo_cavallero = { set_nationality = VAT } }
+					ITA = { ITA_sebastiano_visconti_prasca = { set_nationality = VAT } }
+					every_enemy_country = {
+						limit = { is_dynamic_country = yes }
+						VAT = { give_military_access = PREV }
+						load_focus_tree = generic_focus
+					}
+					set_rule = { can_join_factions = no }
+					set_rule = { can_create_factions = no }
+				}
+				country_event = {
+					id = vatican.34
+					days = 3
+				}
+			}
+		}
+	}
+
+#	#Incite the Fear of God
+#	focus = {
+#		id = VAT_incite_the_fear_of_god
+#		icon = GFX_goal_generic_attack_allies
+#		x = 11
+#		y = 5
+#		cost = 2
+#		search_filters = {
+#			FOCUS_FILTER_POLITICAL
+#		}
+#		prerequisite = { focus = VAT_the_papal_revolution }
+#		completion_reward = {
+#			add_timed_idea = {
+#			    idea = fear_of_god
+#			    days = 150
+#			}
+#		}
+#	}
+
+	#Restore Order
+	focus = {
+		id = VAT_restore_order
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		x = 9
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = VAT_the_papal_revolution }
+		available = {
+			NOT = { ITA = { has_war_with = VAT } GER = { has_war_with = VAT } }
+		}
+		completion_reward = {
+			annex_country = { target = ITA transfer_troops = yes }
+			hidden_effect = { ITA = { kill_ideology_leader = fascism } }
+		}
+	}
+
+	#In Visions of the Night...
+	focus = {
+		id = VAT_invisionsofthenight
+		icon = GFX_VAT_visionsofthenight
+		x = 8
+		y = 7
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_declare_the_papal_states  }
+		completion_reward = {
+			hidden_effect = { 
+					mark_focus_tree_layout_dirty = yes
+			}
+			custom_effect_tooltip = visions_tooltip
+			country_event = { id = vatican.26 days = 1 }
+		}
+	}
+
+	#... From Above
+	focus = {
+		id = VAT_fromabove
+		icon = GFX_goal_fromabove
+		x = 7
+		y = 9
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_invisionsofthenight  }
+		allow_branch = { has_completed_focus = VAT_invisionsofthenight }
+		mutually_exclusive = { focus = VAT_frombelow  }
+		completion_reward = {
+			hidden_effect = { set_country_leader_portrait = {
+						ideology = neutrality
+						portrait = GFX_Portrait_Cardinals_1
+					} 
+					mark_focus_tree_layout_dirty = yes
+			}
+			country_event = { id = vatican.27 days = 1 }
+		}
+	}
+	#... From Below
+	focus = {
+		id = VAT_frombelow
+		icon = GFX_goal_frombelow
+		x = 9
+		y = 9
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_invisionsofthenight  }
+		allow_branch = { has_completed_focus = VAT_invisionsofthenight }
+		mutually_exclusive = { focus = VAT_fromabove  }
+		completion_reward = {
+			hidden_effect = { set_country_leader_portrait = {
+						ideology = neutrality
+						portrait = GFX_Portrait_Cardinals_2
+					}
+					mark_focus_tree_layout_dirty = yes
+			}
+
+			country_event = { id = vatican.28 days = 1 }
+		}
+	}
+
+	#Embrace Earthly Delights
+	focus = {
+		id = VAT_embraceearthlydelights
+		icon = GFX_goal_earthly
+		x = 9
+		y = 10
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_frombelow  }
+#		allow_branch = { OR = { has_completed_focus =  VAT_frombelow has_completed_focus =  VAT_fromabove } }
+		mutually_exclusive = { focus = VAT_invokeinfernalwrath }
+		completion_reward = {
+			hidden_effect = { kill_country_leader = yes drop_cosmetic_tag = yes }
+			add_popularity = {
+   				ideology = communism
+   				popularity = 0.25
+			}
+			set_cosmetic_tag = COM_VAT
+			custom_effect_tooltip = delights_tooltip
+			hidden_effect = {
+					country_event = { id = vatican.133 days = 10 }
+					promote_character = {
+						character = VAT_Earthly_Satan
+						ideology = anarchist_communism
+					}
+					set_politics = {
+						ruling_party = communism
+							elections_allowed = no
+							last_election = "1935.12.17"
+							election_frequency = 48
+					}
+					promote_character = {
+						character = VAT_Infernal_Satan
+						ideology = fascism_ideology
+					}
+					promote_character = {
+						character = VAT_Edenic_Christ
+						ideology = socialism
+					}
+					promote_character = {
+						character = VAT_Elect_Christ
+						ideology = despotism
+					}
+					set_party_name = { 
+						ideology = communism
+						long_name = VAT_communism_divine_party 
+						name =  VAT_communism_divine_party
+					}
+					set_party_name = { 
+						ideology = fascism
+						long_name = VAT_fascism_divine_party 
+						name = VAT_fascism_divine_party
+					}
+					set_party_name = { 
+						ideology = democratic
+						long_name = VAT_democratic_divine_party 
+						name = VAT_democratic_divine_party
+					}
+					set_party_name = { 
+						ideology = neutrality
+						long_name = VAT_neutrality_divine_party 
+						name = VAT_neutrality_divine_party
+					}
+					news_event = {
+						id = cloudnews.7
+						days = 0
+					}
+			 add_advisor_role = {
+ 			  Character = VAT_lilith
+			   advisor = {
+ 			    slot = political_advisor
+			    cost = 150
+			     traits = {
+			         feminist_ultranationalist
+			     }
+			 	idea_token = lilith
+ 			    allowed = {
+			         always = yes
+			     }
+			   }
+			    activate = no
+			 }
+			add_corps_commander_role = {
+			  Character = VAT_lilith
+			traits= { harsh_leader  }
+			  skill = 3
+			  attack_skill = 2
+ 			 defense_skill = 3
+ 			 planning_skill = 3
+ 			 logistics_skill = 2
+			}
+			 add_advisor_role = {
+ 			  Character = VAT_commodus
+			   advisor = {
+ 			    slot = high_command
+			    idea_token = commodus
+			     cost = 50
+			     traits = {
+			         army_regrouping_2
+			     }
+ 			    allowed = {
+			         always = yes
+			     }
+			  }
+			    activate = no
+			 }
+			 add_corps_commander_role = {
+			   Character = VAT_commodus
+			 traits= { media_personality }
+			   skill = 2
+			  attack_skill = 2
+ 			  defense_skill = 2
+ 			  planning_skill = 2
+ 			  logistics_skill = 1
+			 }
+			 add_advisor_role = {
+ 			  Character = VAT_pan
+			   advisor = {
+ 			    slot = army_chief
+			    ledger = army
+			    idea_token = pan
+			     cost = 50
+			     traits = {
+			         army_chief_offensive_2
+			     }
+ 			    allowed = {
+			         always = yes
+			     }
+			   }
+			    activate = no
+			 }
+			 add_corps_commander_role = {
+			   Character = VAT_pan
+			 traits= { trait_reckless }
+			   skill = 2
+			   attack_skill = 2
+ 			  defense_skill = 3
+ 			  planning_skill = 2
+ 			  logistics_skill = 3
+			 }
+			 add_advisor_role = {
+ 			  Character = VAT_eve
+			   advisor = {
+ 			    slot = political_advisor
+			     cost = 150
+			 	idea_token = eve
+			     traits = {
+			 	driver_of_the_faithful
+			     }
+ 			    allowed = {
+			         always = yes
+			     }
+			   }
+			    activate = no
+			 }
+			 add_advisor_role = {
+			  Character = VAT_teach
+			   advisor = {
+ 			    slot = theorist
+			    ledger = navy
+			    idea_token = teach
+			     cost = 50
+			     traits = {
+			         naval_theorist
+			     }
+ 			    allowed = {
+			         always = yes
+			     }
+			   }
+			    activate = no
+			 }
+			 add_naval_commander_role = {
+			   Character = VAT_teach
+			 traits= { seawolf }
+			   skill = 3
+			   attack_skill = 3
+ 			  defense_skill = 1
+ 			 planning_skill = 2
+ 			  logistics_skill = 3
+			 }
+			 add_advisor_role = {
+			  Character = VAT_messengers
+			   advisor = {
+ 			    slot = theorist
+			    idea_token = messengers
+			    ledger = air
+			     cost = 50
+			     traits = {
+			         air_warfare_theorist
+			     }
+ 			    allowed = {
+			         always = yes
+			     }
+			   }
+			    activate = no
+			 }
+			 add_advisor_role = {
+			  Character = VAT_messengers
+			   advisor = {
+ 			    slot = air_chief
+			    idea_token = messengers
+			    ledger = air
+			     cost = 50
+			     traits = {
+			         air_chief_ground_support_2
+			     }
+ 			    allowed = {
+			         always = yes
+			     }
+			   }
+			    activate = no
+			 }
+			 add_advisor_role = {
+			  Character = VAT_rameses
+			   advisor = {
+ 			    slot = naval_chief
+			    ledger = navy
+			    idea_token = rameses
+			     cost = 50
+			     traits = {
+			         navy_chief_decisive_battle_2
+			     }
+ 			    allowed = {
+			         always = yes
+			     }
+			    }
+			     activate = no
+			  }
+			  add_advisor_role = {
+ 			   Character = VAT_goliath
+			    advisor = {
+ 			     slot = high_command
+			      ledger = army
+			      cost = 50
+			  	idea_token = goliath
+			      traits = {
+			          army_armored_3
+			      }
+ 			     allowed = {
+			          always = yes
+			      }
+			    }
+			     activate = no
+			  }
+			  add_field_marshal_role = {
+			    Character = VAT_goliath
+			  traits= { brilliant_strategist }
+			    skill = 3
+			    attack_skill = 4
+ 			   defense_skill = 2
+ 			   planning_skill = 3
+ 			   logistics_skill = 3
+			  }
+			  add_advisor_role = {
+ 			   Character = VAT_herod
+			    advisor = {
+ 			     slot = high_command
+			      ledger = army
+			  	idea_token = herod
+			      cost = 50
+			      traits = {
+			          army_logistics_2
+			      }
+ 			     allowed = {
+			          always = yes
+			      }
+			    }
+			     activate = no
+			  }
+			  add_corps_commander_role = {
+			    Character = VAT_herod
+			  traits= { politically_connected infantry_officer }
+			    skill = 3
+			    attack_skill = 4
+ 			   defense_skill = 2
+ 			   planning_skill = 5
+ 			   logistics_skill = 5
+			  }
+			  add_advisor_role = {
+ 			   Character = VAT_carnot
+			    advisor = {
+ 			     slot = high_command
+			      ledger = air
+			      cost = 50
+			  	idea_token = carnot
+			      traits = {
+			          air_air_superiority_2
+			      }
+ 			     allowed = {
+			          always = yes
+			      }
+			    }
+			     activate = no
+			  }
+			  add_advisor_role = {
+ 			   Character = VAT_carnot
+			    advisor = {
+ 			     slot = air_chief
+			      ledger = air
+			  	idea_token = carnot
+			      cost = 50
+			      traits = {
+			          air_chief_reform_2
+			      }
+ 			     allowed = {
+			          always = yes
+			      }
+			    }
+			     activate = no
+			  }
+			  add_corps_commander_role = {
+			    Character = VAT_wilmot
+			  traits= { }
+			    skill = 3
+			    attack_skill = 3
+ 			   defense_skill = 3
+ 			   planning_skill = 2
+ 			   logistics_skill = 2
+			  }
+			  add_advisor_role = {
+ 			   Character = VAT_beasts
+			    advisor = {
+ 			     slot = high_command
+			     idea_token = beasts
+			      ledger = army
+			      cost = 50
+			      traits = {
+			          army_infantry_2
+			      }
+ 			     allowed = {
+			          always = yes
+			      }
+			    }
+			     activate = no
+			  }
+			  add_corps_commander_role = {
+			    Character = VAT_beasts
+			  traits= { inflexible_strategist }
+			    skill = 4
+			    attack_skill = 3
+ 			   defense_skill = 2
+ 			   planning_skill = 3
+ 			   logistics_skill = 2
+			  }
+			  add_advisor_role = {
+ 			   Character = VAT_rabutin
+			    advisor = {
+ 			     slot = high_command
+			      ledger = army
+			      cost = 50
+			  	idea_token = rabutin
+			      traits = {
+			          army_concealment_3
+			      }
+ 			     allowed = {
+			          always = yes
+			      }
+			    }
+			     activate = no
+			  }
+			  add_corps_commander_role = {
+			    Character = VAT_rabutin
+			  traits= { war_hero }
+			    skill = 4
+			    attack_skill = 3
+ 			   defense_skill = 3
+ 			   planning_skill = 2
+ 			   logistics_skill = 3
+			  }
+			  add_advisor_role = {
+ 			   Character = VAT_delilah
+			    advisor = {
+ 			     slot = political_advisor
+			      cost = 150
+			  	idea_token = delilah
+			      traits = {
+			          backroom_backstabber
+			      }
+ 			     allowed = {
+			          always = yes
+			      }
+			    }
+			     activate = no
+			  }
+			  add_advisor_role = {
+ 			   Character = VAT_jezebel
+			    advisor = {
+ 			     slot = political_advisor
+			      cost = 150
+			  	idea_token = jezebel
+			      traits = {
+			          princess_of_terror
+			      }
+ 			     allowed = {
+			          always = yes
+			      }
+			    }
+			     activate = no
+			  }
+			  add_advisor_role = {
+ 			   Character = VAT_nimrod
+			    advisor = {
+ 			     slot = political_advisor
+			     idea_token = nimrod
+			      cost = 150
+			      traits = {
+			          war_industrialist
+			      }
+ 			     allowed = {
+			          always = yes
+			      }
+			    }
+			     activate = no
+			  }
+			  add_advisor_role = {
+ 			   Character = VAT_nimrod
+			    advisor = {
+			     ledger = navy
+ 			     slot = navy_chief
+			      cost = 50
+			  	idea_token = nimrod
+			      traits = {
+			  	navy_chief_maneuver_2
+			      }
+ 			     allowed = {
+			          always = yes
+			      }
+			    }
+			    activate = no
+			 }			
+				mark_focus_tree_layout_dirty = yes
+				ITA = {
+					set_country_leader_ideology = anarchist_communism
+				}
+				country_event = vatican.64
+			}
+		}
+	}
+
+	#Invoke Infernal Wrath
+	focus = {
+		id = VAT_invokeinfernalwrath
+		icon = GFX_goal_infernal
+		x = 11
+		y = 10
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = { has_country_flag = unfinishedavailability }
+		prerequisite = { focus = VAT_frombelow  }
+#		allow_branch = { OR = { has_completed_focus =  VAT_frombelow has_completed_focus =  VAT_fromabove } }
+		mutually_exclusive = { focus = VAT_embraceearthlydelights }
+		completion_reward = {
+			hidden_effect = { kill_country_leader = yes drop_cosmetic_tag = yes }
+			custom_effect_tooltip = UNFINISHED_TOOLTIP
+			hidden_effect = {
+			add_popularity = {
+  				ideology = fascism
+  				popularity = 0.25
+			}
+			set_cosmetic_tag = FAS_VAT
+			custom_effect_tooltip = infernal_tooltip
+			set_politics = {
+				ruling_party = fascism
+       				elections_allowed = no
+       				last_election = "1935.12.17"
+       				election_frequency = 48
+			}
+			promote_character = {
+				character = VAT_Infernal_Satan
+				ideology = fascism_ideology
+			}
+					promote_character = {
+						character = VAT_Earthly_Satan
+						ideology = anarchist_communism
+					}
+					promote_character = {
+						character = VAT_Edenic_Christ
+						ideology = socialism
+					}
+					promote_character = {
+						character = VAT_Elect_Christ
+						ideology = despotism
+					}
+			set_party_name = { 
+   				ideology = communism
+				long_name = VAT_communism_divine_party 
+   				name =  VAT_communism_divine_party
+			}
+			set_party_name = { 
+   				ideology = fascism
+				long_name = VAT_fascism_divine_party 
+   				name = VAT_fascism_divine_party
+			}
+			set_party_name = { 
+   				ideology = democratic
+				long_name = VAT_democratic_divine_party 
+   				name = VAT_democratic_divine_party
+			}
+			set_party_name = { 
+   				ideology = neutrality
+				long_name = VAT_neutrality_divine_party 
+   				name = VAT_neutrality_divine_party
+			}
+			news_event = {
+			    id = cloudnews.8
+			    days = 1
+			}
+			mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+	#Unleash the Final Judgement
+	focus = {
+		id = VAT_unleashthefinaljudgement
+		icon = GFX_goal_judgement
+		x = 7
+		y = 10
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = { has_country_flag = unfinishedavailability }
+		prerequisite = { focus = VAT_fromabove  }
+#		allow_branch = { OR = { has_completed_focus =  VAT_frombelow has_completed_focus =  VAT_fromabove } }
+		mutually_exclusive = { focus = VAT_forgeaneweden }
+		completion_reward = {
+			hidden_effect = { kill_country_leader = yes drop_cosmetic_tag = yes }
+			custom_effect_tooltip = UNFINISHED_TOOLTIP
+			hidden_effect = {
+			set_cosmetic_tag = NEU_VAT
+			custom_effect_tooltip = judgement_tooltip
+			set_politics = {
+				ruling_party = neutrality
+       				elections_allowed = no
+       				last_election = "1935.12.17"
+       				election_frequency = 48
+			}
+			promote_character = {
+				character = VAT_Elect_Christ
+				ideology = despotism
+			}
+					promote_character = {
+						character = VAT_Earthly_Satan
+						ideology = anarchist_communism
+					}
+					promote_character = {
+						character = VAT_Edenic_Christ
+						ideology = socialism
+					}
+					promote_character = {
+						character = VAT_Infernal_Satan
+						ideology = fascism_ideology
+					}
+			set_party_name = { 
+   				ideology = communism
+				long_name = VAT_communism_divine_party 
+   				name =  VAT_communism_divine_party
+			}
+			set_party_name = { 
+   				ideology = fascism
+				long_name = VAT_fascism_divine_party 
+   				name = VAT_fascism_divine_party
+			}
+			set_party_name = { 
+   				ideology = democratic
+				long_name = VAT_democratic_divine_party 
+   				name = VAT_democratic_divine_party
+			}
+			set_party_name = { 
+   				ideology = neutrality
+				long_name = VAT_neutrality_divine_party 
+   				name = VAT_neutrality_divine_party
+			}
+					add_advisor_role = {
+					 Character = VAT_samson
+					  advisor = {
+					   slot = army_chief
+					   idea_token = samson
+						ledger = army
+						cost = 50
+						traits = {
+							army_chief_offensive_2
+						}
+					   allowed = {
+							always = yes
+						}
+					  }
+					   activate = no
+					}
+					add_corps_commander_role = {
+					  Character = VAT_samson
+					traits= { trait_reckless }
+					  skill = 3
+					  attack_skill = 3
+					 defense_skill = 2
+					 planning_skill = 3
+					 logistics_skill = 2
+					}
+					add_corps_commander_role = {
+					  Character = VAT_david
+					traits= { trait_cautious }
+					  skill = 3
+					  attack_skill = 4
+					 defense_skill = 4
+					 planning_skill = 2
+					 logistics_skill = 2
+					}
+			news_event = {
+			    id = cloudnews.6
+			    days = 1
+			}
+			mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+	#Forge a New Eden
+	focus = {
+		id = VAT_forgeaneweden
+		icon = GFX_goal_eden
+		x = 5
+		y = 10
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_fromabove  }
+#		allow_branch = { OR = { has_completed_focus =  VAT_frombelow has_completed_focus =  VAT_fromabove } }
+		mutually_exclusive = { focus = VAT_unleashthefinaljudgement }
+		completion_reward = {
+			hidden_effect = { kill_country_leader = yes drop_cosmetic_tag = yes }
+			add_popularity = {
+   				ideology = democratic
+   				popularity = 0.3
+			}
+			set_cosmetic_tag = DEM_VAT
+			custom_effect_tooltip = eden_tooltip
+			hidden_effect = {
+					country_event = { id = vatican.105 days = 3 }
+					country_event = { id = vatican.128 days = 12 }
+					set_politics = {
+						ruling_party = democratic
+							elections_allowed = no
+							last_election = "1935.12.17"
+							election_frequency = 48
+					}
+					promote_character = {
+						character = VAT_Edenic_Christ
+						ideology = socialism
+					}
+					promote_character = {
+						character = VAT_Earthly_Satan
+						ideology = anarchist_communism
+					}
+					promote_character = {
+						character = VAT_Elect_Christ
+						ideology = despotism
+					}
+					promote_character = {
+						character = VAT_Infernal_Satan
+						ideology = fascism_ideology
+					}
+				set_party_name = { 
+					ideology = communism
+					long_name = VAT_communism_divine_party 
+					name =  VAT_communism_divine_party
+				}
+				set_party_name = { 
+					ideology = fascism
+					long_name = VAT_fascism_divine_party 
+					name = VAT_fascism_divine_party
+				}
+				set_party_name = { 
+					ideology = democratic
+					long_name = VAT_democratic_divine_party 
+					name = VAT_democratic_divine_party
+				}
+				set_party_name = { 
+					ideology = neutrality
+					long_name = VAT_neutrality_divine_party 
+					name = VAT_neutrality_divine_party
+				}
+				news_event = {
+					id = cloudnews.1
+					days = 1
+				}
+				mark_focus_tree_layout_dirty = yes
+					 add_advisor_role = {
+					  Character = VAT_gabriel
+					   advisor = {
+					    slot = political_advisor
+					 	cost = 150
+					 	idea_token = gabriel
+					 	traits = {
+					 		adventurous_daredevil
+					 	}
+					    allowed = {
+					 		always = yes
+					 	}
+					   }
+					    activate = no
+					 }
+					 add_advisor_role = {
+					  Character = VAT_paul
+					   advisor = {
+					    slot = political_advisor
+					 	cost = 150
+					 	idea_token = paul
+					 	traits = {
+					 		author_of_scripture
+					    allowed = {
+					 		always = yes
+					 	}
+					   }
+					    activate = no
+					 }
+					 add_advisor_role = {
+					  Character = VAT_raphael
+					   advisor = {
+					    slot = political_advisor
+					 	cost = 150
+					 	idea_token = raphael
+					 	traits = {
+					 		compassionate_gentleman
+					 	}
+					    allowed = {
+					 		always = yes
+					 	}
+					   }
+					    activate = no
+					 }
+					 add_advisor_role = {
+					  Character = VAT_raphael
+					   advisor = {
+					    slot = high_command
+					 	ledger = air
+					 	idea_token = raphael
+					 	cost = 50
+					 	traits = {
+					 		air_air_combat_training_2
+					 	}
+					    allowed = {
+					 		always = yes
+					 	}
+					   }
+					    activate = no
+					 }
+					 add_advisor_role = {
+					  Character = VAT_michael
+					   advisor = {
+					    slot = political_advisor
+					 	cost = 150
+					 	idea_token = michael
+					 	traits = {
+					 		war_industrialist
+					 	}
+					    allowed = {
+					 		always = yes
+					 	}
+					   }
+					    activate = no
+					 }
+					 add_advisor_role = {
+					  Character = VAT_gabriel
+					   advisor = {
+					    slot = air_chief
+					 	ledger = air
+					 	idea_token = gabriel
+					 	cost = 50
+					 	traits = {
+					 		air_chief_night_operations_2
+					 	}
+					    allowed = {
+					 		always = yes
+					 	}
+					   }
+					    activate = no
+					 }
+					 add_field_marshal_role = {
+					   Character = VAT_michael
+					   skill = 3
+					   attack_skill = 3
+					  defense_skill = 2
+					  planning_skill = 2
+					  logistics_skill = 3
+					 }
+					 add_advisor_role = {
+					  Character = VAT_cupertino
+					   advisor = {
+					    slot = theorist
+					 	ledger = air
+					 	idea_token = cupertino
+					 	cost = 50
+					 	traits = {
+					 		air_warfare_theorist
+					 	}
+					    allowed = {
+					 		always = yes
+					 	}
+					   }
+					    activate = no
+					 }
+					 add_advisor_role = {
+					  Character = VAT_cupertino
+					   advisor = {
+					    slot = air_chief
+					 	ledger = air
+					 	idea_token = cupertino
+					 	cost = 50
+					 	traits = {
+					 		air_air_combat_training_3
+					 	}
+					    allowed = {
+					 		always = yes
+					 	}
+					   }
+					    activate = no
+					 }
+					 add_advisor_role = {
+					  Character = VAT_brendan
+					   advisor = {
+					    slot = theorist
+					 	ledger = navy
+					 	idea_token = brendan
+					 	cost = 50
+					 	traits = {
+					 		naval_theorist
+					 	}
+					    allowed = {
+					 		always = yes
+					 	}
+					   }
+					    activate = no
+					 }
+					 add_advisor_role = {
+					  Character = VAT_brendan
+					   advisor = {
+					    slot = navy_chief
+					 	ledger = navy
+					 	idea_token = brendan
+					 	cost = 50
+					 	traits = {
+					 		navy_chief_maneuver_2
+					 	}
+					    allowed = {
+					 		always = yes
+					 	}
+					   }
+					    activate = no
+					 }
+					 add_naval_commander_role = {
+					   Character = VAT_brendan
+					   traits = { bold }
+					   skill = 2
+					   attack_skill = 2
+					   defense_skill = 2
+					   planning_skill = 3
+					   logistics_skill = 2
+					 }
+					 add_advisor_role = {
+					  Character = VAT_constantine
+					   advisor = {
+					    slot = high_command
+					 	ledger = army
+					 	idea_token = constantine
+					 	cost = 50
+					 	traits = {
+					 		army_logistics_3
+					 	}
+					    allowed = {
+					 		always = yes
+					 	}
+					   }
+					    activate = no
+					 }
+					 add_advisor_role = {
+					  Character = VAT_michael
+					   advisor = {
+					    slot = army_chief
+					    idea_token = michael
+					 	ledger = army
+					 	cost = 50
+					 	traits = {
+					 		army_chief_offensive_2
+					 	}
+					    allowed = {
+					 		always = yes
+					 	}
+					   }
+					    activate = no
+					 }
+					 add_corps_commander_role = {
+					   Character = VAT_gabriel
+					 traits= { inflexible_strategist }
+					   skill = 3
+					   attack_skill = 3
+					  defense_skill = 2
+					  planning_skill = 3
+					  logistics_skill = 2
+					 }
+					 add_corps_commander_role = {
+					   Character = VAT_george
+					 traits= { trait_cautious infantry_officer }
+					   skill = 3
+					   attack_skill = 4
+					  defense_skill = 4
+					  planning_skill = 2
+					  logistics_skill = 2
+					 }
+					 add_advisor_role = {
+					  Character = VAT_joan_of_arc
+					   advisor = {
+					 	slot = high_command
+					    cost = 50
+					    idea_token = joan_of_arc
+					 	idea_token = VAT_joan_of_arc
+					 	traits = {
+					 	   army_infantry_3
+					 	}
+					    allowed = {
+					 		always = yes
+					 	}
+					   }
+					 }
+					ITA = {
+						set_country_leader_ideology = socialism
+					}
+				}
+		}
+	}
+
+
+#############################################
+#############################################      
+#############################################
+######███████╗██████╗░███████╗███╗░░██╗######
+######██╔════╝██╔══██╗██╔════╝████╗░██║######
+######█████╗░░██║░░██║█████╗░░██╔██╗██║######
+######██╔══╝░░██║░░██║██╔══╝░░██║╚████║######
+######███████╗██████╔╝███████╗██║░╚███║######
+######╚══════╝╚═════╝░╚══════╝╚═╝░░╚══╝######
+#############################################
+#############################################
+############################################# or The Good Heaven Route :)
+
+
+
+	#Look West
+	focus = {
+		id = VAT_look_west
+		icon = GFX_VAT_lookwest
+		allow_branch = { has_completed_focus =  VAT_forgeaneweden }
+		x = 1
+		y = 11
+		cost = 5
+		mutually_exclusive = { focus = VAT_look_east }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+			has_country_flag = westaligned
+		}
+		prerequisite = {
+			focus = VAT_forgeaneweden
+		}
+		completion_reward = {
+			set_rule = { can_join_factions = yes }
+			set_rule = { can_create_factions = yes }
+			add_war_support = 0.05
+			ITA = {
+				if = { limit = { is_puppet_of = VAT }
+					add_popularity = { ideology = democratic popularity = 0.3 }
+				}
+			}
+		}
+	}
+
+	#Look East
+	focus = {
+		id = VAT_look_east
+		icon = GFX_focus_GRE_an_orthodox_state
+		allow_branch = { has_completed_focus =  VAT_forgeaneweden }
+		x = 9
+		y = 11
+		cost = 5
+		mutually_exclusive = { focus = VAT_look_west }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+			has_country_flag = eastaligned
+		}
+		prerequisite = {
+			focus = VAT_forgeaneweden
+		}
+		completion_reward = {
+			set_rule = { can_join_factions = yes }
+			set_rule = { can_create_factions = yes }
+			create_faction = "Court of Eden"
+			add_war_support = 0.05
+			ITA = {
+				if = { limit = { is_puppet_of = VAT }
+					add_popularity = { ideology = democratic popularity = 0.3 }
+				}
+			}
+			hidden_effect = {
+				country_event = { id = vatican.112 days = 10 }
+				country_event = { id = vatican.150 days = 7 }
+			}
+		}
+	}
+
+	#
+	focus = {
+		id = VAT_BOOST_SUPPLY_and_RESOURCES
+		icon = GFX_goal_generic_trade
+		x = 6
+		y = 12
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_look_east focus = VAT_look_west }
+		completion_reward = {
+			add_stability = 0.5
+			add_ideas = land_of_pleanty
+		}
+	}
+	#
+	focus = {
+		id = VAT_BOOST_RECOVERY_and_COST_FOR_SUPPORT
+		icon = GFX_goal_generic_demand_territory
+		x = 6
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_BOOST_SUPPLY_and_RESOURCES }
+		completion_reward = {
+			#add_stability = 0.05
+			swap_ideas = { remove_idea = land_of_plenty add_idea = land_of_plenty_2 }
+		}
+	}
+	#
+	focus = {
+		id = VAT_BOOST_ECONOMY_and_REPAIR_SPEED
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 4
+		y = 12
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_look_east focus = VAT_look_west  }
+		completion_reward = {
+			#add_popularity = { ideology = democratic popularity = 0.05 }
+			add_ideas = eliminate_poverty
+		}
+	}
+	#
+	focus = {
+		id = VAT_BOOST_MANPOWER_and_STABILITY
+		icon = GFX_goal_generic_neutrality_focus
+		x = 4
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_BOOST_ECONOMY_and_REPAIR_SPEED }
+		completion_reward = {
+			add_popularity = { ideology = democratic popularity = 0.05 }
+			set_rule = { can_generate_female_aces = yes }
+					add_corps_commander_role = {
+					 Character = VAT_joan_of_arc
+					traits= { war_hero }
+					 skill = 4
+					  attack_skill = 3
+					  defense_skill = 4
+					  planning_skill = 3
+					 logistics_skill = 2
+					}
+		}
+	}
+	#
+	focus = {
+		id = VAT_BOOST_DEM_SUPPORT_and_STABILITY
+		icon = GFX_goal_support_democracy
+		x = 5
+		y = 15
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_BOOST_MANPOWER_and_STABILITY }
+		prerequisite = { focus = VAT_BOOST_RECOVERY_and_COST_FOR_SUPPORT }
+		completion_reward = {
+					 add_advisor_role = {
+					  Character = VAT_marymag
+					   advisor = {
+					    slot = political_advisor
+					 	cost = 150
+					 	idea_token = marymag
+					 	traits = {
+					 		social_reformer
+					    allowed = {
+					 		always = yes
+					 	}
+					   }
+		    activate = no
+		 }
+		}
+	}
+	#
+	focus = {
+		id = VAT_INFLUENCE_EAST
+		icon = GFX_focus_generic_balkans_focus
+		x = 8
+		y = 12
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_look_east }
+		completion_reward = {
+			BUL = { add_ideas = papal_influence }
+			ALB = { add_ideas = papal_influence }
+			TUR = {
+				add_timed_idea = {
+					idea = orthodox_unrest
+					days = 50
+				}
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_ALLY_GRE
+		icon = GFX_focus_generic_befriend_greece
+		x = 10
+		y = 12
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_look_east }
+		completion_reward = {
+			GRE = {
+				country_event = EdenDiplo.1
+			}
+					# add_advisor_role = {
+					#  Character = VAT_palamas
+					#   advisor = {
+					#    slot = political_advisor
+					# 	cost = 150
+					# 	idea_token = palamas
+					# 	traits = {
+					# 		popular_figurehead
+					# 	}
+					#    allowed = {
+					# 		always = yes
+					# 	}
+					#   }
+					#    activate = no
+					# }
+		}
+	}
+	#
+	focus = {
+		id = VAT_WAR_YUG
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 9
+		y = 13
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_look_east }
+		completion_reward = {
+			#add_ideas = war_support_boost
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = YUG
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_YUG_CORES
+		icon = GFX_focus_BUL_restore_the_bulgarian_patriarchate
+		x = 9
+		y = 14
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_WAR_YUG }
+		completion_reward = {
+			remove_country_leader_trait = chamberlain_appeaser
+			add_ideas = orthodox_integration
+		}
+	}
+	#
+	focus = {
+		id = VAT_ANNEX_GRE
+		icon = GFX_focus_SOV_the_true_tsars
+		x = 11
+		y = 13
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+			GRE = {
+				is_in_faction_with = VAT
+				has_opinion = {
+					target = VAT
+					value > 69
+				}
+			}
+		}
+		prerequisite = { focus = VAT_ALLY_GRE }
+		bypass = { NOT = { country_exists = GRE } }
+		completion_reward = {
+			annex_country = {
+				target = GRE
+				transfer_troops = yes
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_INVITE_BUL_ALB
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 7
+		y = 13
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+		}
+		prerequisite = { focus = VAT_INFLUENCE_EAST }
+		completion_reward = {
+			BUL = { country_event = EdenDiplo.2 }
+			ALB = { country_event = EdenDiplo.3 }
+		}
+	}
+	#
+	focus = {
+		id = VAT_TUR_UNREST
+		icon = GFX_focus_TUR_the_montreux_convention
+		x = 8
+		y = 15
+		cost = 10
+		mutually_exclusive = { focus = VAT_TUR_WAR}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_INFLUENCE_EAST }
+		available = {
+			TUR = { NOT = { has_idea = orthodox_unrest } }
+		}
+		bypass = { OR = { NOT = { country_exists = TUR } is_in_faction_with = TUR } }
+		completion_reward = {
+			hidden_effect = { country_event = { id = vatican.154 days = 6 } }
+			#set_rule = { can_send_volunteers = yes }
+			add_ideas = missionaries
+			if = {
+				limit = { NOT = { has_country_flag = vat_oriental } }
+				TUR = {
+					start_civil_war = {
+						ruling_party = neutrality
+						ideology = democratic
+						size = 0.5
+						capital = 797
+						keep_political_leader = yes
+						keep_political_party_members = yes
+					}
+				}
+			} else = {
+				TUR = {
+					start_civil_war = {
+						ruling_party = neutrality
+						ideology = democratic
+						size = 0.7
+						capital = 797
+						keep_political_leader = yes
+						keep_political_party_members = yes
+					}
+				}
+			}
+			hidden_effect = {
+				TUR = {
+					every_enemy_country = {
+						limit = {
+							has_government = democratic
+							controls_state = 797
+						}
+						load_focus_tree = generic_focus
+						add_ideas = papal_influence
+					}
+					remove_ideas = { TUR_mustafa_kemal_ataturk_figurehead TUR_legacy_of_ataturk_fulfilled TUR_legacy_of_ataturk_preserved TUR_sectarian_woes TUR_sectarian_woes_1 TUR_sectarian_woes_2 }
+				}
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_TUR_WAR
+		icon = GFX_focus_generic_attack_turkey
+		x = 10
+		y = 15
+		cost = 10
+		mutually_exclusive = { focus = VAT_TUR_UNREST }
+		bypass = { OR = { NOT = { country_exists = TUR } is_in_faction_with = TUR } }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_ALLY_GRE }
+		completion_reward = {
+			hidden_effect = { country_event = { id = vatican.154 days = 6 } }
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = TUR
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_SOV_WAR
+		icon = GFX_focus_SOV_patriarch_of_all_russia
+		x = 8
+		y = 16
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_TUR_UNREST focus = VAT_TUR_WAR }
+		completion_reward = {
+			country_event = vatican.118
+			hidden_effect = {
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_DEMAND_HOLY_LAND
+		icon = GFX_goal_generic_territory_or_war
+		x = 11
+		y = 17
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_TUR_UNREST focus = VAT_TUR_WAR }
+		completion_reward = {
+			custom_effect_tooltip = tooltip_demand_holy_land
+			ENG = { country_event = EdenDiplo.5 }
+			FRA = { country_event = EdenDiplo.6 }
+		}
+	}
+	#
+	focus = {
+		id = VAT_THE_FINAL_CRUSADE
+		icon = GFX_focus_POL_belarus_army
+		x = 10
+		y = 16
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_TUR_UNREST focus = VAT_TUR_WAR }
+		completion_reward = {
+			custom_effect_tooltip = tooltip_final_crusade
+			unlock_decision_category_tooltip = VAT_CATEGORY_CRUSADE
+		}
+	}
+	#
+	focus = {
+		id = VAT_SOUTH_SPA_WAR
+		icon = GFX_focus_spa_eliminate_the_carlists
+		x = 11
+		y = 14
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_ANNEX_GRE }
+		available = {
+			SPR = { has_war = no }
+			NOT = { SPR = { has_government = democratic } }
+		}
+		bypass = { OR = { NOT = { country_exists = SPR } is_in_faction_with = SPR } }
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SPR
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_ROM_ALLY
+		icon = GFX_focus_rom_preserve_romania
+		x = 7
+		y = 17
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_TUR_UNREST focus = VAT_TUR_WAR }
+		bypass = { OR = { NOT = { country_exists = ROM } is_in_faction_with = ROM } }
+		completion_reward = {
+			ROM = { country_event = EdenDiplo.4 }
+		}
+	}
+	#
+	focus = {
+		id = VAT_BYZANTIUM
+		icon = GFX_VAT_byzantium
+		x = 9
+		y = 17
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+			has_war = no
+			2 = {
+				owner = {
+					OR = {
+						is_in_faction_with = VAT
+						is_puppet_of = VAT
+						tag = VAT
+					}
+				}
+			}
+			107 = {
+				owner = {
+					OR = {
+						is_in_faction_with = VAT
+						is_puppet_of = VAT
+						tag = VAT
+					}
+				}
+			}
+			44 = {
+				owner = {
+					OR = {
+						is_in_faction_with = VAT
+						is_puppet_of = VAT
+						tag = VAT
+					}
+				}
+			}
+			47 = {
+				owner = {
+					OR = {
+						is_in_faction_with = VAT
+						is_puppet_of = VAT
+						tag = VAT
+					}
+				}
+			}
+			797 = {
+				owner = {
+					OR = {
+						is_in_faction_with = VAT
+						is_puppet_of = VAT
+						tag = VAT
+					}
+				}
+			}
+		}
+		prerequisite = { focus = VAT_TUR_UNREST focus = VAT_TUR_WAR }
+		completion_reward = {
+			set_cosmetic_tag = BYZ_VAT
+			annex_country = { target = GRE }
+			annex_country = { target = BUL }
+			annex_country = { target = YUG }
+			if = {
+				limit = { ALB = { is_puppet_of = VAT } }
+				annex_country = { target = ALB }
+			}
+			annex_country = { target = TUR }
+			unlock_decision_category_tooltip = VAT_CATEGORY_BYZANTIUM
+			unlock_decision_category_tooltip = VAT_CATEGORY_AESTHETIC
+		}
+	}
+	#
+	focus = {
+		id = VAT_REACH_OUT_TO_ALLIES
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 0
+		y = 12
+		cost = 5
+		mutually_exclusive = { focus = VAT_ALLY_AUSTRIA }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_look_west  }
+		available = { NOT = { has_war_with = FRA has_war_with = ENG } }
+		completion_reward = {
+			add_political_power = 50
+			add_opinion_modifier = {
+				target = ENG
+				modifier = large_increase
+			}
+			add_opinion_modifier = {
+				target = FRA
+				modifier = large_increase
+			}
+			ENG = {
+				add_opinion_modifier = {
+					target = VAT
+					modifier = large_increase
+				}
+			}
+			FRA = {
+				add_opinion_modifier = {
+					target = VAT
+					modifier = large_increase
+				}
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_ALLY_AUSTRIA
+		icon = GFX_goal_generic_defence
+		x = 2
+		y = 12
+		cost = 5
+		mutually_exclusive = { focus = VAT_REACH_OUT_TO_ALLIES }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = { NOT = { has_war_with = AUS } }
+		prerequisite = { focus = VAT_look_west  }
+		completion_reward = {
+			add_political_power = 50
+			create_faction = "Latin Concordat"
+			CZE = {
+				country_event = EdenDiplo.14
+				add_opinion_modifier = {
+					target = VAT
+					modifier = small_increase
+				}
+				add_ideas = papal_influence
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_HOLY_ENTENTE
+		icon = GFX_focus_POL_plan_west
+		x = 3
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+		}
+		prerequisite = { focus = VAT_ALLY_AUSTRIA }
+		bypass = { OR = { NOT = { country_exists = POL } is_in_faction_with = POL } }
+		completion_reward = {
+			POL = {
+				country_event = EdenDiplo.7
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_REBOOT_THE_COUNTERREFORMATION
+		icon = GFX_focus_generic_monarchy_1
+		x = 0
+		y = 14
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+
+		}
+		prerequisite = { focus = VAT_REACH_OUT_TO_ALLIES focus = VAT_ALLY_AUSTRIA }
+		mutually_exclusive = { focus = VAT_STRIP_THE_ALTARS }
+		completion_reward = {
+			country_event = vatican.120
+			#add_timed_idea =  { idea = church_renovations days = 200 }
+		}
+	}
+	#
+	focus = {
+		id = VAT_STRIP_THE_ALTARS
+		icon = GFX_focus_mex_triumph_over_the_cristeros
+		x = 2
+		y = 14
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+
+		}
+		prerequisite = { focus = VAT_REACH_OUT_TO_ALLIES focus = VAT_ALLY_AUSTRIA }
+		mutually_exclusive = { focus = VAT_REBOOT_THE_COUNTERREFORMATION }
+		completion_reward = {
+			country_event = vatican.121
+			add_ideas = catholic_uproar
+		}
+	}
+	#
+	focus = {
+		id = VAT_CATHOLIC_UPRISING
+		icon = GFX_focus_POL_riot_of_37
+		x = 1
+		y = 15
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+
+		}
+		prerequisite = { focus = VAT_STRIP_THE_ALTARS }
+		completion_reward = {
+			add_stability = 0.05
+			remove_ideas = catholic_uproar
+			add_ideas = fulfillment_of_the_reformation
+		}
+	}
+	#
+	focus = {
+		id = VAT_JOIN_ALLIES
+		icon = GFX_focus_chi_british_cooperation
+		x = -1
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_REACH_OUT_TO_ALLIES }
+		bypass = { is_in_faction_with = ENG }
+		available = {
+			NOT = { has_war_with = ENG }
+			ENG = {
+				has_opinion = {
+					target = VAT
+					value > 49
+				}
+			}
+		}
+		completion_reward = {
+			ENG = {
+				country_event = EdenDiplo.13
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_LESSER_EVILS
+		icon = GFX_focus_usa_focus_on_europe
+		x = 3
+		y = 15
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_HOLY_ENTENTE }
+		completion_reward = {
+			add_war_support = 0.05
+			country_event = vatican.41
+		}
+	}
+	#
+	focus = {
+		id = VAT_PREPARE_WAR
+		icon = GFX_focus_CZE_german_puppet
+		x = 2
+		y = 16
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_LESSER_EVILS focus = VAT_RESTORE_CHURCH_IN_ALLIES }
+		completion_reward = {
+			custom_effect_tooltip = VAT_GER_WAR_TOOLTIP
+			remove_country_leader_trait = chamberlain_appeaser
+			create_wargoal = { type = puppet_wargoal_focus target = GER }
+		}
+	}
+	#
+	focus = {
+		id = VAT_monasteries
+		icon = GFX_VAT_scribe
+		x = 1
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+		}
+		prerequisite = { focus = VAT_ALLY_AUSTRIA focus = VAT_REACH_OUT_TO_ALLIES }
+		completion_reward = {
+			add_ideas = diligent_scribes
+		}
+	}
+	#
+	focus = {
+		id = VAT_AUDIENCE_IN_THE_ROSE_GARDEN
+		icon = GFX_VAT_visitusa
+		x = 5
+		y = 17
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+			OR = {
+				has_country_flag = catholicism
+				has_country_flag = protestantism
+			}
+		}
+		prerequisite = { focus = VAT_WAR_ALLIES focus = VAT_ALLIES_REVOLUTION }
+		completion_reward = {
+			custom_effect_tooltip = tooltip_rose_garden
+			country_event = vatican.140
+		}
+	}
+	#
+	focus = {
+		id = VAT_RESTORE_CHURCH_IN_ALLIES
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = -1
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_JOIN_ALLIES }
+		completion_reward = {
+			add_ideas = missionaries
+			ENG = {
+				add_timed_idea = { idea = clerical_interference days = 70 }
+			}
+			FRA = {
+				add_timed_idea = { idea = clerical_interference days = 70 }
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_ALLIES_REVOLUTION
+		icon = GFX_focus_focus_fra_border
+		x = -2
+		y = 16
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+			FRA = { has_war = no NOT = { has_idea = clerical_interference } }
+		}
+		prerequisite = { focus = VAT_RESTORE_CHURCH_IN_ALLIES }
+		bypass = { OR = { NOT = { country_exists = FRA } FRA = { is_puppet_of = VAT } } }
+		completion_reward = {
+			custom_effect_tooltip = VAT_FRA_revolution_eden
+			FRA = {
+				hidden_effect = {
+					set_politics = { ruling_party = democratic elections_allowed = no }
+					remove_ideas = { FRA_victors_of_wwi FRA_disjointed_government FRA_political_violence FRA_inefficient_economy_1 FRA_inefficient_economy_2 }
+					set_cosmetic_tag = PAP_FRA
+					promote_character = FRA_verdier
+					set_party_name = {
+						ideology = democratic
+						long_name = "Holy French Senate"
+						name = "Holy French Senate"
+					}
+					if = {
+						limit = { has_country_flag = catholicism }
+						start_civil_war = {
+							ruling_party = democratic
+							ideology = neutrality
+							size = 0.2
+							capital = 14
+							keep_political_leader = yes
+							keep_political_party_members = yes
+						}
+					} else = {
+						start_civil_war = {
+							ruling_party = democratic
+							ideology = neutrality
+							size = 0.6
+							capital = 14
+							keep_political_leader = yes
+							keep_political_party_members = yes
+						}
+					}
+					every_enemy_country = {
+						limit = { controls_state = 14 has_civil_war = yes has_government = neutrality }
+						set_cosmetic_tag = REV_FRA
+						set_party_name = { 
+							ideology = neutrality 
+							long_name = "Emergency Government"
+							name = "Emergency Government"
+						}
+						set_party_name = { 
+							ideology = democratic 
+							long_name = "Holy French Senate"
+							name = "Holy French Senate"
+						}
+							set_country_leader_portrait = {
+								ideology = neutrality
+								portrait = GFX_portrait_Philippe_Petain
+							}
+							set_country_leader_name = {
+								ideology = neutrality
+								name = "Philippe Pétain"
+							}
+					}
+				}
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_ALLIES_REVOLUTION_ENG
+		icon = GFX_focus_hol_united_netherlands
+		x = 0
+		y = 16
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+			ENG = { has_war = no NOT = { has_idea = clerical_interference } }
+		}
+		prerequisite = { focus = VAT_RESTORE_CHURCH_IN_ALLIES }
+		bypass = { OR = { NOT = { country_exists = ENG } ENG = { is_puppet_of = VAT } } }
+		completion_reward = {
+			custom_effect_tooltip = VAT_ENG_revolution_eden
+				ENG = {
+					hidden_effect = {
+						set_politics = { ruling_party = democratic elections_allowed = no }
+						remove_ideas = { george_v ENG_king_edward ENG_king_edward_fascism ENG_george_vi ENG_the_war_to_end_all_wars stiff_upper_lip }
+						VAT = { country_event = { id = vatican.138 days = 5 } }
+						set_cosmetic_tag = PAP_ENG
+						promote_character = ENG_lang
+						set_party_name = {
+							ideology = democratic 
+							long_name = "Britonic Magisterium"
+							name = "Britonic Magisterium"
+						}
+						if = {
+							limit = { has_country_flag = protestantism }
+							start_civil_war = {
+								ruling_party = democratic
+								ideology = neutrality
+								size = 0.5
+								capital = 132
+								keep_political_leader = yes
+								keep_political_party_members = yes
+							}
+						} else = {
+							start_civil_war = {
+								ruling_party = democratic
+								ideology = neutrality
+								size = 0.6
+								capital = 132
+								keep_political_leader = yes
+								keep_political_party_members = yes
+							}
+						}
+						every_enemy_country = {
+							limit = { controls_state = 132 has_civil_war = yes has_government = neutrality }
+							set_cosmetic_tag = REV_ENG
+							set_party_name = { 
+								ideology = neutrality 
+								long_name = "Government of National Unity"
+								name = "Government of National Unity"
+							}
+							set_party_name = { 
+								ideology = democratic 
+								long_name = "Britonic Magisterium"
+								name = "Britonic Magisterium"
+							}
+							set_country_leader_portrait = {
+								ideology = neutrality
+								portrait = GFX_portrait_George_VI
+							}
+							set_country_leader_name = {
+								ideology = neutrality
+								name = "George VI"
+							}
+						}
+					}
+				}
+		}
+	}
+	#
+	focus = {
+		id = VAT_WAR_ALLIES
+		icon = GFX_focus_ger_break_anglo_french_colonial_hegemony
+		x = 4
+		y = 16
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_LESSER_EVILS }
+		bypass = { OR = { NOT = { country_exists = FRA } has_war_with = FRA } }
+		completion_reward = {
+			custom_effect_tooltip = VAT_FRA_WAR_TOOLTIP
+			create_wargoal = { type = puppet_wargoal_focus target = FRA }
+		}
+	}
+	#
+	focus = {
+		id = VAT_CAROLINGIAN_LEGACY
+		icon = GFX_VAT_carolingian
+		x = 1
+		y = 17
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+			has_war = no
+			2 = {
+				owner = {
+					OR = {
+						is_in_faction_with = VAT
+						is_puppet_of = VAT
+						tag = VAT
+					}
+				}
+			}
+			16 = {
+				owner = {
+					OR = {
+						is_in_faction_with = VAT
+						is_puppet_of = VAT
+						tag = VAT
+					}
+				}
+			}
+			51 = {
+				owner = {
+					OR = {
+						is_in_faction_with = VAT
+						is_puppet_of = VAT
+						tag = VAT
+					}
+				}
+			}
+			55 = {
+				owner = {
+					OR = {
+						is_in_faction_with = VAT
+						is_puppet_of = VAT
+						tag = VAT
+					}
+				}
+			}
+		}
+		prerequisite = { focus = VAT_WAR_ALLIES focus = VAT_ALLIES_REVOLUTION }
+		completion_reward = {
+			set_cosmetic_tag = CAR_VAT
+			annex_country = { target = GER }
+			annex_country = { target = FRA }
+			unlock_decision_category_tooltip = VAT_CATEGORY_CAROLINGIAN
+			unlock_decision_category_tooltip = VAT_CATEGORY_AESTHETIC
+		}
+	}
+	#
+#	focus = {
+#		id = VAT_WAR_SPA
+#		icon = GFX_focus_spa_no_compromise_on_carlist_ideals
+#		x = -1
+#		y = 17
+#		cost = 10
+#		search_filters = {
+#			FOCUS_FILTER_POLITICAL
+#		}
+#		available = {
+#			SPR = { has_war = no }
+#			NOT = { SPR = { has_government = democratic } }
+#		}
+#		prerequisite = { focus = VAT_WAR_ALLIES focus = VAT_ALLIES_REVOLUTION }
+#		completion_reward = {
+#			create_wargoal = {
+#				type = puppet_wargoal_focus
+#				target = SPR
+#			}
+#		}
+#	}
+	#
+	focus = {
+		id = VAT_RESTORE_TO_GLORY
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 3
+		y = 17
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = { has_completed_focus = VAT_CAROLINGIAN_LEGACY }
+		prerequisite = { focus = VAT_ALLIES_REVOLUTION focus = VAT_WAR_ALLIES }
+		completion_reward = {
+			custom_effect_tooltip = tooltip_swi_ben_join
+			SWI = { country_event = EdenDiplo.8 }
+			LUX = { country_event = EdenDiplo.8 }
+			BEL = { country_event = EdenDiplo.8 }
+			HOL = { country_event = EdenDiplo.8 }
+		}
+	}
+	#
+	focus = {
+		id = VAT_OUR_HINTERLAND
+		icon = GFX_goal_generic_more_territorial_claims
+		x = -1
+		y = 17
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_ALLIES_REVOLUTION focus = VAT_WAR_ALLIES }
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = YUG
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = HUN
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_spread_christianity
+		icon = GFX_focus_spr_anarchism_knows_no_borders
+		x = 5
+		y = 18
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_CAROLINGIAN_LEGACY focus = VAT_BYZANTIUM }
+		completion_reward = {
+			set_rule = { can_declare_war_on_same_ideology = yes }
+			set_rule = { can_only_justify_war_on_threat_country = no }
+			add_ideas = christian_zeal
+		}
+	}
+
+
+#######################################################################
+#######################################################################
+#######################################################################
+#####██████╗ ███████╗██╗     ██╗ ██████╗ ██╗  ██╗████████╗███████╗#####
+#####██╔══██╗██╔════╝██║     ██║██╔════╝ ██║  ██║╚══██╔══╝██╔════╝#####
+#####██║  ██║█████╗  ██║     ██║██║  ███╗███████║   ██║   ███████╗#####
+#####██║  ██║██╔══╝  ██║     ██║██║   ██║██╔══██║   ██║   ╚════██║#####
+#####██████╔╝███████╗███████╗██║╚██████╔╝██║  ██║   ██║   ███████║#####
+#####╚═════╝ ╚══════╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝#####
+#######################################################################
+#######################################################################
+####################################################################### or The Good Hell Route :O
+                                                           
+
+	#
+	focus = {
+		id = VAT_HARMONY
+		icon = GFX_focus_generic_diplomatic_treaty
+		allow_branch = { has_completed_focus =  VAT_embraceearthlydelights }
+		x = 12
+		y = 11
+		cost = 5
+		mutually_exclusive = { focus = VAT_NO_GODS_NO_MASTERS }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_embraceearthlydelights  }
+		completion_reward = {
+			add_stability = 0.05
+			ITA = {
+				if = { limit = { is_puppet_of = VAT }
+					add_popularity = { ideology = communism popularity = 0.3 }
+				}
+			}
+			unlock_decision_category_tooltip = VAT_sin_decisions_category
+			set_variable = {
+				var = sin
+				value = 1
+			}
+			clamp_variable = {
+				var = sin
+				min = 1
+				max = 100
+			}
+			update_sin = yes
+		}
+	}
+	#
+	focus = {
+		id = VAT_NO_GODS_NO_MASTERS
+		icon = GFX_focus_generic_strike_at_democracy2
+		allow_branch = { has_completed_focus =  VAT_embraceearthlydelights }
+		x = 6
+		y = 11
+		cost = 5
+		mutually_exclusive = { focus = VAT_HARMONY }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_embraceearthlydelights  }
+		completion_reward = {
+			add_war_support = 0.05
+			ITA = {
+				if = { limit = { is_puppet_of = VAT }
+					add_popularity = { ideology = communism popularity = 0.3 }
+				}
+			}
+			unlock_decision_category_tooltip = VAT_sin_decisions_category
+			set_variable = {
+				var = sin
+				value = 1
+			}
+			clamp_variable = {
+				var = sin
+				min = 1
+				max = 100
+			}
+			update_sin = yes
+		}
+	}
+	#
+	focus = {
+		id = VAT_FRA_DELIGHTS
+		icon = GFX_focus_focus_fra_liberte_egalite_solidarite
+		x = 9
+		y = 12
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_HARMONY focus = VAT_NO_GODS_NO_MASTERS }
+		bypass = { is_in_faction_with = FRA }
+		completion_reward = {
+			custom_effect_tooltip = FRA_DELIGHTS_TOOLTIP
+			country_event = vatican.65
+		}
+	}
+	#
+	focus = {
+		id = VAT_PUNISH_PARIS
+		icon = GFX_VAT_the_murder_of_the_innocents-422
+		x = 9
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_FRA_DELIGHTS }
+		available = {
+			16 = {
+				owner = {
+					OR = {
+						is_in_faction_with = VAT
+						is_puppet_of = VAT
+						tag = VAT
+					}
+				}
+			}
+		}
+		completion_reward = {
+			country_event = vatican.100
+			add_stability = 0.1
+			add_political_power = 100
+			FRA = {
+				every_core_state = {
+					add_resistance = -5
+				}
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_SPA_DELIGHTS
+		icon = GFX_focus_spa_eliminate_the_carlists
+		x = 7
+		y = 12
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+			SPR = { has_civil_war = no }
+		}
+		prerequisite = { focus = VAT_HARMONY focus = VAT_NO_GODS_NO_MASTERS }
+		bypass = { is_in_faction_with = SPR }
+		completion_reward = {
+			custom_effect_tooltip = SPR_DELIGHTS_TOOLTIP
+			country_event = vatican.75
+		}
+	}
+	#
+	focus = {
+		id = VAT_CRACKDOWN_ON_CATHOLICS
+		icon = GFX_focus_mex_triumph_over_the_cristeros
+		x = 8
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_SPA_DELIGHTS }
+		available = {
+			41 = {
+				owner = {
+					OR = {
+						is_in_faction_with = VAT
+						is_puppet_of = VAT
+						tag = VAT
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_to_variable = { sin = 10 }
+			update_sin = yes
+			custom_effect_tooltip = gain_sin_10_tooltip
+			add_ideas = spanish_inquisitor_courts
+		}
+	}
+	#
+	focus = {
+		id = VAT_PORTUGAL
+		icon = GFX_focus_generic_attack_portugal
+		x = 7
+		y = 14
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_CRACKDOWN_ON_CATHOLICS }
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = POR }
+		}
+	}
+	#
+	focus = {
+		id = VAT_ENG_DELIGHTS
+		icon = GFX_focus_eng_decolonization
+		x = 11
+		y = 12
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_HARMONY focus = VAT_NO_GODS_NO_MASTERS }
+		bypass = { is_in_faction_with = ENG }
+		completion_reward = {
+			custom_effect_tooltip = ENG_DELIGHTS_TOOLTIP
+			country_event = vatican.79
+		}
+	}
+	#
+	focus = {
+		id = VAT_HELLFIRE_CLUBS
+		icon = GFX_VAT_the_tower-187301
+		x = 10
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_ENG_DELIGHTS }
+		available = {
+			126 = {
+				owner = {
+					OR = {
+						is_in_faction_with = VAT
+						is_puppet_of = VAT
+						tag = VAT
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_to_variable = { sin = 10 }
+			update_sin = yes
+			custom_effect_tooltip = gain_sin_10_tooltip
+			country_event = vatican.101
+			swap_ideas = { remove_idea = never_sip_with_the_devil add_idea = never_sip_with_the_devil_2 }
+		}
+	}
+	#
+	focus = {
+		id = VAT_CONSOLIDATE_THE_ISLES
+		icon = GFX_VAT_hellfire_returns_to_montpelier_hill-187333
+		x = 11
+		y = 14
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_HELLFIRE_CLUBS }
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = IRE }
+		}
+	}
+	#
+	focus = {
+		id = VAT_INTIMIDATE_CARDINALS
+		icon = GFX_goal_generic_production
+		x = 15
+		y = 12
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_HARMONY }
+		completion_reward = {
+			add_political_power = 100
+			modify_timed_idea = {
+				idea = cardinal_unrest
+				days = -80
+			}
+			add_to_variable = { sin = 10 }
+			update_sin = yes
+			custom_effect_tooltip = gain_sin_10_tooltip
+		}
+	}
+	#
+	focus = {
+		id = VAT_PACELLI
+		icon = GFX_VAT_whateverhappenedtoeugeniopacelli-187339
+		x = 12
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_INTIMIDATE_CARDINALS }
+		completion_reward = {
+			country_event = vatican.96
+		}
+	}
+	#
+	focus = {
+		id = VAT_INCORPORATE_COMMUNISM
+		icon = GFX_goal_generic_war_with_comintern
+		x = 13
+		y = 12
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_HARMONY }
+		completion_reward = {
+			add_ideas = move_towards_syndicalism 
+		}
+	}
+	#
+	focus = {
+		id = VAT_WAR_USA
+		icon = GFX_focus_generic_strike_at_democracy3
+		x = 17
+		y = 14
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_TOWARDS_A_NEW_HARMONY focus = VAT_Corbetts_Vision }
+		completion_reward = {
+			custom_effect_tooltip = USA_DELIGHTS_TOOLTIP
+				if = {
+					limit = { has_completed_focus = VAT_TOWARDS_A_NEW_HARMONY }
+					country_event = vatican.172
+				}
+				if = {
+					limit = { has_completed_focus = VAT_Corbetts_Vision }
+					country_event = vatican.179
+				}
+		}
+	}
+	#
+	focus = {
+		id = VAT_TOWARDS_A_NEW_HARMONY
+		icon = GFX_VAT_inspire_chaos_in_turkey-187321
+		x = 16
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_INTIMIDATE_CARDINALS }
+		mutually_exclusive = { focus = VAT_Corbetts_Vision }
+		completion_reward = {
+			add_stability = 0.08
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#
+	focus = {
+		id = VAT_PHALANXES
+		icon = GFX_focus_generic_industry_1
+		x = 15
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_TOWARDS_A_NEW_HARMONY }
+		completion_reward = {
+			add_timed_idea = { idea = phalanxes_idea days = 360 }
+		}
+	}
+	#
+	focus = {
+		id = VAT_MILITARISE_PHALANXES
+		icon = GFX_focus_spa_the_phalanx_ascendant
+		x = 16
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_PHALANXES }
+		completion_reward = {
+			add_ideas = phalanxes_idea_2
+		}
+	}
+	#
+	focus = {
+		id = VAT_HIJACK_SCRIPTURE
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 12
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_PACELLI }
+		completion_reward = {
+			add_to_variable = { sin = 10 }
+			update_sin = yes
+			custom_effect_tooltip = gain_sin_10_tooltip
+			swap_ruler_traits = { remove = hedonist add = veteran_communist }
+		}
+	}
+	#
+	focus = {
+		id = VAT_ALTER_HUMANITY
+		icon = GFX_VAT_proclaim_gomorrah-187289
+		x = 14
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_INTIMIDATE_CARDINALS }
+		completion_reward = {
+			add_ideas = desecrate_gods_work
+		}
+	}
+	#
+	focus = {
+		id = VAT_ANTILIONS
+		icon = GFX_focus_hol_united_netherlands
+		x = 13
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_ALTER_HUMANITY }
+		completion_reward = {
+			add_ideas = antilions
+		}
+	}
+	#
+	focus = {
+		id = VAT_CONGREGATION
+		icon = GFX_goal_generic_national_unity
+		x = 14
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_ANTILIONS }
+		completion_reward = {
+			remove_ideas = cardinal_unrest
+		}
+	}
+	#
+	focus = {
+		id = VAT_HARMONIA
+		icon = GFX_VAT_proclaim_sodom-187288
+		x = 15
+		y = 16
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_HIJACK_SCRIPTURE }
+		prerequisite = { focus = VAT_CONGREGATION }
+		prerequisite = { focus = VAT_MILITARISE_PHALANXES focus = VAT_Womans_Best_Friend }
+		completion_reward = {
+			set_rule = { can_join_factions = yes }
+			set_rule = { can_create_factions = yes }
+			hidden_effect = { drop_cosmetic_tag = yes remove_ideas = never_sip_with_the_devil_2 }
+			remove_ideas = never_sip_with_the_devil
+			set_cosmetic_tag = HAR_VAT
+			if = {
+				limit = { has_completed_focus = VAT_TOWARDS_A_NEW_HARMONY }
+				set_province_name = {
+					id = 13236
+					name = "Phalanstère du Palais Sociétal"
+				}
+			}
+			if = {
+				limit = { has_completed_focus = VAT_Corbetts_Vision }
+				set_province_name = {
+					id = 13236
+					name = "New Amazonia"
+				}
+			}
+			add_ideas = speak_with_one_tongue
+			unlock_decision_category_tooltip = VAT_CATEGORY_AESTHETIC_COMMUNIST
+		}
+	}
+	#
+	focus = {
+		id = VAT_ANTI_SCHEDULES
+		icon = GFX_goal_generic_forceful_treaty
+		x = 3
+		y = 12
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_NO_GODS_NO_MASTERS }
+		completion_reward = {
+			add_stability = -0.05
+			add_political_power = 100
+			add_to_variable = { sin = 10 }
+			update_sin = yes
+			custom_effect_tooltip = gain_sin_10_tooltip
+		}
+	}
+	#
+	focus = {
+		id = VAT_REANIMATION
+		icon = GFX_VAT_reanimation
+		x = 5
+		y = 12
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_NO_GODS_NO_MASTERS }
+		completion_reward = {
+			add_ideas = reanimation
+		}
+	}
+	#
+	focus = {
+		id = VAT_PUBLIC_NUDITY
+		icon = GFX_VAT_intothestars-187334
+		x = 4
+		y = 13
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_ANTI_SCHEDULES }
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_ideas = the_simple_life
+		}
+	}
+	#
+	focus = {
+		id = VAT_ALLURE_OF_THE_MACHINE
+		icon = GFX_VAT_rabbit-187359
+		x = 2
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_ANTI_SCHEDULES }
+		completion_reward = {
+			add_war_support = 0.05
+			add_ideas = war_economy
+		}
+	}
+	#
+	focus = {
+		id = VAT_WAR_GER_DEL
+		icon = GFX_focus_attack_germany
+		x = 1
+		y = 14
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_ALLURE_OF_THE_MACHINE }
+		completion_reward = {
+			add_timed_idea = { idea = all_guns_blazing days = 150 }
+			create_wargoal = { type = topple_government target = GER }
+		}
+	}
+	#
+	focus = {
+		id = VAT_SADISM
+		icon = GFX_goal_continuous_restrict_freedom
+		x = 6
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_ANTI_SCHEDULES }
+		completion_reward = {
+			add_war_support = 0.05
+			add_ideas = the_beauty_of_violence
+		}
+	}
+	#
+	focus = {
+		id = VAT_HEDONISM
+		icon = GFX_VAT_ignite_the_powderkeg-88
+		x = 5
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_PUBLIC_NUDITY }
+		completion_reward = {
+			add_to_variable = { sin = 10 }
+			update_sin = yes
+			custom_effect_tooltip = gain_sin_10_tooltip
+			add_ideas = good_pantagruelists
+		}
+	}
+	#
+	focus = {
+		id = VAT_MASOCHISM
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 3
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_PUBLIC_NUDITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.05 }
+			add_ideas = legacy_of_masoch
+		}
+	}
+	#
+	focus = {
+		id = VAT_ROBOFUCK
+		icon = GFX_VAT_the_pact_of_palma-120
+		x = 2
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_MASOCHISM }
+		prerequisite = { focus = VAT_ALLURE_OF_THE_MACHINE }
+		completion_reward = {
+			add_country_leader_trait = empire_builder
+		}
+	}
+	#
+	focus = {
+		id = VAT_ENSLAVEMENT
+		icon = GFX_focus_SOV_penal_battalions
+		x = 6
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_SADISM }
+		prerequisite = { focus = VAT_CRACKDOWN_ON_CATHOLICS }
+		completion_reward = {
+			add_ideas = slave_econ
+		}
+	}
+	#
+	focus = {
+		id = VAT_NEONSPIRAL
+		icon = GFX_VAT_neonspiral-187354
+		x = 4
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_HEDONISM }
+		completion_reward = {
+			country_event = vatican.91
+			remove_ideas = cardinal_unrest
+		}
+	}
+	#
+	focus = {
+		id = VAT_120_DAYS
+		icon = GFX_VAT_pandaemonium-187372
+		x = 4
+		y = 16
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_NEONSPIRAL }
+		prerequisite = { focus = VAT_ENSLAVEMENT }
+		prerequisite = { focus = VAT_ROBOFUCK }
+		completion_reward = {
+			hidden_effect = { drop_cosmetic_tag = yes remove_ideas = never_sip_with_the_devil_2 }
+			set_rule = { can_join_factions = yes }
+			set_rule = { can_create_factions = yes }
+			remove_ideas = never_sip_with_the_devil
+			add_war_support = 0.1
+			set_cosmetic_tag = PAN_VAT
+			set_province_name = {
+				id = 13236
+				name = "Great Thélème"
+			}
+			add_ideas = speak_with_one_tongue
+			unlock_decision_category_tooltip = VAT_CATEGORY_AESTHETIC_COMMUNIST
+		}
+	}
+	focus = {
+		id = VAT_Corbetts_Vision
+		icon = GFX_focus_focus_fra_revolution_utmost
+		x = 18
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_INTIMIDATE_CARDINALS }
+		mutually_exclusive = { focus = VAT_TOWARDS_A_NEW_HARMONY }
+		completion_reward = {
+			add_war_support = 0.08
+			country_event = vatican.171
+		}
+	}
+	focus = {
+		id = VAT_Amazonian_Dream
+		icon = GFX_focus_generic_women_in_military
+		x = 19
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_Corbetts_Vision }
+		completion_reward = {
+			add_ideas = tables_turned
+			add_corps_commander_role = {
+			  Character = VAT_aubigny
+			  skill = 4
+			  traits = { inflexible_strategist }
+			  attack_skill = 4
+			  defense_skill = 4
+			  planning_skill = 3
+			  logistics_skill = 2
+			}
+		}
+	}
+	focus = {
+		id = VAT_Womans_Best_Friend
+		icon = GFX_goal_generic_wolf_pack
+		x = 18
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = VAT_Amazonian_Dream }
+		completion_reward = {
+			add_ideas = master_race
+		}
+	}
+}
+}

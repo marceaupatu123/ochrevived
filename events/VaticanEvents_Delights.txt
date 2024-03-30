@@ -1,0 +1,658 @@
+﻿###########################
+# Vatican Events
+###########################
+
+add_namespace = DelightDiplo
+
+
+country_event = {
+	id = DelightDiplo.1
+	desc = DelightDiplo.1.d
+	title = "The Temptation of Sodom"
+	picture = GFX_
+	
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "Just once."
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_war_with = VAT
+			}
+		}
+		effect_tooltip = {
+			custom_effect_tooltip = "[Root.GetLeader] will visit Italy for a night."
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.66 days = 1 } }
+		}
+	}
+	option = {
+		name = "An appalling suggestion!"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = { has_war_with = VAT }
+			}
+		}
+		effect_tooltip = {
+
+		}
+		hidden_effect = {
+			VAT = { country_event = { id = vatican.67 days = 1 } }
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.2
+	desc = DelightDiplo.2.d
+	title = "Tut-tut, Mr. President"
+	picture = GFX_
+	
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "We must... The office of president cannot be tarnished."
+		ai_chance = {
+			factor = 50
+		}
+		custom_effect_tooltip = "This will likely lead to political unrest and violence."
+		add_stability = -0.3
+		VAT = { country_event = { id = vatican.69 days = 1 } }
+		effect_tooltip = {
+			
+		}
+		hidden_effect = {
+		
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.3
+	desc = DelightDiplo.3.d
+	title = "[VAT.GetLeader] Demands Subjugation"
+	picture = GFX_
+	
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "Our people long for peace."
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.1
+		VAT = { country_event = { id = vatican.72 days = 1 } }
+		effect_tooltip = {
+			
+		}
+		hidden_effect = {
+		
+		}
+	}
+	option = {
+		name = "God help us - the answer is no."
+		ai_chance = {
+			factor = 8
+			modifier = {
+				factor = 100
+				NOT = { has_government = communism }
+			}
+		}
+		add_war_support = 0.1
+		VAT = { country_event = { id = vatican.73 days = 1 } }
+		effect_tooltip = {
+			
+		}
+		hidden_effect = {
+		
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.4
+	desc = DelightDiplo.4.d
+	title = "Refugee Crisis Unfolds"
+	picture = GFX_
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "A travesty."
+		ai_chance = {
+			factor = 50
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.5
+	desc = DelightDiplo.5.d
+	title = "[VAT.GetLeader] Annexes the Balearics"
+	picture = GFX_
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "An outrage!"
+		ai_chance = {
+			factor = 100
+		}
+		declare_war_on = {
+			target = VAT
+			type = puppet_wargoal_focus
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Let them have it."
+		ai_chance = {
+			factor = 0
+		}
+		add_opinion_modifier = { target = VAT modifier = large_decrease }
+		add_stability = -0.1
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.6
+	desc = DelightDiplo.6.d
+	title = "[VAT.GetLeader] Invites us to their Court"
+	picture = GFX_
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "We need allies!"
+		ai_chance = {
+			factor = 1000
+		}
+		add_opinion_modifier = { target = VAT modifier = small_increase }
+		VAT = { country_event = vatican.76 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Tell him to go to... hell?"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.1
+				OR = { has_government = fascism has_government = communism }
+			}
+		}
+		VAT = { country_event = vatican.77 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.7
+	desc = DelightDiplo.7.d
+	title = "[VAT.GetLeader] Informs us of their Deplorable Intentions"
+	picture = GFX_
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "We cannot let this come to pass! What do they want?!"
+		ai_chance = {
+			factor = 10
+		}
+		VAT = { country_event = { id = vatican.80 days = 1 } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Sick bastards! Britain will never fall!"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				OR = { has_war_with = VAT }
+			}
+		}
+		custom_effect_tooltip = "We will make our own threats in response, demanding Sardinia - their refusal will mean war."
+		VAT = { country_event = { id = vatican.85 days = 1 } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.8
+	desc = DelightDiplo.8.d
+	title = "[VAT.GetLeader] of Hell Demands Cornwall"
+	picture = GFX_
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "Take it. Just leave us alone."
+		ai_chance = {
+			factor = 6
+			modifier = {
+				factor = 2
+				16 = {
+					owner = {
+						OR = {
+							is_in_faction_with = VAT
+							is_puppet_of = VAT
+							tag = VAT
+						}
+					}
+				}
+			}
+		}
+		VAT = { country_event = { id = vatican.82 days = 1 } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Never! Cornwall prevails!"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				OR = { has_war_with = VAT }
+			}
+		}
+		VAT = { country_event = { id = vatican.81 days = 1 } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.9
+	desc = DelightDiplo.9.d
+	title = "[VAT.GetLeader] Demands our Territories on Continental Europe"
+	picture = GFX_
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "Take them. Just leave us alone."
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				41 = {
+					owner = {
+						OR = {
+							is_in_faction_with = VAT
+							is_puppet_of = VAT
+							tag = VAT
+						}
+					}
+				}
+			}
+		}
+		VAT = { country_event = { id = vatican.83 days = 1 } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Never!"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				OR = { has_war_with = VAT }
+			}
+		}
+		VAT = { country_event = { id = vatican.81 days = 1 } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.10
+	desc = DelightDiplo.10.d
+	title = "[VAT.GetLeader] Demands our North African Holdings"
+	picture = GFX_
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "What choice do we have?"
+		ai_chance = {
+			factor = 9
+			modifier = {
+				factor = 0
+				has_war_with = VAT
+			}
+		}
+		VAT = { country_event = { id = vatican.84 days = 1 } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Never!"
+		ai_chance = {
+			factor = 10
+		}
+		VAT = { country_event = { id = vatican.81 days = 1 } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.11
+	desc = DelightDiplo.10.d
+	title = "Scottish Libertine Rebels Demand Freedom"
+	picture = GFX_
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			remove_ideas = scottish_unrest
+			release = SCO
+			SCO = {
+				set_cosmetic_tag = PAP_SCO
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+					long_name = "The Most Ancient and Most Puissant Parliament of Scotland"
+					name = "APPS"
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 90
+				}
+				add_political_power = 100
+				add_war_support = 0.2
+				declare_war_on = {
+					target = ENG
+					type = puppet_wargoal_focus
+				}
+				transfer_units_fraction= {
+					target = ENG
+					size = 0.2
+					stockpile_ratio = 0.2
+					army_ratio = 0.2
+					navy_ratio = 0.1
+					air_ratio = 0.3
+				}
+				set_rule = { can_join_factions = no }
+				load_oob = SCO_Revolution
+				set_country_flag = SCO_REV
+			}
+		}
+	}
+	option = {
+		name = "Have they gone insane?"
+		ai_chance = {
+			factor = 80
+		}
+		VAT = { country_event = { id = vatican.86 days = 1 } }
+		if = {
+			limit = { is_ai = no }
+			custom_effect_tooltip = "We will remain as the United Kingdom to fight off Scottish seperatists."
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "They might have a point, though..."
+		ai_chance = {
+			factor = 10
+		}
+		VAT = { country_event = { id = vatican.86 days = 1 } }
+		if = {
+			limit = { is_ai = no }
+			custom_effect_tooltip = "We will become the Scottish seperatists and fight to be liberated from Britain. Our victory may lead to us being annexed the Kingdom of Earthly Delights, but we will have the chance to argue our case for sovereignty."
+			SCO = { change_tag_from = ROOT }
+		}
+
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.12
+	desc = DelightDiplo.12.d
+	title = "[VAT.GetLeader] Suggests Unification"
+	picture = GFX_
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "What choice do we have?"
+		ai_chance = {
+			factor = 10
+		}
+		VAT = { country_event = { id = vatican.88 days = 1 } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Never!"
+		ai_chance = {
+			factor = 50
+		}
+		VAT = { country_event = { id = vatican.89 days = 1 } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.13
+	desc = DelightDiplo.13.d
+	title = "[VAT.GetLeader] Suggests Vassalisation"
+	picture = GFX_
+	is_triggered_only = yes
+	trigger = { }
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "We would be honoured."
+		ai_chance = {
+			factor = 30
+		}
+		VAT = { puppet = SCO }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Alba gu Bràth!"
+		ai_chance = {
+			factor = 10
+		}
+		VAT = { country_event = { id = vatican.90 days = 1 } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.15
+	desc = "To our horror, we have discovered that our beloved leader was in fact kidnapped during his most recent visit to Rome. In his place, an imposter was installed!"
+	title = "Saboteur Discovered at the Heart of Government!"
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	is_triggered_only = yes
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	immediate = {
+	}
+	option = {
+		name = "We demand retribution!"
+		ai_chance = {
+			factor = 30
+		}
+		custom_effect_tooltip = "The Kingdom of Earthly Delights will receive an ultimatum: hand over our leader or we will declare war."
+		VAT = { country_event = vatican.111 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.16
+	desc = "The repugnant [VAT.GetLeader] has responded with haste to inform us of the tragic death of our leader! He died in the brutal custody of those devils, and now our population demands revenge!"
+	title = "A Most Profuse Apology"
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	is_triggered_only = yes
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	immediate = {
+	}
+	option = {
+		name = "They will pay."
+		ai_chance = {
+			factor = 30
+		}
+		declare_war_on = {
+			target = VAT
+			type = puppet_wargoal_focus
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.17
+	desc = "This event should be hidden."
+	title = "DELIGHTDIPLO.17"
+	picture = GFX_
+	trigger = {
+		AND = {
+			is_puppet_of = VAT
+			has_government = communism
+			NOT = { has_country_flag = focusreset }
+		}
+	}
+	is_triggered_only = no
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	hidden = yes
+	immediate = {
+		hidden_effect = {
+			set_politics = { ruling_party = communism elections_allowed = no }
+			load_focus_tree = generic_focus
+			set_country_flag = focusreset
+		}
+	}
+}
+country_event = {
+	id = DelightDiplo.14
+	desc = "The time has come for us to accept that the sodomic ideology, once detested and despised by our people, now governs our fate. This day will go down in infamy."
+	title = "Sodomic Ideals Take Over"
+	picture = GFX_report_event_crowd_in_prague
+	trigger = {
+		AND = {
+			is_puppet_of = VAT
+			NOT = { OR = { original_tag = ITA original_tag = FRA original_tag = ENG original_tag = SPR original_tag = SAL } }
+			has_government = communism
+			NOT = { has_country_flag = puppetofvatican }
+		}
+	}
+	is_triggered_only = no
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	immediate = {
+		hidden_effect = {
+			set_country_leader_ideology = anarchist_communism
+			set_country_leader_name = {
+				name = "General Sodomic Assembly"
+			}
+			set_country_leader_portrait = {
+				portrait = GFX_Portrait_sodomic_assembly_large
+			}
+			add_country_leader_trait = hedonist
+			set_country_flag = puppetofvatican
+			if = { limit = { tag = POR } remove_ideas = POR_unstable_republic }
+		}
+	}
+	option = {
+		name = "We are changed forever."
+		ai_chance = {
+			factor = 30
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			load_focus_tree = generic_focus
+			add_ideas = demonic_influence
+		}
+	}
+}

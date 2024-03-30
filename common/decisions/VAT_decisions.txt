@@ -1,0 +1,999 @@
+VAT_CATEGORY_CHRISTIAN_WORLD = {  
+   strengthen_ties_IRE = {
+		name = "Strengthen Ties with Ireland"
+		icon = GFX_decision_hol_exchange_intelligence_data
+		available = {
+			IRE = { OR = { has_government = democratic has_government = neutrality } }
+		}
+		fire_only_once = yes
+		cost = 25
+		complete_effect = {
+			IRE = { country_event = EdenDiplo.16 }
+		}
+    }
+   strengthen_ties_POR = {
+		name = "Strengthen Ties with Portugal"
+		icon = GFX_decision_hol_exchange_intelligence_data
+		available = {
+			POR = { OR = { has_government = democratic has_government = neutrality } }
+		}
+		fire_only_once = yes
+		cost = 25
+		complete_effect = {
+			POR = { country_event = EdenDiplo.16 }
+		}
+    }
+   strengthen_ties_SPR = {
+		name = "Strengthen Ties with Spain"
+		icon = GFX_decision_hol_exchange_intelligence_data
+		available = {
+			SPR = {
+				has_civil_war = no
+				SPR = { has_government = neutrality }
+			}
+		}
+		fire_only_once = yes
+		cost = 30
+		complete_effect = {
+			SPR = { country_event = EdenDiplo.16 }
+		}
+    }
+   strengthen_ties_MLT = {
+		name = "Strengthen Ties with Malta"
+		icon = GFX_decision_hol_exchange_intelligence_data
+		available = {
+			NOT = { has_war_with = ENG }
+		}
+		fire_only_once = yes
+		cost = 10
+		complete_effect = {
+			ENG = { country_event = EdenDiplo.17 }
+			116 = { add_core_of = VAT }
+		}
+    }
+   integrate_IRE = {
+		name = "Integrate the Irish Economy"
+		icon = GFX_decision_hol_exchange_intelligence_data
+		visible = {
+			has_country_flag = IRE_integration
+		}
+		cancel_trigger = {
+			IRE = { is_puppet_of = VAT }
+			has_war_with = IRE
+		}
+		fire_only_once = yes
+		cost = 75
+		days_remove = 100
+		remove_effect = {
+			puppet = IRE
+		}
+    }
+   integrate_POR = {
+		name = "Integrate the Portuguese Economy"
+		icon = GFX_decision_hol_exchange_intelligence_data
+		visible = {
+			has_country_flag = POR_integration
+		}
+		cancel_trigger = {
+			POR = { is_puppet_of = VAT }
+			has_war_with = POR
+		}
+		fire_only_once = yes
+		cost = 75
+		days_remove = 100
+		remove_effect = {
+			puppet = POR
+		}
+    }
+   integrate_SPR = {
+		name = "Integrate the Spanish Economy"
+		icon = GFX_decision_hol_exchange_intelligence_data
+		visible = {
+			has_country_flag = SPR_integration
+		}
+		cancel_trigger = {
+			SPR = { is_puppet_of = VAT }
+			has_war_with = SPR
+		}
+		fire_only_once = yes
+		cost = 150
+		days_remove = 100
+		remove_effect = {
+			puppet = SPR
+		}
+    }
+   integrate_MLT = {
+		name = "Negotiate the Transfer of Malta"
+		icon = GFX_decision_hol_exchange_intelligence_data
+		visible = {
+			has_country_flag = MLT_integration
+		}
+		cancel_trigger = {
+			has_war_with = ENG
+		}
+		fire_only_once = yes
+		cost = 12
+		days_remove = 20
+		remove_effect = {
+			transfer_state = 116
+		}
+    }
+#    annex_IRE = {
+#		name = "Reward the Faithful Irish"
+#		icon = GFX_decision_eng_trade_unions_support
+#		visible = {
+#			IRE = { is_puppet_of = VAT }
+#		}
+#		fire_only_once = yes
+#		cost = 60
+#		complete_effect = {
+#			annex_country = { target = IRE transfer_troops = yes }
+#			IRE = {
+#				every_core_state = { add_compliance = 50 }
+#			}
+#		}
+#    }
+#    annex_POR = {
+#		name = "Reward the Faithful Portuguese"
+#		icon = GFX_decision_eng_trade_unions_support
+#		visible = {
+#			POR = { is_puppet_of = VAT }
+#		}
+#		fire_only_once = yes
+#		cost = 60
+#		complete_effect = {
+#			annex_country = { target = POR transfer_troops = yes }
+#			POR = {
+#				every_core_state = { add_compliance = 50 }
+#			}
+#		}
+#   }
+#    annex_SPR = {
+#		name = "Reward the Faithful Spanish"
+#		icon = GFX_decision_eng_trade_unions_support
+#		visible = {
+#			SPR = { is_puppet_of = VAT }
+#		}
+#		fire_only_once = yes
+#		cost = 75
+#		complete_effect = {
+#			annex_country = { target = SPR transfer_troops = yes }
+#			SPR = {
+#				every_core_state = { add_compliance = 50 }
+#			}
+#		}
+#    }
+}
+
+VAT_CATEGORY_CAROLINGIAN = {
+   move_capital = {
+		name = "Proclaim a New Aix-la-Chapelle"
+		icon = GFX_decision_faction_tur_kurdish
+		available = {
+			51 = { is_core_of = VAT is_controlled_by = VAT is_capital = no }
+		}
+		fire_only_once = yes
+		cost = 10
+		complete_effect = {
+			set_capital = { state = 51 }
+			set_province_name = {
+				id = 6469
+				name = "Aix-la-Chapelle"
+			}
+		}
+    }
+   move_capital_0 = {
+		name = "The Holy City Restored to Glory"
+		icon = GFX_decision_faction_tur_kurdish
+		available = {
+			454 = { is_core_of = VAT is_controlled_by = VAT is_capital = no }
+		}
+		fire_only_once = no
+		cost = 10
+		complete_effect = {
+			set_capital = { state = 454 }
+			set_province_name = {
+				id = 1086
+				name = "New Jerusalem"
+			}
+		}
+    }
+   move_capital_3 = {
+		name = "The True Seat of Power"
+		icon = GFX_decision_faction_tur_kurdish
+		available = {
+			835 = { is_core_of = VAT is_controlled_by = VAT is_capital = no }
+		}
+		fire_only_once = no
+		cost = 10
+		complete_effect = {
+			set_capital = { state = 835 }
+		}
+    }
+   convert_FRA = {
+		name = "Convert Frankish Territories"
+		icon = GFX_decision_eng_propaganda_campaigns
+		available = {
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 80
+		remove_effect = {
+			FRA = { every_core_state = { add_compliance = 35 } }
+			set_country_flag = FRA_convert
+		}
+    }
+   convert_FRA_2 = {
+		name = "Integrate the Frankish Kingdom"
+		icon = GFX_decision_hol_draw_up_staff_plans
+		available = {
+		}
+		visible = { has_country_flag = FRA_convert }
+		fire_only_once = yes
+		cost = 200
+		days_remove = 150
+		remove_effect = {
+			FRA = { every_core_state = { add_core_of = VAT } }
+		}
+    }
+   convert_GER = {
+		name = "Convert Germanic Territories"
+		icon = GFX_decision_eng_propaganda_campaigns
+		available = {
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 80
+		remove_effect = {
+			GER = { every_core_state = { add_compliance = 35 } }
+			set_country_flag = GER_convert
+		}
+    }
+   convert_GER_2 = {
+		name = "Integrate the German Lands"
+		icon = GFX_decision_hol_draw_up_staff_plans
+		available = {
+		}
+		visible = { has_country_flag = GER_convert }
+		fire_only_once = yes
+		cost = 200
+		days_remove = 150
+		remove_effect = {
+			GER = { every_core_state = { add_core_of = VAT } }
+		}
+    }
+}
+VAT_CATEGORY_BYZANTIUM = {
+   move_capital_2 = {
+		name = "Constantinople Rises Again"
+		icon = GFX_decision_faction_tur_kurdish
+		available = {
+			797 = { is_core_of = VAT is_controlled_by = VAT is_capital = no }
+		}
+		fire_only_once = no
+		cost = 10
+		complete_effect = {
+			set_capital = { state = 797 }
+			set_province_name = {
+				id = 9833
+				name = "Constantinople"
+			}
+		}
+    }
+   move_capital_4 = {
+		name = "The Holy City Restored to Glory"
+		icon = GFX_decision_faction_tur_kurdish
+		available = {
+			454 = { is_core_of = VAT is_controlled_by = VAT is_capital = no }
+		}
+		fire_only_once = no
+		cost = 10
+		complete_effect = {
+			set_capital = { state = 454 }
+			set_province_name = {
+				id = 1086
+				name = "New Jerusalem"
+			}
+		}
+    }
+   move_capital_5 = {
+		name = "The True Seat of Power"
+		icon = GFX_decision_faction_tur_kurdish
+		available = {
+			835 = { is_core_of = VAT is_controlled_by = VAT is_capital = no }
+		}
+		fire_only_once = no
+		cost = 10
+		complete_effect = {
+			set_capital = { state = 835 }
+		}
+    }
+   convert_BAL = {
+		name = "Convert Balkan Territories"
+		icon = GFX_decision_eng_propaganda_campaigns
+		available = {
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 80
+		remove_effect = {
+			GRE = { every_core_state = { add_compliance = 35 } }
+			BUL = { every_core_state = { add_compliance = 35 } }
+			YUG = { every_core_state = { add_compliance = 35 } }
+			ALB = { every_core_state = { add_compliance = 35 } }
+			set_country_flag = BAL_convert
+		}
+    }
+   convert_BAL_2 = {
+		name = "Integrate the Balkans"
+		icon = GFX_decision_hol_draw_up_staff_plans
+		available = {
+		}
+		visible = { has_country_flag = BAL_convert }
+		fire_only_once = yes
+		cost = 200
+		days_remove = 100
+		remove_effect = {
+			GRE = { every_core_state = { add_core_of = VAT } }
+			BUL = { every_core_state = { add_core_of = VAT } }
+			YUG = { every_core_state = { add_core_of = VAT } }
+			ALB = { every_core_state = { add_core_of = VAT } }
+		}
+    }
+   convert_TUR = {
+		name = "Convert Turkish Territories"
+		icon = GFX_decision_eng_propaganda_campaigns
+		available = {
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 80
+		remove_effect = {
+			TUR = { every_core_state = { add_compliance = 35 } }
+			set_country_flag = TUR_convert
+		}
+    }
+   convert_TUR_2 = {
+		name = "Integrate Turkey"
+		icon = GFX_decision_hol_draw_up_staff_plans
+		available = {
+		}
+		visible = { has_country_flag = TUR_convert }
+		fire_only_once = yes
+		cost = 200
+		days_remove = 100
+		remove_effect = {
+			TUR = { every_core_state = { add_core_of = VAT } }
+		}
+    }
+}
+
+
+
+
+VAT_CATEGORY_CRUSADE = {
+    rally_the_people = {
+		name = "Rally the Brave"
+		icon = GFX_decision_eng_propaganda_campaigns
+		available = {
+			NOT = { has_country_flag = rallied has_country_flag = recovering has_country_flag = parley }
+			country_exists = SAU
+			NOT = { has_war_with = SAU }
+		}
+		fire_only_once = no
+		cost = 25
+		days_remove = 10
+		remove_effect = {
+			custom_effect_tooltip = "We shall inspire any able-bodied Christian in the land to take up arms and prepare for a glorious crusader quest."
+			set_country_flag = rallied
+		}
+    }
+   crusade_begin = {
+		name = "Proclaim a Crusade"
+		icon = GFX_decision_faction_tur_traditionalist
+		available = {
+			has_country_flag = rallied
+			country_exists = SAU
+			NOT = { has_war_with = SAU has_country_flag = parley }
+		}
+		fire_only_once = no
+		cost = 20
+		complete_effect = {
+			custom_effect_tooltip = "We shall set out to conquer eastern lands, but we must exercise caution; our men will eventually tire and their families will want them home."
+			add_ideas = deus_id_vult
+			declare_war_on = {
+				target = SAU
+				type = annex_everything
+			}
+			hidden_effect = {
+				country_event = { id = vatican.155 days = 30 }
+				if = {
+					limit = { NOT = { has_country_flag = first_crusade } }
+					set_country_flag = first_crusade
+				} else = {
+					if = {
+						limit = { NOT = { SAU = { has_idea = the_last_jihad } } }
+						country_event = { id = vatican.157 days = 6 }
+						set_country_flag = second_crusade
+					}
+				}
+				if = {
+					limit = { has_country_flag = second_crusade }
+					set_country_flag = third_crusade
+				}
+			}
+		}
+    }
+   crusade_END = {
+		name = "End this Crusade"
+		icon = GFX_decision_faction_tur_traditionalist
+		available = {
+			has_idea = crusader_exhaustion
+			has_war_with = SAU
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our current crusade will end and both sides will keep any territory they conquered. Once we are rested, we can embark on another conquest."
+			hidden_effect = {
+				every_controlled_state = {
+					limit = { OR = { is_core_of = SAU is_core_of = TUR } }
+					set_state_owner_to = VAT
+				}
+				SAU = {
+					every_controlled_state = {
+						set_state_owner_to = SAU
+					}
+				}
+				white_peace = SAU
+				set_truce = {
+					target = SAU
+					days = 10
+				}
+			}
+			remove_ideas = crusader_exhaustion
+			clr_country_flag = rallied
+			set_country_flag = recovering
+		}
+		days_remove = 10
+		remove_effect = {
+			clr_country_flag = recovering
+			custom_effect_tooltip = "Our people will now be substantially rested and ready for another crusade."
+		}
+    }
+   crusades_conclude = {
+		name = "Declare the Crusades A Success"
+		icon = GFX_decision_hol_draw_up_staff_plans
+		available = {
+			SAU = {
+				all_core_state = {
+					owner = {
+						OR = {
+							is_in_faction_with = VAT
+							is_puppet_of = VAT
+							tag = VAT
+						}
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.1
+			SAU = {
+			  every_core_state = {
+				add_manpower = -500
+				add_resistance = -35
+				add_compliance = 20
+			  }
+			}
+			hidden_effect = {
+				remove_decision = rally_the_people
+				remove_decision = crusade_begin
+				remove_decision = crusade_END
+				remove_decision = crusades_conclude
+			}
+		}
+    }
+}
+
+VAT_CATEGORY_AESTHETIC = {
+    eden_flag_0 = {
+		name = "Standard of the Chi Ro"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = BYZ_VAT_0 }
+			has_completed_focus = VAT_BYZANTIUM
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our national flag will be the Standard of the Chi Ro, one of the earliest symbols of Christianity, representing the Son."
+			hidden_effect = { set_cosmetic_tag = BYZ_VAT_0 }
+		}
+    }
+    eden_flag_1 = {
+		name = "Standard of the Eagle"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = BYZ_VAT }
+			has_completed_focus = VAT_BYZANTIUM
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our national flag will be the Standard of the Eagle, an icon commonly associated with Byzantium and linked with Orthodox Christianity."
+			hidden_effect = { set_cosmetic_tag = BYZ_VAT }
+		}
+    }
+    eden_flag_suppedaneum = {
+		name = "Standard of the Suppedaneum"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = BYZ_VAT_1 }
+			has_completed_focus = VAT_BYZANTIUM
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our national flag will be the Standard of the Suppedaneum, an icon closely associated with the Eastern Orthodox churches, most commonly Russia."
+			hidden_effect = { set_cosmetic_tag = BYZ_VAT_1 }
+		}
+    }
+    eden_flag_greek = {
+		name = "Standard of the Greek Cross"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = BYZ_VAT_2 }
+			has_completed_focus = VAT_BYZANTIUM
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our national flag will be the Standard of the Greek Cross, one of eastern Christianity's most common icons."
+			hidden_effect = { set_cosmetic_tag = BYZ_VAT_2 }
+		}
+    }
+
+
+    eden_flag_2 = {
+		name = "Standard of the Chi Ro"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = CAR_VAT_0 }
+			has_completed_focus = VAT_CAROLINGIAN_LEGACY
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our national flag will be the Standard of the Chi Ro, one of the earliest symbols of Christianity, representing the Son."
+			hidden_effect = { set_cosmetic_tag = CAR_VAT_0 }
+		}
+    }
+    eden_flag_3 = {
+		name = "Standard of the Oriflamme"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = CAR_VAT }
+			has_completed_focus = VAT_CAROLINGIAN_LEGACY
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our national flag will be the Standard of the Oriflamme, meaning “golden flame,” an emblem commonly associated with the Carolingian Empire."
+			hidden_effect = { set_cosmetic_tag = CAR_VAT }
+		}
+    }
+    eden_flag_charlemagne = {
+		name = "Standard of the Charlemagne Oriflamme"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = CAR_VAT_1 }
+			has_completed_focus = VAT_CAROLINGIAN_LEGACY
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our national flag will be the Standard of the Charlemagne Oriflamme, a variant of the Carolingian emblem associated with Charlemagne personally."
+			hidden_effect = { set_cosmetic_tag = CAR_VAT_1 }
+		}
+    }
+    eden_flag_carolingian = {
+		name = "Standard of the Carolingian Cross"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = CAR_VAT_2 }
+			has_completed_focus = VAT_CAROLINGIAN_LEGACY
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our national flag will be the Standard of the Carolingian Cross, an early medieval Christian symbol."
+			hidden_effect = { set_cosmetic_tag = CAR_VAT_2 }
+		}
+    }
+}
+
+VAT_CATEGORY_AESTHETIC_COMMUNIST = {
+    delights_flag_0 = {
+		name = "Standard of the Fall"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = HAR_VAT_0 }
+			has_completed_focus = VAT_HARMONIA
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our national flag will be the Standard of the Fall, a depiction of the cunning serpent intertwined with the Tree of Life."
+			hidden_effect = { set_cosmetic_tag = HAR_VAT_0 }
+		}
+    }
+    delights_flag_1 = {
+		name = "Standard of Harmony"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = HAR_VAT }
+			has_completed_focus = VAT_HARMONIA
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our national flag will be the Standard of Harmony, a variant of the Socialist star emblem."
+			hidden_effect = { set_cosmetic_tag = HAR_VAT }
+		}
+    }
+    delights_flag_unityism = {
+		name = "Standard of Unityism"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = HAR_VAT_1 }
+			has_completed_focus = VAT_HARMONIA
+			has_completed_focus = VAT_TOWARDS_A_NEW_HARMONY
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our national flag will be the Standard of Unityism, symbolising humanity at peace and joined together in celebration of the twelve passions."
+			hidden_effect = { set_cosmetic_tag = HAR_VAT_1 }
+		}
+    }
+    delights_flag_2 = {
+		name = "Standard of the Fall"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = PAN_VAT_0 }
+			has_completed_focus = VAT_120_DAYS
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our national flag will be the Standard of the Fall, a depiction of the cunning serpent intertwined with the Tree of Life."
+			hidden_effect = { set_cosmetic_tag = PAN_VAT_0 }
+		}
+    }
+    delights_flag_3 = {
+		name = "Standard of Anarcho-Sadism"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = PAN_VAT }
+			has_completed_focus = VAT_120_DAYS
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our national flag will be the Standard of Anarcho-Sadism, a symbolic commemoration of Man's fall into eternal depravity."
+			hidden_effect = { set_cosmetic_tag = PAN_VAT }
+		}
+    }
+    delights_flag_black = {
+		name = "Standard?"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = PAN_VAT_1 }
+			has_completed_focus = VAT_120_DAYS
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our society is no longer constrained by the limitations of statehood - we have evolved into something far superior, far baser."
+			hidden_effect = { set_cosmetic_tag = PAN_VAT_1 }
+		}
+    }
+    delights_flag_lilith = {
+		name = "Standard of the First Woman"
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			NOT = { has_cosmetic_tag = LIL_VAT }
+			has_completed_focus = VAT_HARMONIA
+			has_completed_focus = VAT_Corbetts_Vision
+		}
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = "Our national flag will be the Standard of the First Woman, an icon embodying feminine energy, the inherent power of the woman."
+			hidden_effect = { set_cosmetic_tag = LIL_VAT }
+		}
+    }
+}
+
+
+
+#################################################
+
+################
+# SIN MECHANIC #
+################
+
+VAT_sin_decisions_category = {
+	core_state = {
+		icon = GFX_decision_sin
+
+		available = {
+			check_variable = { var=sin value=5 compare=greater_than_or_equals }
+			original_tag = VAT
+			NOT = { has_country_flag = coring_state }
+		}
+
+		visible = {
+			OR = { has_completed_focus = VAT_HARMONY has_completed_focus = VAT_NO_GODS_NO_MASTERS }
+		}
+
+		fire_only_once = no
+		
+		custom_cost_trigger = {
+			original_tag = VAT
+		}
+		custom_cost_text = decision_cost_sin_5
+
+		state_target = yes
+		target_array = VAT.owned_states
+		on_map_mode = map_only
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				NOT = { is_core_of = ROOT }
+			}
+		}
+		complete_effect = {
+			set_country_flag = coring_state
+			hidden_effect = {
+				subtract_from_variable = { sin = 5 }
+			}
+			update_sin = yes
+		}
+		days_remove = 18
+		remove_effect = {
+			FROM = {
+				add_core_of = VAT
+			}
+			clr_country_flag = coring_state
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	orgy_decision = {
+		icon = GFX_decision_orgy
+
+		available = {
+			original_tag = VAT
+		}
+
+		visible = {
+			OR = { has_completed_focus = VAT_HARMONY has_completed_focus = VAT_NO_GODS_NO_MASTERS }
+		}
+
+		fire_only_once = no
+		
+		cost = 30
+		
+		days_remove = 25
+		
+		modifier = {
+			stability_weekly = -0.03
+			production_factory_efficiency_gain_factor = -0.05
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = decision_gain_sin_15_tooltip
+			hidden_effect = {
+				add_to_variable = { sin = 15 }
+			}
+			update_sin = yes
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	blasphemies_decision = {
+		icon = GFX_decision_hol_radio_oranje
+
+		available = {
+			original_tag = VAT
+		}
+
+		visible = {
+			OR = { has_completed_focus = VAT_HARMONY has_completed_focus = VAT_NO_GODS_NO_MASTERS }
+		}
+
+		fire_only_once = no
+		
+		cost = 20
+		
+		days_remove = 20
+		
+		remove_effect = {
+			custom_effect_tooltip = decision_gain_sin_5_tooltip
+			hidden_effect = {
+				add_to_variable = { sin = 5 }
+			}
+			update_sin = yes
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	rabid_decision = {
+		icon = GFX_decision_generic_ignite_civil_war
+
+		available = {
+			original_tag = VAT
+			check_variable = { var=sin value=5 compare=greater_than_or_equals }
+		}
+
+		visible = {
+			OR = { has_completed_focus = VAT_HARMONY has_completed_focus = VAT_NO_GODS_NO_MASTERS }
+		}
+
+		fire_only_once = no
+		
+		custom_cost_trigger = {
+			original_tag = VAT
+		}
+		custom_cost_text = decision_cost_sin_5
+		
+		days_remove = 50
+		
+		complete_effect = {
+			hidden_effect = {
+				subtract_from_variable = { sin = 5 }
+			}
+			update_sin = yes
+		}
+		
+		modifier = {
+			experience_gain_army_factor = 0.05
+			land_reinforce_rate = 0.05
+			offence = 0.08
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	stability_sin_decision = {
+		icon = GFX_decision_oppression
+
+		available = {
+			original_tag = VAT
+			check_variable = { var=sin value=8 compare=greater_than_or_equals }
+		}
+
+		visible = {
+			OR = { has_completed_focus = VAT_HARMONY has_completed_focus = VAT_NO_GODS_NO_MASTERS }
+		}
+
+		fire_only_once = no
+
+		custom_cost_trigger = {
+			original_tag = VAT
+		}
+		custom_cost_text = stability_sin_tooltip
+		
+		days_remove = 10
+		
+		complete_effect = {
+			hidden_effect = {
+				subtract_from_variable = { sin = 8 }
+			}
+			update_sin = yes
+		}
+		remove_effect = {
+			add_stability = 0.03
+			add_popularity = { ideology = communism popularity = 0.04 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ninety_percent_decision = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		available = {
+			original_tag = VAT
+			check_variable = { var=sin value=25 compare=greater_than_or_equals }
+			454 = { is_owned_by = VAT }
+		}
+
+		visible = {
+			OR = { has_completed_focus = VAT_HARMONY has_completed_focus = VAT_NO_GODS_NO_MASTERS }
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			original_tag = VAT
+		}
+		custom_cost_text = sodom_tooltip
+		
+		complete_effect = {
+			hidden_effect = {
+				add_victory_points = {
+					province = 1086
+					value = 20
+				}
+			}
+			set_country_flag = sodom
+			add_stability = 0.08
+			454 = {
+				add_core_of = VAT
+				add_manpower = -10000
+				set_state_category = metropolis
+			}
+			set_capital = { state = 454 }
+			set_province_name = {
+				id = 1086
+				name = "Sodom Novum"
+			}
+			hidden_effect = {
+				subtract_from_variable = { sin = 25 }
+			}
+			update_sin = yes
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+   move_capital_italy = {
+		name = "Move Capital Back to Italy"
+		icon = GFX_decision_eng_trade_unions_demand
+		visible = {
+			835 = { is_core_of = VAT is_controlled_by = VAT is_capital = no }
+		}
+		fire_only_once = no
+		cost = 10
+		complete_effect = {
+			set_capital = { state = 835 }
+		}
+    }
+   move_capital_sodom = {
+		name = "Move Capital Back to Sodom"
+		icon = GFX_decision_eng_trade_unions_demand
+		visible = {
+			454 = { is_core_of = VAT is_controlled_by = VAT is_capital = no }
+			has_country_flag = sodom
+		}
+		fire_only_once = no
+		cost = 10
+		complete_effect = {
+			set_capital = { state = 454 }
+		}
+    }
+	hundred_percent_decision = {
+		name = "At the Summit of Sin"
+		icon = GFX_decision_revolt
+
+		available = {
+			original_tag = VAT
+			check_variable = { var=sin value=100 compare=greater_than_or_equals }
+			has_country_flag = summit_of_sin
+		}
+
+		visible = {
+			OR = { has_completed_focus = VAT_HARMONY has_completed_focus = VAT_NO_GODS_NO_MASTERS }
+		}
+
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_ideas = garden_of_earthly_delights
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

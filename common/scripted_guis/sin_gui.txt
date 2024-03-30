@@ -1,0 +1,42 @@
+scripted_gui = {
+  sin_gui = {
+    window_name = "SIN_WINDOW"
+    context_type = decision_category
+
+    visible = {
+		OR = { has_completed_focus = VAT_HARMONY has_completed_focus = VAT_NO_GODS_NO_MASTERS }
+    }
+
+    effects = {
+    }
+
+    triggers = {
+
+    }
+
+    dynamic_lists = {
+	}
+
+    properties = {
+		sanity_meter = {
+			frame = sin_counter
+		}
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+}

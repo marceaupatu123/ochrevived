@@ -1,0 +1,14 @@
+
+#### Sanity assets ####
+
+spriteTypes = {	
+
+	### Basic assets ###
+				
+	spriteType = {
+		name = "GFX_sanity_gui"
+		texturefile = "gfx/interface/scripted_gui_graphics/sanity_gui.dds"
+		legacy_lazy_load = no
+		noOfFrames = 10
+	}
+}

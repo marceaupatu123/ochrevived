@@ -1,0 +1,86 @@
+VAT_CATEGORY_CHRISTIAN_WORLD = {
+	icon = GFX_decision_category_generic_foreign_policy
+    priority = 9
+	allowed = {
+		original_tag = VAT
+	}
+	visible_when_empty = no
+	visible = {
+		has_country_flag = westaligned
+	}
+}
+VAT_CATEGORY_CAROLINGIAN = {
+	icon = GFX_decision_category_generic_monarchism
+    priority = 10
+	allowed = {
+		original_tag = VAT
+	}
+	visible_when_empty = no
+	visible = {
+		has_completed_focus = VAT_CAROLINGIAN_LEGACY
+	}
+}
+VAT_CATEGORY_BYZANTIUM = {
+	icon = GFX_decision_category_eng_appeal_to_imperial_loyalists
+    priority = 10
+	allowed = {
+		original_tag = VAT
+	}
+	visible_when_empty = no
+	visible = {
+		has_completed_focus = VAT_BYZANTIUM
+	}
+}
+VAT_CATEGORY_CRUSADE = {
+	icon = GFX_decision_category_eng_move_to_secure_the_dominions
+    priority = 10
+	allowed = {
+		original_tag = VAT
+		VAT = { NOT = { has_country_flag = atpeacenow } }
+	}
+	visible_when_empty = no
+	visible = {
+		has_completed_focus = VAT_THE_FINAL_CRUSADE
+	}
+}
+VAT_CATEGORY_AESTHETIC = {
+	icon = GFX_decision_category_generic_political_actions
+    priority = 10
+	allowed = {
+		original_tag = VAT
+	}
+	visible_when_empty = no
+	visible = {
+		OR = {
+			has_completed_focus = VAT_BYZANTIUM
+			has_completed_focus = VAT_CAROLINGIAN_LEGACY
+		}
+	}
+}
+VAT_CATEGORY_AESTHETIC_COMMUNIST = {
+	icon = GFX_decision_category_generic_political_actions
+    priority = 10
+	allowed = {
+		original_tag = VAT
+	}
+	visible_when_empty = no
+	visible = {
+		OR = {
+			has_completed_focus = VAT_HARMONIA
+			has_completed_focus = VAT_120_DAYS
+		}
+	}
+}
+
+VAT_sin_decisions_category = {
+	icon = GFX_decision_category_sin
+	priority = 50
+	allowed = {
+		original_tag = VAT
+	}
+	visible_when_empty = yes
+	visible = {
+		OR = { has_completed_focus = VAT_HARMONY has_completed_focus = VAT_NO_GODS_NO_MASTERS }
+	}
+	scripted_gui = sin_gui
+}

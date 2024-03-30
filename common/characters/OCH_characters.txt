@@ -1,0 +1,28 @@
+characters = {
+#ITA
+	ITA_catholic_uprising={
+		name="Catholic Uprising"
+		portraits={
+			civilian={
+				large="GFX_Portrait_Uprising_large"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1.1"
+		}
+	}
+			ITA_eugenio_pacelli={
+				name="Eugenio Pacelli"
+				portraits={
+					civilian={
+						large="GFX_Portrait_Pacelli_large"
+					}
+				}
+				country_leader={
+					ideology=papacy
+					expire="1965.1.1.1"
+				}
+			}
+#
+}

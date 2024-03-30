@@ -1,0 +1,34 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_report_event_above"
+		texturefile = "gfx/eventpictures/report_event_above.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_below"
+		texturefile = "gfx/eventpictures/report_event_below.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_voices"
+		texturefile = "gfx/eventpictures/report_event_voices.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_voices_2"
+		texturefile = "gfx/eventpictures/report_event_voices_2.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_delights"
+		texturefile = "gfx/eventpictures/news_event_delights.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_eden"
+		texturefile = "gfx/eventpictures/news_event_eden.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_judgement"
+		texturefile = "gfx/eventpictures/news_event_judgement.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_infernal"
+		texturefile = "gfx/eventpictures/news_event_infernal.dds"
+	}
+}

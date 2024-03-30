@@ -1,0 +1,77 @@
+﻿###########################
+# News Events
+###########################
+
+add_namespace = cloudnews
+
+news_event = {
+	id = cloudnews.1
+	title = "See Him Coming on the Clouds of Heaven"	#NEW EDEN PATH
+	desc = cloudnews.1.d
+	picture = GFX_news_event_eden
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Spread the word!"
+		trigger = {
+			
+		}
+	}
+}
+
+news_event = {
+	id = cloudnews.6
+	title = "Bloodmoon"	#FINAL JUDGEMENT PATH
+	desc = cloudnews.6.d
+	picture = GFX_news_event_judgement
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Holy! Holy! Holy!"
+		trigger = {
+			
+		}
+	}
+}
+
+news_event = {
+	id = cloudnews.7
+	title = "Partake of the Fruit, and You Will Not Certainly Die"	#EARTHLY DELIGHTS PATH
+	desc = cloudnews.7.d
+	picture = GFX_news_event_delights
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Let nothing be forbidden ever again..."
+		trigger = {
+			
+		}
+	}
+}
+
+news_event = {
+	id = cloudnews.8
+	title = "Abandon All Hope"	#INFERNAL PATH
+	desc = cloudnews.8.d
+	picture = GFX_news_event_infernal
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "The Earth screams."
+		trigger = {
+			
+		}
+	}
+}

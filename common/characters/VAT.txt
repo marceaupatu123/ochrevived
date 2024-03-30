@@ -1,0 +1,677 @@
+characters={
+##LEADERS##
+	VAT_PiusXI={
+		name="Pius XI"
+		portraits={
+			civilian={
+				large="GFX_Portrait_PiusXI_large"
+			}
+		}
+		country_leader={
+			ideology=papacy
+			#idea_token = piusxi
+			traits = {
+				hearing_the_voices
+				anti_communist
+			}
+			expire="1965.1.1.1"
+		}
+	}
+	VAT_Conciliar={
+		name="Conciliar Committee"
+		portraits={
+			civilian={
+				large="GFX_Portrait_PiusXI_large"
+			}
+		}
+		country_leader={
+			ideology=marxism
+			#idea_token = conciliar
+			traits = {
+				hearing_the_voices
+				dislikes_germany
+			}
+			expire="1965.1.1.1"
+		}
+	}
+	VAT_Commission={
+		name="Pontifical Commission"
+		portraits={
+			civilian={
+				large="GFX_Portrait_PiusXI_large"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			#idea_token = commission
+			traits = {
+				hearing_the_voices
+				anti_communist
+				dislikes_germany
+			}
+			expire="1965.1.1.1"
+		}
+	}
+	VAT_Defence={
+		name="Vatican Defence Council"
+		portraits={
+			civilian={
+				large="GFX_Portrait_PiusXI_large"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			#idea_token = defence
+			traits = {
+				hearing_the_voices
+				anti_communist
+			}
+			expire="1965.1.1.1"
+		}
+	}
+	VAT_Cardinals={
+		name="College of Cardinals"
+		portraits={
+			civilian={
+				large="GFX_Portrait_Cardinals_large"
+			}
+		}
+		country_leader={
+			ideology=papacy
+			#idea_token = cardinals
+			traits = {
+				crown_regent
+			}
+			expire="1965.1.1.1"
+		}
+	}
+	VAT_Earthly_Satan={
+		name="Prince of Hell"
+		portraits={
+			civilian={
+				large="GFX_Portrait_Earthly_large"
+			}
+		}
+		country_leader={
+			ideology=anarchist_communism
+			#idea_token = earthly_satan
+			traits = {
+				hedonist
+			}
+			expire="1965.1.1.1"
+		}
+	}
+	VAT_Infernal_Satan={
+		name="Lucifer"
+		portraits={
+			civilian={
+				large="GFX_Portrait_Infernal_large"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			#idea_token = infernal_satan
+			traits = {
+				unpopular_monarch
+			}
+			expire="1965.1.1.1"
+		}
+	}
+	VAT_Edenic_Christ={
+		name="The Son"
+		portraits={
+			civilian={
+				large="GFX_Portrait_Edenic_large"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			#idea_token = edenic_christ
+			traits = {
+				chamberlain_appeaser
+			}
+			expire="1965.1.1.1"
+		}
+	}
+	VAT_Elect_Christ={
+		name="The Father"
+		portraits={
+			civilian={
+				large="GFX_Portrait_Elect_large"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			#idea_token = elect_christ
+			traits = {
+				hawk
+			}
+			expire="1965.1.1.1"
+		}
+	}
+
+### TRANSFERS ###
+	VAT_italo_balbo={
+		name="Italo Balbo"
+		portraits={
+			army={
+				small="GFX_idea_italo_balbo"
+			}
+			army={
+				large=GFX_portrait_ITA_italo_balbo
+			}
+		}
+	}
+	VAT_inigo_campioni={
+		name="Inigo Campioni"
+		portraits={
+			navy={
+				small="GFX_idea_inigo_campioni"
+			}
+			army={
+				large=GFX_portrait_ITA_inigo_campioni
+			}
+		}
+	}
+
+##ADVISORS##
+	VAT_eugenio_pacelli={
+		name="Eugenio Pacelli"
+		portraits={
+			civilian={
+				large="GFX_Portrait_Pacelli_large"
+				small="GFX_Portrait_Pacelli_small"
+			}
+		}
+		advisor={
+			cost = 150
+			slot = political_advisor
+			idea_token = eugenio_pacelli
+			allowed = {
+				original_tag = VAT
+			}
+			traits = {
+				silent_workhorse
+			}
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+	VAT_bernardino_nogara ={
+		name="Bernardino Nogara"
+		portraits={
+			civilian={
+				small="GFX_Portrait_nogara_small"
+			}
+		}
+		advisor={
+			cost = 150
+			slot = political_advisor
+			idea_token = bernardino_nogara
+			allowed = {
+				original_tag = VAT
+			}
+			traits = {
+				captain_of_industry
+			}
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+	VAT_camillo_serafini ={
+		name="Camillo Serafini"
+		portraits={
+			civilian={
+				small="GFX_Portrait_serafini_small"
+			}
+		}
+		advisor={
+			cost = 150
+			slot = political_advisor
+			idea_token = camillo_serafini
+			allowed = {
+				original_tag = VAT
+			}
+			traits = {
+				financial_expert
+			}
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+	VAT_georg_aspremont ={
+		name="Georg von Sury d'Aspremont"
+		portraits={
+			civilian={
+				small="GFX_Portrait_aspremont_small"
+				large="GFX_Portrait_aspremont_large"
+			}
+		}
+		advisor={
+			cost = 100
+			slot = high_command
+			idea_token = georg_aspremont
+			ledger = army
+			allowed = {
+				original_tag = VAT
+			}
+			traits = {
+				army_entrenchment_2
+			}
+			ai_will_do = { factor = 1.0 }
+		}
+		corps_commander = {
+			traits= { old_guard }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	VAT_alois ={
+		name="Hirschbühl Alois"
+		portraits={
+			civilian={
+				small="GFX_Portrait_alois_small"
+			}
+		}
+		advisor={
+			cost = 100
+			slot = theorist
+			ledger = army
+			idea_token = alois
+			allowed = {
+				original_tag = VAT
+			}
+			traits = {
+				military_theorist
+			}
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+	VAT_ludwig ={
+		name="Haas Ludwig"
+		portraits={
+			civilian={
+				small="GFX_Portrait_ludwig_small"
+			}
+		}
+		advisor={
+			cost = 100
+			slot = army_chief
+			ledger = army
+			idea_token = ludwig
+			allowed = {
+				original_tag = VAT
+			}
+			traits = {
+				army_chief_defensive_2
+			}
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+	VAT_christian ={
+		name="Gallen Caspar Christian"
+		portraits={
+			civilian={
+				small="GFX_Portrait_christian_small"
+			}
+		}
+		advisor={
+			cost = 100
+			slot = army_chief
+			ledger = army
+			idea_token = christian
+			allowed = {
+				original_tag = VAT
+			}
+			traits = {
+				army_chief_morale_2
+			}
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+
+##########
+## EDEN ##
+##########
+
+
+	VAT_george ={
+		name="George of Lydda"
+		portraits={
+			civilian={
+				large="GFX_Portrait_george_large"
+			}
+		}
+	}
+	VAT_paul ={
+		name="Paul the Apostle"
+		portraits={
+			civilian={
+				small="GFX_Portrait_paul_small"
+			}
+		}
+	}
+	VAT_marymag ={
+		name="Mary Magdalen"
+		portraits={
+			civilian={
+				small="GFX_Portrait_marymag_small"
+			}
+		}
+	}
+	VAT_gabriel ={
+		name="Gabriel"
+		portraits={
+			civilian={
+				small="GFX_Portrait_gabriel_small"
+				large="GFX_Portrait_gabriel_large"
+			}
+		}
+	}
+	VAT_michael ={
+		name="Michael"
+		portraits={
+			civilian={
+				small="GFX_Portrait_michael_small"
+				large="GFX_Portrait_michael_large"
+			}
+		}
+	}
+	VAT_raphael ={
+		name="Raphael"
+		portraits={
+			civilian={
+				small="GFX_Portrait_raphael_small"
+				large="GFX_Portrait_raphael_large"
+			}
+		}
+	}
+	VAT_cupertino ={
+		name="Joseph of Cupertino"
+		portraits={
+			civilian={
+				small="GFX_Portrait_cupertino_small"
+			}
+		}
+	}
+	VAT_brendan ={
+		name="Brendan the Navigator"
+		portraits={
+			civilian={
+				small="GFX_Portrait_brendan_small"
+				large="GFX_Portrait_brendan_large"
+			}
+		}
+	}
+	VAT_joshua ={
+		name="Joshua"
+		portraits={
+			civilian={
+				small="GFX_Portrait_joshua_small"
+			}
+		}
+	}
+	VAT_constantine ={
+		name="Constantine the Great"
+		portraits={
+			civilian={
+				small="GFX_Portrait_constantine_small"
+			}
+		}
+	}
+	VAT_david ={
+		name="David"
+		portraits={
+			civilian={
+				large="GFX_Portrait_david_large"
+			}
+		}
+	}
+	VAT_samson ={
+		name="Samson"
+		portraits={
+			civilian={
+				small="GFX_Portrait_samson_small"
+				large="GFX_Portrait_samson_large"
+			}
+		}
+	}
+	VAT_luther ={
+		name="Martin Luther"
+		portraits={
+			civilian={
+				small="GFX_Portrait_luther_small"
+			}
+		}
+	}
+	VAT_joan_of_arc ={
+		name="Joan of Arc"
+		portraits={
+			civilian={
+				small="GFX_Portrait_joan_small"
+				large="GFX_Portrait_joan_large"
+			}
+		}
+	}
+	VAT_judas ={
+		name="Judas Iscariot"
+		portraits={
+			civilian={
+				large="GFX_Portrait_judas_large"
+				small="GFX_Portrait_judas_small"
+			}
+		}
+	}
+	VAT_adolf ={
+		name="Adolf Schickelgruber"
+		portraits={
+			civilian={
+				large="GFX_Portrait_adolf_large"
+			}
+		}
+	}
+	VAT_palamas ={
+		name="Gregory Palamas"
+		portraits={
+			civilian={
+				small="GFX_Portrait_palmas_small"
+			}
+		}
+	}
+
+##############
+## DELIGHTS ##
+##############
+
+	VAT_lilith ={
+		name="Lilith"
+		portraits={
+			civilian={
+				large="GFX_Portrait_lilith_large"
+				small="GFX_Portrait_lilith_small"
+			}
+		}
+		country_leader={
+			ideology=anarchist_communism
+			#idea_token = lilith
+			traits = {
+				hedonist
+				the_first_woman
+			}
+			expire="1965.1.1.1"
+		}
+	}
+	VAT_herod ={
+		name="King Herod"
+		portraits={
+			civilian={
+				large="GFX_Portrait_herod_large"
+				small="GFX_Portrait_herod_small"
+			}
+		}
+	}
+	VAT_mare ={
+		name="The Mare"
+		portraits={
+			civilian={
+				large="GFX_Portrait_mare_large"
+				small="GFX_Portrait_mare_small"
+			}
+		}
+	}
+	VAT_beasts ={
+		name="Flesh-Starved Beasts"
+		portraits={
+			civilian={
+				large="GFX_Portrait_beasts_large"
+				small="GFX_Portrait_beasts_small"
+			}
+		}
+	}
+	VAT_pan ={
+		name="Pan"
+		portraits={
+			civilian={
+				large="GFX_Portrait_pan_large"
+				small="GFX_Portrait_pan_small"
+			}
+		}
+	}
+	VAT_commodus ={
+		name="Commodus"
+		portraits={
+			civilian={
+				large="GFX_Portrait_commodus_large"
+				small="GFX_Portrait_commodus_small"
+			}
+		}
+	}
+	VAT_teach ={
+		name="Edward Teach"
+		portraits={
+			civilian={
+				large="GFX_Portrait_teach_large"
+				small="GFX_Portrait_teach_small"
+			}
+		}
+	}
+	VAT_prophet ={
+		name="Unholy Prophet"
+		portraits={
+			civilian={
+				large="GFX_Portrait_prophet_large"
+				small="GFX_Portrait_prophet_small"
+			}
+		}
+	}
+	VAT_eve ={
+		name="Eve"
+		portraits={
+			civilian={
+				small="GFX_Portrait_eve_small"
+			}
+		}
+	}
+	VAT_delilah ={
+		name="Delilah"
+		portraits={
+			civilian={
+				small="GFX_Portrait_delilah_small"
+			}
+		}
+	}
+	VAT_jezebel ={
+		name="Jezebel"
+		portraits={
+			civilian={
+				small="GFX_Portrait_jezebel_small"
+			}
+		}
+	}
+	VAT_nimrod ={
+		name="King Nimrod"
+		portraits={
+			civilian={
+				small="GFX_Portrait_nimrod_small"
+			}
+		}
+	}
+	VAT_messengers ={
+		name="Messengers of Satan"
+		portraits={
+			civilian={
+				small="GFX_Portrait_messengers_small"
+			}
+		}
+	}
+	VAT_rameses ={
+		name="Rameses II"
+		portraits={
+			civilian={
+				small="GFX_Portrait_rameses_small"
+			}
+		}
+	}
+	VAT_goliath ={
+		name="Goliath"
+		portraits={
+			civilian={
+				small="GFX_Portrait_goliath_small"
+				large="GFX_Portrait_goliath_large"
+			}
+		}
+	}
+	VAT_nebuchadnezzar ={
+		name="Nebuchadnezzar II"
+		portraits={
+			civilian={
+				small="GFX_Portrait_nebuchadnezzar_small"
+				large="GFX_Portrait_nebuchadnezzar_large"
+			}
+		}
+	}
+	VAT_carnot ={
+		name="Lazare Carnot"
+		portraits={
+			civilian={
+				small="GFX_Portrait_carnot_small"
+			}
+		}
+	}
+	VAT_wilmot ={
+		name="John Wilmot"
+		portraits={
+			civilian={
+				large="GFX_Portrait_wilmot_large"
+			}
+		}
+	}
+	VAT_rabutin ={
+		name="Roger 'Bussy' de Rabutin"
+		portraits={
+			civilian={
+				small="GFX_Portrait_rabutin_small"
+				large="GFX_Portrait_rabutin_large"
+			}
+		}
+	}
+	VAT_aubigny ={
+		name="Julie d'Aubigny"
+		portraits={
+			civilian={
+				large="GFX_Portrait_aubigny_large"
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

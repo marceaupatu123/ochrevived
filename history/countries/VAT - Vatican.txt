@@ -1,0 +1,142 @@
+﻿capital = 970
+
+set_research_slots = 2
+
+set_rule = { can_join_factions = no }
+set_rule = { can_create_factions = no }
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	gw_artillery = 1
+	fuel_silos = 1
+	basic_train = 1
+}
+
+recruit_character = VAT_PiusXI
+recruit_character = VAT_Conciliar
+recruit_character = VAT_Commission
+recruit_character = VAT_Defence
+recruit_character = VAT_Cardinals
+recruit_character = VAT_eugenio_pacelli
+recruit_character = VAT_bernardino_nogara
+recruit_character = VAT_camillo_serafini
+recruit_character = VAT_georg_aspremont
+recruit_character = VAT_alois
+recruit_character = VAT_ludwig
+recruit_character = VAT_christian
+recruit_character = VAT_Earthly_Satan
+recruit_character = VAT_Infernal_Satan
+recruit_character = VAT_Edenic_Christ
+recruit_character = VAT_Elect_Christ
+
+recruit_character = VAT_italo_balbo
+recruit_character = VAT_inigo_campioni
+
+#EDEN#
+recruit_character = VAT_joan_of_arc
+recruit_character = VAT_gabriel
+recruit_character = VAT_michael
+recruit_character = VAT_raphael
+recruit_character = VAT_cupertino
+recruit_character = VAT_brendan
+recruit_character = VAT_joshua
+recruit_character = VAT_constantine
+recruit_character = VAT_david
+recruit_character = VAT_samson
+recruit_character = VAT_luther
+recruit_character = VAT_palamas
+recruit_character = VAT_george
+recruit_character = VAT_marymag
+recruit_character = VAT_paul
+
+#DELIGHTS#
+recruit_character = VAT_lilith
+recruit_character = VAT_herod
+recruit_character = VAT_mare
+recruit_character = VAT_beasts
+recruit_character = VAT_pan
+recruit_character = VAT_commodus
+recruit_character = VAT_teach
+recruit_character = VAT_prophet
+recruit_character = VAT_eve
+recruit_character = VAT_delilah
+recruit_character = VAT_jezebel
+recruit_character = VAT_nimrod
+recruit_character = VAT_messengers
+recruit_character = VAT_rameses
+recruit_character = VAT_goliath
+recruit_character = VAT_nebuchadnezzar
+recruit_character = VAT_rabutin
+recruit_character = VAT_wilmot
+recruit_character = VAT_carnot
+recruit_character = VAT_aubigny
+
+set_convoys = 0
+set_war_support = 0.2
+oob = VAT_1936
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1922.2.6"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 83
+	democratic = 12
+	fascism = 5
+}
+
+add_ideas = {
+	lateran_treaty
+	seeking_recognition
+	archaic_institution
+}
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+
+	set_politics = {
+	ruling_party = neutrality
+
+	last_election = "1922.2.6"
+	election_frequency = 48
+	elections_allowed = no
+	}
+
+	#focusses
+
+	set_technology = {
+		gw_artillery = 1
+		interwar_antiair = 1
+		infantry_weapons2 = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		fuel_refining = 1
+	}
+}

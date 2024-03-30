@@ -1,0 +1,28 @@
+﻿VAT_OPERATIVE_CODENAME_HISTORICAL = {
+	name = VAT_OPERATIVE_CODENAME_HISTORICAL
+
+	for_countries = { VAT }
+
+	type = codename
+
+	fallback_name = "Agent %d"
+
+	unique = {
+		"Lupo"
+		"Passero"
+		"Falco"
+		"Aquila"
+		"Serpente"
+		"Orso"
+		"Tigre"
+		"Condor"
+		"Gazza"
+		"Tartaruga"
+		"Squalo"
+		"Topo"
+		"Calabrone"
+		"Drago"
+		"Farfalla"
+		"Stallone"
+	}
+}

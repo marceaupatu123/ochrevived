@@ -1,0 +1,5382 @@
+﻿###########################
+# Vatican Events
+###########################
+
+add_namespace = vatican
+
+
+country_event = {
+	id = vatican.21
+	title = "The Voices From Beyond"
+	desc = vatican.21.d
+	picture = GFX_report_event_voices
+	
+	#is_triggered_only = yes
+	trigger = { country_exists = VAT }
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	option = {
+		name = "There is something unearthly about them..."
+		ai_chance = { factor = 90 }
+		effect_tooltip = {
+
+		}
+		hidden_effect = {
+
+		}
+	}
+}
+country_event = {
+	id = vatican.22
+	title = "Dinner with Mussolini"
+	desc = vatican.22.d
+	picture = GFX_report_event_mussolini_hotel
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Excellent."
+		ai_chance = { factor = 90 }
+			ITA = {
+			           add_opinion_modifier = {
+			            target = VAT
+			            modifier = huge_increase
+			          }
+			           add_opinion_modifier = {
+			            target = VAT
+			            modifier = monroe_doctrine_trade
+			          }
+			}
+			
+			ENG = {
+			           add_opinion_modifier = {
+			            target = VAT
+			            modifier = small_decrease
+			          }
+			}
+			
+			FRA = {
+			           add_opinion_modifier = {
+			            target = VAT
+			            modifier = small_decrease
+			          }
+			}
+		effect_tooltip = {
+
+		}
+		hidden_effect = {
+
+		}
+	}
+}
+country_event = {
+	id = vatican.23
+	title = "A Scathing Critique"
+	desc = vatican.23.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Good."
+		ai_chance = { factor = 90 }
+			USA = {
+			           add_opinion_modifier = {
+			            target = VAT
+			            modifier = small_increase
+			          }
+			           add_opinion_modifier = {
+			            target = VAT
+			            modifier = monroe_doctrine_trade
+			          }
+			}
+			
+			ENG = {
+			           add_opinion_modifier = {
+			            target = VAT
+			            modifier = small_increase
+			          }
+			           add_opinion_modifier = {
+			            target = VAT
+			            modifier = monroe_doctrine_trade
+			          }
+			}
+			
+			FRA = {
+			           add_opinion_modifier = {
+			            target = VAT
+			            modifier = small_increase
+			          }
+			           add_opinion_modifier = {
+			            target = VAT
+			            modifier = monroe_doctrine_trade
+			          }
+			}
+			
+			ITA = {
+			           add_opinion_modifier = {
+			            target = VAT
+			            modifier = small_decrease
+			          }
+			}
+			GER = {
+			           add_opinion_modifier = {
+			            target = VAT
+			            modifier = small_decrease
+			          }
+			}
+		effect_tooltip = {
+
+		}
+		hidden_effect = {
+
+		}
+	}
+}
+country_event = {
+	id = vatican.24
+	title = "The Two Romes"
+	desc = vatican.24.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Excellent."
+		ai_chance = { factor = 90 }
+
+		effect_tooltip = {
+
+		}
+		hidden_effect = {
+
+		}
+	}
+}
+country_event = {
+	id = vatican.25
+	title = "The Papal Revolution"
+	desc = vatican.25.d
+	picture = GFX_report_event_peasant_revolt
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "To victory!"
+		ai_chance = { factor = 90 }
+
+		effect_tooltip = {
+
+		}
+		hidden_effect = {
+
+		}
+	}
+}
+country_event = {
+	id = vatican.26
+	title = "The Voices Grow Ceaceless"
+	desc = vatican.26.d
+	picture = GFX_report_event_voices_2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "What now?"
+		ai_chance = { factor = 90 }
+				promote_character = {
+					character = VAT_Cardinals
+					ideology = papacy
+				}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+
+		}
+	}
+}
+country_event = {
+	id = vatican.27
+	title = "A Holy Revelation"
+	desc = vatican.27.d
+	picture = GFX_report_event_above
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Rejoice..."
+		ai_chance = { factor = 90 }
+			custom_effect_tooltip = "... for salvation is near!"
+		effect_tooltip = {
+
+		}
+		hidden_effect = {
+
+		}
+	}
+}
+country_event = {
+	id = vatican.28
+	title = "An Unsettling Revelation"
+	desc = vatican.28.d
+	picture = GFX_report_event_below
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Make it stop."
+		ai_chance = { factor = 90 }
+			custom_effect_tooltip = "I don't know how."
+		effect_tooltip = {
+
+		}
+		hidden_effect = {
+
+		}
+	}
+}
+
+country_event = {
+	id = vatican.33
+	title = "Deal with the Devil"
+	desc = vatican.33.d
+	picture = GFX_report_event_german_troops
+	trigger = {
+			tag = VAT
+			has_war_with = GER
+			has_completed_focus = VAT_the_papal_revolution
+			NOT = { has_completed_focus = VAT_restore_order }
+			ITA = { has_capitulated = yes }
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	#is_triggered_only = yes
+	option = {
+		name = "We must have peace."
+		ai_chance = { factor = 90 }
+			custom_effect_tooltip = deal_with_the_devil_tooltip
+			transfer_units_fraction= {
+				target = GER
+				size = 0.0
+				stockpile_ratio = 0.20
+				army_ratio = 0.0
+				navy_ratio = 0.0
+				air_ratio = 0.0
+			}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			white_peace = GER
+			GER = { white_peace = ITA }
+		}
+	}
+	option = {
+		name = "We will fight to the last!"
+		ai_chance = { factor = 10 }
+		add_command_power = 100
+		add_war_support = 0.2
+		effect_tooltip = {
+			
+		}
+		hidden_effect = {
+
+		}
+	}
+}
+
+country_event = {
+	id = vatican.34
+	title = "Turkey Seizes the Dodecanese"
+	desc = "News has arrived that the chaos we unleashed on the Italian mainland has given the Turkish state a chance to capture the Dodecanese islands. Naturally, they have proclaimed it to be rightful Turkish soil."
+	picture = GFX_report_event_tur_turkish_soldiers
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 3 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			TUR = { transfer_state = 164 }
+			country_event = {
+			    id = vatican.35
+			    days = 3
+			}
+		}
+	}
+	option = {
+		name = "Troubling."
+		ai_chance = { factor = 90 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+country_event = {
+	id = vatican.35
+	title = "Yugoslavia Captures Zara"
+	desc = "The chaos created as a result of our Catholic uprising has allowed foreign powers to capture overseas Italian territories. We have just received word that the Yugoslavian military has entered the region of Zara and declared its annexation."
+	picture = GFX_report_event_yugoslavian_cavalry
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 3 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			YUG = { transfer_state = 163 }
+			if = {
+				limit = { ETH = { NOT = { has_war_with = ITA } } }
+				country_event = {
+					id = vatican.36
+					days = 3
+				}
+			}
+		}
+	}
+	option = {
+		name = "Things are moving fast."
+		ai_chance = { factor = 90 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+country_event = {
+	id = vatican.36
+	title = "Ethiopia Declares Independence"
+	desc = "Italy's conquest of Ethiopia appears to have been shortlived. With all of the chaos that we have created on the peninsula, Ethiopian rebels saw an opportunity to reclaim their freedom and Mussolini is far too occupied with us to retaliate."
+	picture = GFX_report_event_military_planning
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 3 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = { 
+				limit = { ETH = { exists = no }}
+				ETH = { 
+					transfer_state = 271
+					transfer_state = 842
+					transfer_state = 841
+					transfer_state = 843
+					transfer_state = 840
+					transfer_state = 839
+					transfer_state = 838
+					transfer_state = 837
+					transfer_state = 836
+					transfer_state = 835
+					transfer_state = 908
+
+					declare_war_on = {
+						target = ITA
+					}
+
+				}
+			}
+		}
+	}
+	option = {
+		name = "Interesting."
+		ai_chance = { factor = 90 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+
+
+########
+# EDEN #
+########
+
+country_event = {
+	id = vatican.37
+	title = "The United Kingdom Ignores our Demands"
+	desc = "Despite our rightful claim to holy territories in the Middle East, Britain has refused to acknowledge our demands. It is an outrage that will prove in time to be a mere setback, and a terrible mistake for the British government to make."
+	picture = GFX_report_event_eng_royal_family
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 3 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "That is a shame."
+		ai_chance = { factor = 90 }
+		create_wargoal = { type = annex_everything target = ENG }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Very well, we will not persist."
+		ai_chance = { factor = 90 }
+		add_stability = -0.05
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.38
+	title = "France Ignores our Demands"
+	desc = "Despite our rightful claim to holy territories in the Middle East, France has refused to acknowledge our demands. It is an outrage that will prove in time to be a mere setback, and a terrible mistake for the French government to make."
+	picture = GFX_report_event_french_british_officers
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 3 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Diplomacy fails. Force is our only hope now."
+		ai_chance = { factor = 90 }
+		create_wargoal = { type = annex_everything target = FRA }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Very well, we will not persist."
+		ai_chance = { factor = 90 }
+		add_stability = -0.05
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.39
+	title = "Turkish Civil War Ends"
+	desc = vatican.39.d
+	picture = GFX_report_event_communists_cheer
+	trigger = {
+		tag = VAT
+		has_completed_focus = VAT_TUR_UNREST
+		country_exists = TUR
+		TUR = { has_war = no has_government = democratic NOT = { is_puppet_of = VAT } }
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	#is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "We welcome them with open arms."
+		ai_chance = { factor = 90 }
+		faction_leader = { add_to_faction = TUR }
+		transfer_state = 797
+		transfer_state = 341
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			TUR = { set_cosmetic_tag = TUR_VAT }
+		}
+	}
+	option = {
+		name = "Perhaps a closer union is in order."
+		ai_chance = { factor = 90 }
+		puppet = TUR
+		transfer_state = 797
+		transfer_state = 341
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			TUR = { set_cosmetic_tag = TUR_VAT }
+		}
+	}
+}
+country_event = {
+	id = vatican.40
+	title = "Turkish Uprising Fails"
+	desc = "Our attempted coup of Turkey has proven wholly unprepared and uncoordinated. Orthodox rebels put up a brave fight, but this is indeed a dark day for Christianity."
+	picture = GFX_report_event_communists_cheer
+	trigger = {
+		tag = VAT
+		has_completed_focus = VAT_TUR_UNREST
+		country_exists = TUR
+		TUR = { has_war = no NOT = { has_government = democratic } NOT = { is_puppet_of = VAT } }
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	#is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "We must intervene immediately!"
+		ai_chance = { factor = 90 }
+		create_wargoal = { type = puppet_wargoal_focus target = TUR }
+		add_stability = -0.05
+		add_war_support = -0.05
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "It is a lost cause."
+		ai_chance = { factor = 90 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.41
+	title = "The Two Francias"
+	desc = vatican.41.d
+	picture = GFX_report_event_military_planning
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 2 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "West Francia is our priority."
+		ai_chance = { factor = 50 }
+		FRA = {
+			add_ideas = french_clergy
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "East Francia must fall!"
+		ai_chance = { factor = 50 }
+		GER = {
+			add_ideas = german_clergy
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.42
+	title = "French Civil War Ends"
+	desc = "The great news has just arrived at the Vatican that our attempted coup of the French government has been a success! There remain small pockets of secular resistence, but the new government has finally had a chance to establish itself."
+	picture = GFX_report_event_communists_cheer
+	trigger = {
+		tag = VAT
+		has_completed_focus = VAT_ALLIES_REVOLUTION
+		country_exists = FRA
+		FRA = { has_war = no has_government = democratic NOT = { is_puppet_of = VAT } }
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	#is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "They are reborn."
+		ai_chance = { factor = 50 }
+		faction_leader = { add_to_faction = FRA }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			FRA = { set_cosmetic_tag = PAP_FRA }
+		}
+	}
+	option = {
+		name = "We must stick together."
+		ai_chance = { factor = 50 }
+		puppet = FRA
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			FRA = { set_cosmetic_tag = PAP_FRA }
+		}
+	}
+}
+country_event = {
+	id = vatican.43
+	title = "British Civil War Ends"
+	desc = "The great news has just arrived at the Vatican that our attempted coup of the British government has been a success! There remain small pockets of secular resistence, but the new government has finally had a chance to establish itself."
+	picture = GFX_report_event_communists_cheer
+	trigger = {
+		tag = VAT
+		has_completed_focus = VAT_ALLIES_REVOLUTION_ENG
+		country_exists = ENG
+		ENG = { has_war = no has_government = democratic NOT = { is_puppet_of = VAT } }
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	#is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "At last."
+		ai_chance = { factor = 50 }
+		faction_leader = { add_to_faction = ENG }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			ENG = { set_cosmetic_tag = PAP_ENG }
+		}
+	}
+	option = {
+		name = "They will join us in closer union."
+		ai_chance = { factor = 50 }
+		puppet = ENG
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			ENG = { set_cosmetic_tag = PAP_ENG }
+		}
+	}
+}
+country_event = {
+	id = vatican.44
+	title = "French Uprising Ends in Calamity"
+	desc = "Our attempted coup of France has proven wholly unprepared and uncoordinated. Christian rebels put up a brave fight, but their lines were quickly broken by the enemy and their bases of operation have been captured. This is a dark day for Christianity."
+	picture = GFX_report_event_communists_cheer
+	trigger = {
+		tag = VAT
+		has_completed_focus = VAT_ALLIES_REVOLUTION
+		country_exists = FRA
+		FRA = { has_war = no NOT = { has_government = democratic } NOT = { is_puppet_of = VAT } }
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	#is_triggered_only = yes
+	immediate = {
+		FRA = {
+			hidden_effect = { promote_character = FRA_verdier set_capital = {state = 16} }
+		}
+	}
+	option = {
+		name = "They will be remembered as martyrs."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = puppet_wargoal_focus target = FRA }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "We did the best we could."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.45
+	title = "British Influence Fails"
+	desc = "Our attempted coup of Britain has proven wholly unprepared and uncoordinated. Christian rebels put up a brave fight, but their lines were quickly broken by the enemy and their bases of operation have been captured. This is a dark day for Christianity."
+	picture = GFX_report_event_communists_cheer
+	trigger = {
+		tag = VAT
+		has_completed_focus = VAT_ALLIES_REVOLUTION_ENG
+		country_exists = ENG
+		ENG = { has_war = no NOT = { has_government = democratic } NOT = { is_puppet_of = VAT } }
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	#is_triggered_only = yes
+	immediate = {
+		ENG = {
+			hidden_effect = { promote_character = ENG_lang 	set_capital = {state = 126} }
+		}
+	}
+	option = {
+		name = "We prepared for this outcome."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = puppet_wargoal_focus target = ENG }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Disappointing."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.46
+	title = "Greece Agrees to Join our Alliance"
+	desc = "After a short period of deliberation, the Greek government has decided that it is in their interests to be a member of our faction. May our friendship be forever lasting."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			VAT = { add_to_faction = GRE }
+		}
+	}
+	option = {
+		name = "Great."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.47
+	title = "Greece Refuses to Join our Alliance"
+	desc = "After a short period of deliberation, the Greek government has decided to refuse our invitation into this faction. An unexpected move for sure, and an unwelcome one in these dangerous times."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "It is their choice."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "We did not want to have to do this..."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = puppet_wargoal_focus target = GRE }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.48
+	title = "Bulgaria Agrees to Join our Alliance"
+	desc = "After a short period of deliberation, the Bulgarian government has decided that it is in their interests to be a member of our faction. May our friendship be forever lasting."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			VAT = { add_to_faction = BUL }
+		}
+	}
+	option = {
+		name = "Great."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.49
+	title = "Bulgaria Refuses to Join our Alliance"
+	desc = "After a short period of deliberation, the Bulgarian government has decided to refuse our invitation into this faction. An unexpected move for sure, and an unwelcome one in these dangerous times."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "It is their choice."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "We did not want to have to do this..."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = puppet_wargoal_focus target = BUL }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.50
+	title = "Albania Agrees to Annexation"
+	desc = "After a short period of deliberation, the Albanian government has decided that it is in their interests to be incorporated into the Kingdom of Man. May our friendship be forever lasting."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			annex_country = { target = ALB transfer_troops = yes }
+		}
+	}
+	option = {
+		name = "Great."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.51
+	title = "Albania Refuses Annexation"
+	desc = "After a short period of deliberation, the Albanian government has decided to refuse our invitation to unite our two kingdoms. An unexpected move for sure, and an unwelcome one in these dangerous times."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "It is their choice."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "All people's are entitled to their sovereignty. Perhaps we meet them halfway?"
+		ai_chance = { factor = 50 }
+		ALB = { country_event = EdenDiplo.9 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "We did not want to have to do this..."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = puppet_wargoal_focus target = ALB }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.52
+	title = "Romania Agrees to Join our Alliance"
+	desc = "After a short period of deliberation, the Romanian government has decided that it is in their interests to be a member of our faction. May our friendship be forever lasting."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			VAT = { add_to_faction = ROM }
+		}
+	}
+	option = {
+		name = "Great."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.53
+	title = "Romania Refuses to Join our Alliance"
+	desc = "After a short period of deliberation, the Bulgarian government has decided to refuse our invitation into this faction. An unexpected move for sure, and an unwelcome one in these dangerous times."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "It is their choice."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "We did not want to have to do this..."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = puppet_wargoal_focus target = ROM }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.54
+	title = "Britain Recognises our Claim"
+	desc = "The British government has determined that these lands are indeed the rightful property of the Kingdom of Man. They have made a wise choice."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Onwards."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.55
+	title = "France Recognises our Claim"
+	desc = "The French government has determined that these lands are indeed the rightful property of the Kingdom of Man. They have made a wise choice."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Onwards."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.56
+	title = "Poland joins the Court of the Son of Man"
+	desc = "The Polish government wisely recognises the need for unity in these times, and so we will fight together when the time comes."
+	picture = GFX_report_event_generic_sign_treaty1
+	immediate = {
+		hidden_effect = {
+			VAT = { add_to_faction = POL }
+		}
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "Onwards, together."
+		ai_chance = { factor = 50 }
+		add_timed_idea = { idea = devout_nation days = 360 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.57
+	title = "Poland Refuses to Align with Us"
+	desc = "The Polish government has just let us know that they have no such intention of forging an alliance, at least with us. The pride of men is always their downfall, and so we regret that Poland may be doomed."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "They have reason to distrust outsiders; perhaps a compromise."
+		give_guarantee = POL
+		POL = {
+			add_opinion_modifier = {
+				target = VAT
+				modifier = large_increase
+			}
+		}
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Their will must be respected."
+		add_political_power = 100
+		POL = {
+			add_opinion_modifier = {
+				target = VAT
+				modifier = small_increase
+			}
+		}
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Fools."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = puppet_wargoal_focus target = POL }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.58
+	title = "[From.GetName] Embraces its Carolingian Heritage"
+	desc = "The Council of Worms has reached a conclusion on the matter of [From.GetAdjective] autonomy. They have agreed to join with us in greater Christian union, and we are one step closer to achieving Eden."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Praise be!"
+		ai_chance = { factor = 50 }
+		annex_country = { target = FROM transfer_troops = yes }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+country_event = {
+	id = vatican.59
+	title = "[From.GetNameDefCap] Rejects our Proposal"
+	desc = "The Council of Worms could unfortunately reach no conclusion on the matter of [From.GetAdjective] autonomy. [From.Capital.GetName] have wholeheartedly dismissed any suggestion of unification, a terrible disappointment."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "We respect their wishes."
+		ai_chance = { factor = 50 }
+		add_political_power = 50
+		FROM = {
+			add_opinion_modifier = {
+				target = VAT
+				modifier = large_increase
+			}
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "This is an outrage!"
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = annex_everything target = FROM }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Very well. Perhaps a compromise?"
+		trigger = { FROM = { is_in_faction = no has_war = no } }
+		ai_chance = { factor = 10 }
+		FROM = { country_event = EdenDiplo.9 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+country_event = {
+	id = vatican.60
+	title = "[From.GetNameDefCap] Agrees to Vassalisation"
+	desc = "We have finally reached a compromise - the ultimate proof of a healthy democracy - and it has been decided that [From.GetNameDefCap] shall join our union as a semi-autonomous region."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Fantastic!"
+		ai_chance = { factor = 50 }
+		puppet = FROM
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+country_event = {
+	id = vatican.61
+	title = "[From.GetNameDefCap] Refuses to be Vassalised"
+	desc = "[From.GetNameDefCap] have proven a tough nut to crack, and they have once again dismissed our proposal. This is a surprising turn of events."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "... Let them be."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "No more Mr. Nice Jesus."
+		ai_chance = { factor = 50 }
+		add_stability = -0.05
+		create_wargoal = { type = puppet_wargoal_focus target = FROM }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+country_event = {
+	id = vatican.62
+	title = "[From.GetNameDefCap] Mocks our Diplomatic Efforts"
+	desc = "[From.GetNameDefCap] has refused to compromise or consider peaceful coexistence despite our best efforts. The Pharaoh's heart is hardened."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "That's it, then. We have no option."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = puppet_wargoal_focus target = GER }
+		add_war_support = 0.1
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Very well."
+		ai_chance = { factor = 50 }
+		add_political_power = 50
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+country_event = {
+	id = vatican.63
+	title = "Our Efforts Backfire"
+	desc = "[From.GetNameDefCap] has not only refused to even entertain our diplomatic approaches, we have received troubling news that Hitler's forces are mobilising near our border. Perhaps we should have kept quiet after all."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Hope for the best, prepare for the worst."
+		ai_chance = { factor = 50 }
+		add_war_support = 0.15
+		add_command_power = 10
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.105
+	title = "Ecumenical Council of Rome - Day I"
+	desc = vatican.105.d
+	picture = GFX_report_event_generic_conference
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Infallible is he who represents the infallible Son."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = ecumenical.1
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			set_country_flag = west1
+			country_event = { id = vatican.106 days = 1 }
+		}
+	}
+	option = {
+		name = "None besides the Lord can claim infallibility."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = ecumenical.2
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			set_country_flag = east1
+			country_event = { id = vatican.106 days = 1 }
+		}
+	}
+}
+country_event = {
+	id = vatican.106
+	title = "Ecumenical Council of Rome - Day II"
+	desc = vatican.106.d
+	picture = GFX_report_event_generic_conference
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Naturally, the Holy Roman Empire was the legitimate heir."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = ecumenical.1
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			set_country_flag = west2
+			country_event = { id = vatican.107 days = 1 }
+		}
+	}
+	option = {
+		name = "Byzantium was undoubtedly inheritor to the Roman legacy."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = ecumenical.2
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			set_country_flag = east2
+			country_event = { id = vatican.107 days = 1 }
+		}
+	}
+}
+country_event = {
+	id = vatican.107
+	title = "Ecumenical Council of Rome - Day III"
+	desc = vatican.107.d
+	picture = GFX_report_event_generic_conference
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "The Trinity is three Hypostases, and the Spirit is breathed from the Father and the Son."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = ecumenical.1
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			if = {
+				limit = { OR = { has_country_flag = west1 has_country_flag = west2 } }
+				country_event = vatican.108
+			} else = { country_event = vatican.109 }
+		}
+	}
+	option = {
+		name = "The Trinity is three Hypostases, and the Spirit is breathed entirely from the Father."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = ecumenical.2
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			if = {
+				limit = { OR = { has_country_flag = east1 has_country_flag = east2 } }
+				country_event = vatican.109
+			} else = { country_event = vatican.108 }
+		}
+	}
+}
+country_event = {
+	id = vatican.108
+	title = "Ecumenical Discussions Conclude with Western Alignment"
+	desc = "After days of tension in the city of Rome, the Son's ecumenical proclamations have been enough to align Him with the western faith."
+	picture = GFX_report_event_generic_conference
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = westaligned
+	}
+	option = {
+		name = "The Papacy lives on!"
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.109
+	title = "Ecumenical Discussions Conclude with Eastern Alignment"
+	desc = "After days of tension in the city of Rome, the Son's ecumenical proclamations have been enough to align Him with the eastern faith."
+	picture = GFX_report_event_generic_conference
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = eastaligned
+	}
+	option = {
+		name = "Byzantium shall rise again!"
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.150 days = 3 }
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+############
+# DELIGHTS #
+############
+
+
+country_event = {
+	id = vatican.64
+	desc = vatican.64.d
+	title = "International Relations Implode"
+	picture = GFX_report_event_hitler_handshake
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "So?"
+		ai_chance = { factor = 50 }
+		add_threat = 5
+		add_ideas = never_sip_with_the_devil
+		add_ideas = cardinal_unrest
+		if = {
+			limit = { is_in_faction = yes }
+			leave_faction = yes
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.95 days = 5 }
+		}
+	}
+}
+country_event = {
+	id = vatican.65
+	title = "Heart of the Enlightenment"
+	desc = vatican.65.d
+	picture = GFX_report_event_german_parade_paris
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Operation Elagabalus"
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = vatican_elagabalus
+		FRA = { country_event = DelightDiplo.1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Operation Inundatio"
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = vatican_inundatio
+		add_timed_idea = { idea = brain_drain_vat days = 200 }
+		FRA = {
+			country_event = DelightDiplo.4
+			add_timed_idea = { idea = refugee_crisis days = 100 }
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.74 days = 3 }
+		}
+	}
+}
+country_event = {
+	id = vatican.66
+	title = "Our Invitation is Accepted"
+	desc = "To our delight, the French president has accepted our invite and we eagerly await the night of his arrival. We will communicate with his people to ensure a safe trip beyond the eyes of the public."
+	picture = GFX_report_event_hitler_handshake
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Perfect."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.68 days = 1 }
+		}
+	}
+}
+country_event = {
+	id = vatican.67
+	title = "Our Invitation is Refused"
+	desc = "Who could have anticipated this?"
+	picture = GFX_report_event_france_victory_syria
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Well, shit."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = annex_everything target = FRA }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.68
+	title = "A Night of Debauchery"
+	desc = vatican.68.d
+	picture = GFX_report_event_tur_upheaval_celebration
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Now the real fun begins."
+		ai_chance = { factor = 50 }
+		FRA = { country_event = DelightDiplo.2 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.69
+	title = "France Cedes Territories"
+	desc = "The French president, in all his wisdom, has granted us the territories that we desire. What a wonderful neighbour! Indeed, we look forward to future cooperation."
+	picture = GFX_report_event_generic_sign_treaty2
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Good boy."
+		ai_chance = { factor = 50 }
+		transfer_state = 735
+		735 = { add_core_of = VAT }
+		transfer_state = 1
+		1 = { add_core_of = VAT }
+		transfer_state = 458
+		transfer_state = 665
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.70 days = 3 }
+		}
+	}
+}
+
+country_event = {
+	id = vatican.70
+	desc = vatican.70.d
+	title = "France Collapses into Civil War"
+	picture = GFX_report_event_french_tanks
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			FRA = {
+				start_civil_war = {
+					ideology = communism
+					size = 0.4
+					keep_political_leader = yes
+					keep_political_party_members = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = "Let's see how this plays out."
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = french_collapse
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			set_country_flag = french_civil_war_vat
+		}
+	}
+}
+
+country_event = {
+	id = vatican.71
+	desc = vatican.71.d
+	title = "A Nation in Flames"
+	picture = GFX_report_event_ger_civil_war
+	trigger = {
+		VAT = { has_country_flag = french_civil_war_vat }
+		FRA = {
+			has_civil_war = no
+		}
+		original_tag = VAT
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	#is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Demand vassalisation."
+		ai_chance = { factor = 50 }
+		FRA = { country_event = DelightDiplo.3 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "They do not deserve the illusion of a choice."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = annex_everything target = FRA }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.72
+	desc = vatican.72.d
+	title = "France Accepts our Demands"
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Fantastic."
+		ai_chance = { factor = 50 }
+		puppet = FRA
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.73
+	desc = vatican.73.d
+	title = "France Refuses our Demands"
+	picture = GFX_report_event_generic_ruins
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Let us finish this."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = annex_everything target = FRA }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.74
+	title = "French Government Severely Overstretched"
+	desc = "Our plot to overwhelm the French border and drain the resources of their government has been brutally effective. Now, in their moment of panic and weakness, they will be wholly unprepared for our attack!"
+	picture = GFX_report_event_generic_ruins
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "It is all coming together."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = annex_everything target = FRA }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.75
+	title = "An Enlightened Despotism"
+	desc = vatican.75.d
+	picture = GFX_report_event_spr_franco_generals
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Operation Corkscrew"
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = vatican_corkscrew
+		SPR = { country_event = DelightDiplo.5 }
+		transfer_state = 177
+		add_war_support = 0.05
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Operation Marioneta"
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = vatican_marioneta
+		SPR = { country_event = DelightDiplo.6 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.76
+	title = "[SPR.GetLeader] Visits the Vatican"
+	desc = vatican.76.d
+	picture = GFX_report_event_hitler_handshake
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Excellent..."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		custom_effect_tooltip = "We will receive an update about our saboteur's progress within the next week."
+		hidden_effect = {
+			SPR = {
+				every_character = {
+					limit = { is_country_leader = yes }
+					set_portraits = {
+						civilian = { large = "GFX_Portrait_Puppet_large" }
+					}
+				}
+			}
+			random_list = {
+				5 = { country_event = { id = vatican.78 days = 7 } }
+				4 = { country_event = { id = vatican.110 days = 7 } }
+			}
+		}
+	}
+}
+country_event = {
+	id = vatican.77
+	title = "[SPR.GetLeader] Refuses to Visit"
+	desc = "Despite our attractive offer of friendship, Spain seems entirely disinterested, even hostile. We have very few options available now - in fact, we have only one."
+	picture = GFX_report_event_spr_army_of_africa
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Coward!"
+		ai_chance = { factor = 50 }
+		#custom_effect_tooltip = vatican_corkscrew
+		create_wargoal = { target = SPR type = annex_everything }
+		add_war_support = -0.1
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+country_event = {
+	id = vatican.78
+	title = "Our Puppet Proves Invaluable"
+	desc = "In just a few short weeks, the damage that has been done by our 'man' on the inside has left Spain reeling. They are now in a position of weakness that could be exploited."
+	picture = GFX_report_event_generic_ruins
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Wonderful job."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = annex_everything target = SPR }
+		SPR = {
+			add_timed_idea = { idea = saboteur days = 70 }
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			SPR = {
+				create_country_leader = {
+					name = "La Marioneta"
+					picture = GFX_Portrait_Puppet_large
+					expire = "1965.1.1"
+					ideology = anarchist_communism
+					traits = {
+						
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = vatican.79
+	title = "Of Rascals, Rioters, and Rakes"
+	desc = vatican.79.d
+	picture = GFX_report_event_military_planning
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Employ the Depravity Doctrine"
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = vatican_depravity
+		ENG = { country_event = DelightDiplo.7 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Operation Beggar's Benison"
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = vatican_benison
+		ENG = { add_stability = -0.1 add_ideas = scottish_unrest }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		ENG = { country_event = { id = DelightDiplo.11 days = 10 } }
+		}
+	}
+}
+country_event = {
+	id = vatican.80
+	title = "[ENG.GetLeader] Comes to the Table"
+	desc = "By some miracle, the Depravity Doctrine has proven wonderfully successful and the British leadership has agreed to listen to our demands and negotiate."
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "The region of Cornwall must come under our control!"
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = "There is a good chance they will refuse."
+		ENG = { country_event = DelightDiplo.8 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Their north African holdings will do quite nicely."
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = "There is a decent chance they will accept."
+		ENG = { country_event = DelightDiplo.10 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Their presence in the Mediterranean is no longer welcome."
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = "There is a great chance they will accept."
+		ENG = { country_event = DelightDiplo.9 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.81
+	title = "Britain Refuses"
+	desc = "Despite our best efforts, the deplorable British have refused our demands and made a fool of us in the process. They have wasted our time for too long."
+	picture = GFX_report_event_eng_royal_family
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Very well then."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = annex_everything target = ENG }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.82
+	title = "Cornwall Secured"
+	desc = "Your Majesty, I am delighted to inform you that as of midnight tonight, the formerly English region of Cornwall shall come under Hell's command."
+	picture = GFX_report_event_lithuania_army
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Perfect."
+		ai_chance = { factor = 50 }
+		transfer_state = 123
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.83
+	title = "Britain Accepts"
+	desc = "Your Majesty, the British have agreed to sign a concordat that transfers their Mediterranean islands and Gibraltar to us."
+	picture = GFX_report_event_lithuania_army
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Pleasure doing business with you."
+		ai_chance = { factor = 50 }
+		transfer_state = 118
+		transfer_state = 116
+		transfer_state = 183
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.84
+	title = "North Africa Transferred"
+	desc = "Your Majesty, after many hours of arduous debate over the new border arrangements, and even more hours afterwards signing documentation, north Africa is finally ours."
+	picture = GFX_report_event_soldiers_marching
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "One more step towards supremacy."
+		ai_chance = { factor = 50 }
+		transfer_state = 452
+		transfer_state = 552
+		transfer_state = 447
+		transfer_state = 446
+		transfer_state = 456
+		transfer_state = 457
+		transfer_state = 767
+		transfer_state = 551
+		transfer_state = 549
+		transfer_state = 453
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.85
+	title = "Our Threats Backfire!"
+	desc = "To our astonishment and immense embarrassment, the British have called our bluff! They have sent threats of their own, demanding Sardinia."
+	picture = GFX_report_event_eng_royal_family
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Oh, the shame!"
+		ai_chance = { factor = 50 }
+		add_war_support = -0.03
+		add_stability = 0.05
+		ENG = { transfer_state = 114 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Not on their life!"
+		ai_chance = { factor = 50 }
+		add_war_support = 0.05
+		add_stability = -0.03
+		create_wargoal = { type = annex_everything target = ENG }
+		ENG = { create_wargoal = { type = annex_everything target = VAT } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.86
+	title = "Scottish Libertines Rise Up"
+	desc = "Your Majesty, the glorious libertine Scots have assembled and officially declared their independence. The fall of Britain is sure to follow."
+	picture = GFX_report_event_generic_riot
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Let them prove themselves worthy of freedom!"
+		ai_chance = { factor = 0 }
+		add_war_support = -0.05
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "They need our support!"
+		ai_chance = { factor = 80 }
+		add_to_war = { 
+			targeted_alliance = SCO
+			enemy = ENG 
+			hostility_reason = asked_to_join
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.87
+	title = "Victorious Alba"
+	desc = "Despite the odds, and with our help, the libertines in Scotland have victoriously confirmed their place in history! Now, negotiations can begin regarding Scotland's future."
+	picture = GFX_report_event_generic_military_parade
+	trigger = {
+		tag = VAT
+		country_exists = SCO
+		SCO = {
+			AND = {
+				has_country_flag = SCO_REV
+				has_war = no
+				is_puppet = no
+			}
+		}
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = no
+	immediate = {
+		hidden_effect = { SCO = { set_rule = { can_join_factions = yes } } }
+	}
+	option = {
+		name = "We shall be one great union!"
+		ai_chance = { factor = 1 }
+		SCO = { country_event = DelightDiplo.12 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "They have proven themselves worthy of autonomy."
+		ai_chance = { factor = 1 }
+		SCO = { country_event = DelightDiplo.13 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.88
+	title = "Scotland Accepts"
+	desc = "It is a wonderful day for our revolution that all libertines shall come under the same banner to fight for absolute freedom."
+	picture = GFX_report_event_generic_sign_treaty2
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Are they tired of freedom already?"
+		ai_chance = { factor = 1 }
+		annex_country = { target = SCO transfer_troops = yes }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.89
+	title = "Scotland Refuses Annexation"
+	desc = "It is an outrage, after all we have given them, that the Scots insist on their autonomy!"
+	picture = GFX_report_event_soldiers_marching
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Very well... perhaps we meet halfway?"
+		ai_chance = { factor = 1 }
+		SCO = { country_event = DelightDiplo.13 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.90
+	title = "Scotland Remains Firm"
+	desc = "Despite all the help we have given them in the past few months, both to secure independence and maintain it, the Scots refuse to acknowledge the great debt they owe."
+	picture = GFX_report_event_generic_communist_congress
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "... Fine."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Ungrateful bastards."
+		ai_chance = { factor = 2 }
+		create_wargoal = { type = annex_everything target = SCO }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.91
+	title = "Neonspiral"
+	desc = vatican.91.d
+	picture = GFX_report_event_military_planning
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "The body is a church - get on thine knees and show me reverence."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "In 60 days, reconstruction will be complete and we will receive benefits to manpower and communism support."
+		add_ideas = idea_neonspiral
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.92 days = 60 }
+		}
+	}
+	option = {
+		name = "The foaming dog, the writhing prey; there you have our true nature."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "In 60 days, reconstruction will be complete and we will receive benefits to breakthrough and speed."
+		add_ideas = idea_neonspiral
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.93 days = 60 }
+		}
+	}
+	option = {
+		name = "Oh, Minerva! Make us your vessel!"
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "In 60 days, reconstruction will be complete and we will receive benefits to research speed and political power."
+		add_ideas = idea_neonspiral
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.94 days = 60 }
+		}
+	}
+}
+country_event = {
+	id = vatican.92
+	title = "NeonRabidSalvation"
+	desc = vatican.92.d
+	picture = GFX_report_event_military_planning
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Behold, the people is one, and have all one language."
+		ai_chance = { factor = 1 }
+		add_war_support = 0.1
+		remove_ideas = idea_neonspiral
+		add_ideas = neonrabidsalvation
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.93
+	title = "NeonBloodBody"
+	desc = vatican.93.d
+	picture = GFX_report_event_military_planning
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "And now nothing will be restrained from them, which they have imagined to do."
+		ai_chance = { factor = 1 }
+		add_war_support = 0.1
+		remove_ideas = idea_neonspiral
+		add_ideas = neonbloodbody
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.94
+	title = "NeonHyperDeluge"
+	desc = vatican.94.d
+	picture = GFX_report_event_military_planning
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Let us build us a city and a tower, whose top may reach unto heaven."
+		ai_chance = { factor = 1 }
+		add_war_support = 0.1
+		remove_ideas = idea_neonspiral
+		add_ideas = neonhyperdeluge
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.95
+	title = "Pacelli Flees into Hiding"
+	desc = "The seizure of the Vatican into demonic possession has had the expected effect of driving some cardinals, notably Eugenio Pacelli, into hiding. Some among our ranks are worried over what trouble he may sow."
+	picture = GFX_report_event_sanation_left_victory
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "He has no vision."
+		ai_chance = { factor = 1 }
+		remove_advisor_role = {
+		  character = VAT_eugenio_pacelli
+		  slot = political_advisor
+		}
+		ITA = {
+			if = {
+				limit = { is_puppet_of = VAT }
+				hidden_effect = {
+					remove_country_leader_role = {
+					  character = ITA_eugenio_pacelli
+					  ideology = anarchist_communism
+					}
+					remove_country_leader_role = {
+					  character = ITA_eugenio_pacelli
+					  ideology = papacy
+					}
+					set_country_leader_ideology = anarchist_communism
+					set_country_leader_name = {
+						name = "Giacomo Casanova"
+					}
+					set_country_leader_portrait = {
+						portrait = GFX_Portrait_casanova_large
+					}
+					add_country_leader_trait = hedonist
+				}
+			}
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.96
+	title = "The Hunt for Eugenio Pacelli"
+	desc = "A task force has been established in secret to hunt down and dispose of troublesome characters. Among those, Pacelli would be a top target, though to what extent we pursue him is up to us."
+	picture = GFX_report_event_military_planning
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "This is a top priority."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "The hunt will take 180 days and has an 80% chance of ending in success."
+		add_political_power = -30
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			random_list = {
+				80 = {
+					country_event = { id = vatican.97 days = 180 }
+				}
+				20 = {
+					country_event = { id = vatican.98 days = 180 }
+				}
+			}
+		}
+	}
+	option = {
+		name = "There are more important things to focus on."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "The hunt will take 80 days and has a 60% chance of ending in success."
+		add_political_power = -20
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			random_list = {
+				60 = {
+					country_event = { id = vatican.97 days = 80 }
+				}
+				40 = {
+					country_event = { id = vatican.98 days = 80 }
+				}
+			}
+		}
+	}
+	option = {
+		name = "What use do we have for a pipsqueak like him?"
+		ai_chance = { factor = 1 }
+		add_political_power = 25
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.97
+	title = "Pacelli Discovered!"
+	desc = "After months of exhausting investigation, a hunt that at times seemed useless, we have received word just this morning that Pacelli was found cowering and hungry near the border with Switzerland."
+	picture = GFX_report_event_baltic_entente_one
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Silly billy."
+		ai_chance = { factor = 1 }
+		add_advisor_role = {
+		  Character = VAT_eugenio_pacelli
+		  advisor = {
+			slot = political_advisor
+			cost = 50
+			idea_token = eugenio_pacelli
+			traits = {
+				silent_mule
+				political_chameleon
+			}
+			allowed = {
+				always = yes
+			}
+		  }
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.99 days = 7 }
+		}
+	}
+}
+country_event = {
+	id = vatican.98
+	title = "The Hunt for Pacelli is Abandoned"
+	desc = "Despite our greatest efforts, we have no choice but to close the investigation into Pacelli's disappearance. Wherever he is, we can onlu hope he is not causing trouble."
+	picture = GFX_report_event_baltic_entente_one
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Disappointing."
+		ai_chance = { factor = 1 }
+		add_political_power = 10
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.99
+	title = "Pacelli Addresses the Masses"
+	desc = "With the old cardinal now at our side, and with a little persuasion, Pacelli has proclaimed to the people of the world that our regime of sin be recognised and honoured!"
+	picture = GFX_report_event_radar_01
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "What a loyal servant of the cause!"
+		ai_chance = { factor = 1 }
+		add_popularity = { ideology = communism popularity = 0.05 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.100
+	title = "Gargantua"
+	desc = vatican.100.d
+	picture = GFX_report_event_gre_city_devastated
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Let them writhe for a little longer."
+		ai_chance = { factor = 1 }
+			16 = {
+				add_manpower = -6000
+				damage_building = {
+					type = infrastructure
+					damage = 2
+				}
+			}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.101
+	title = "The Cathedrals of Hellfire"
+	desc = vatican.101.d
+	picture = GFX_report_event_gre_athens
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Let us drink and be merry!"
+		ai_chance = { factor = 1 }
+			add_timed_idea = { idea = gothic days = 180 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.102
+	title = "Rodrigo de Borja Resurrected"
+	desc = "Cheers rang out across the sodomic world when news was announced of former Pope Alexander VI's resurrection. An infamous libertine in his day, he shall serve Spain well."
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	trigger = {
+		original_tag = VAT
+		SPR = { is_puppet_of = VAT has_government = communism }
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	#is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			SPR = {
+				set_country_leader_ideology = anarchist_communism
+				set_country_leader_name = {
+					name = "Rodrigo de Borja"
+				}
+				set_country_leader_portrait = {
+					portrait = GFX_Portrait_alexandervi_large
+				}
+				add_country_leader_trait = hedonist
+			}
+		}
+	}
+	option = {
+		name = "Finally - a Pope for the People!"
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.103
+	title = "Charles Baudelaire Resurrected"
+	desc = "As a poet of universal renown, an enemy of the bourgeois, and a man fascinated with decadence, Baudelaire's resurrection shall mark a new beginning for France."
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	trigger = {
+		original_tag = VAT
+		FRA = { is_puppet_of = VAT has_government = communism }
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	#is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			FRA = {
+				set_country_leader_ideology = anarchist_communism
+				set_country_leader_name = {
+					name = "Charles Baudelaire"
+				}
+				set_country_leader_portrait = {
+					portrait = GFX_Portrait_baudelaire_large
+				}
+				add_country_leader_trait = hedonist
+			}
+		}
+	}
+	option = {
+		name = "Awaken, France! A decadent destiny awaits!"
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.104
+	title = "Francis Dashwood Resurrected"
+	desc = "What Britian needs now is a man possessing an excessive lust for decadence and a primal hatred for the Church; no man comes closer than the founder of the Hellfire Club himself."
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	trigger = {
+		original_tag = VAT
+		ENG = { is_puppet_of = VAT has_government = communism }
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	#is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			ENG = {
+				set_country_leader_ideology = anarchist_communism
+				set_country_leader_name = {
+					name = "Francis Dashwood"
+				}
+				set_country_leader_portrait = {
+					portrait = GFX_Portrait_dashwood_large
+				}
+				add_country_leader_trait = hedonist
+			}
+		}
+	}
+	option = {
+		name = "Rakes rise again!"
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.110
+	title = "Our Saboteur is Caught!"
+	desc = "Disaster! The saboteur we planted in the Spanish government has been discovered and destroyed, and our entire plot has been revealed."
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			SPR = {				
+				retire_country_leader = yes
+			}
+		}
+	}
+	option = {
+		name = "We must prepare for the worst..."
+		ai_chance = { factor = 50 }
+		effect_tooltip = {
+		}
+		custom_effect_tooltip = "Tensions with Spain have risen dramatically and they may declare war soon."
+		hidden_effect = {
+			SPR = {
+				country_event = { id = DelightDiplo.15 days = 8 }
+			}
+		}
+	}
+}
+country_event = {
+	id = vatican.111
+	title = "Spain Approaches with an Ultimatum"
+	desc = vatican.111.d
+	picture = GFX_report_event_generic_sign_treaty2
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Tell them... they will understand."
+		ai_chance = { factor = 50 }
+		SPR = {
+			country_event = DelightDiplo.16
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "War is inevitable - we might as well make the first move."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = puppet_wargoal_focus target = SPR }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.112
+	title = "Calls for Clarity"
+	desc = vatican.112.d
+	picture = GFX_report_event_generic_rally_3
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Chalcedon came to the correct conclusion."
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = "We will move towards alignment with the Russian Orthodox Church, weakening Stalin's regime."
+		country_event = vatican.116
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "The decision at Chalcedon was in error."
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = "If we incite Orthodox revolution in Turkey, it will be more likely to succeed."
+		create_wargoal = { type = annex_everything target = ETH }
+		country_event = vatican.113
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			set_country_flag = vat_oriental
+		}
+	}
+}
+country_event = {
+	id = vatican.113
+	title = "Orthodox Africa Grows Restless"
+	desc = vatican.113.d
+	picture = GFX_report_event_spr_spanish_civil_war2
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "We will take on the burden."
+		ai_chance = { factor = 50 }
+		ENG = { country_event = EdenDiplo.12 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "We do not want to provoke the situation."
+		ai_chance = { factor = 50 }
+		add_political_power = 50
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.114
+	title = "Britain Agrees to a Transfer"
+	desc = "After days of detailed negotiations and arm-twisting, we have finally convinced Westminster to transfer Egypt and Sudan into our possession. However, the ongoing violence is now our problem."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "They shall be incorporated entirely."
+		ai_chance = { factor = 50 }
+		ENG = { release = EGY release = SUD }
+		annex_country = { target = EGY transfer_troops = no }
+		annex_country = { target = SUD transfer_troops = no }
+		add_timed_idea = { idea = religious_violence days = 100 }
+		447 = { add_resistance = 30 }
+		452 = { add_resistance = 30 }
+		446 = { add_resistance = 30 }
+		552 = { add_resistance = 30 }
+		453 = { add_resistance = 30 }
+		456 = { add_resistance = 30 }
+		457 = { add_resistance = 30 }
+		767 = { add_resistance = 30 }
+		551 = { add_resistance = 30 }
+		549 = { add_resistance = 30 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "A compromise is in order."
+		ai_chance = { factor = 50 }
+		ENG = { release = EGY release = SUD }
+		puppet = EGY
+		puppet = SUD
+		add_stability = -0.05
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.115
+	title = "Britain Refuses to Transfer Egypt or Sudan"
+	desc = "Despite ongoing religious and political unrest, Britain is determined to crackdown on Orthodox Christians and prevent the region coming under our influence."
+	picture = GFX_report_event_military_planning
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "This is unfortunate, but we respect their territorial integrity."
+		ai_chance = { factor = 50 }
+		add_stability = 0.05
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Absurd! They have clearly lost control of the place."
+		ai_chance = { factor = 50 }
+		add_state_claim = 447
+		add_state_claim = 452
+		add_state_claim = 552
+		add_state_claim = 446
+		add_state_claim = 456
+		add_state_claim = 457
+		add_state_claim = 453
+		add_state_claim = 767
+		add_state_claim = 551
+		add_state_claim = 549
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.116
+	title = "Alliance with an Exarch"
+	desc = vatican.116.d
+	picture = GFX_report_event_military_planning
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Promise Independence."
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = "When war begins with the Soviet Union, Ukraine will declare independence and join our faction."
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			set_country_flag = VAT_ukraine
+		}
+	}
+	option = {
+		name = "A good plan, but we can take on Stalin alone."
+		ai_chance = { factor = 50 }
+		add_war_support = 0.05
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.117
+	title = "The Kievan Exarchate is Proclaimed"
+	desc = "Our coordinated scheme with the exarch of Kyiv has been executed flawlessly, and the USSR now reels in the shock of Ukrainian independence. Victory awaits!"
+	picture = GFX_report_event_soviet_invasion_map
+	trigger = {
+		original_tag = VAT
+		has_country_flag = VAT_ukraine
+		has_war_with = SOV
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = no
+	immediate = {
+		hidden_effect = {
+			SOV = {
+				release = UKR
+				transfer_units_fraction= {
+					target = UKR
+					size = 0.1
+					stockpile_ratio = 0.1
+					army_ratio = 0.1
+				}
+			}
+			UKR = { set_politics = { ruling_party = democratic } set_cosmetic_tag = UKR_VAT
+				set_country_leader_portrait = {
+					ideology = democratic
+					portrait = GFX_Portrait_nicholas_large
+				}
+				set_country_leader_name = {
+					ideology = democratic
+					name = "Metropolitan Nicholas"
+				}
+			}
+		}
+	}
+	option = {
+		name = "Slava Ukraini!"
+		ai_chance = { factor = 50 }
+		VAT = { add_to_faction = UKR }
+		UKR = {
+			add_to_war = { 
+				targeted_alliance = VAT 
+				enemy = SOV 
+				hostility_reason = asked_to_join
+			}
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.118
+	title = "A Tale of Two Churches"
+	desc = vatican.118.d
+	picture = GFX_report_event_stalin_propaganda
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "The Church within Russia is legitimate."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = puppet_wargoal_focus target = SOV }
+		SOV = { add_ideas = orthodox_violence }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			SOV = {
+				  promote_character = SOV_sergius
+			}
+		}
+	}
+	option = {
+		name = "The Church outside Russia is legitimate."
+		ai_chance = { factor = 50 }
+		create_wargoal = { type = puppet_wargoal_focus target = SOV }
+		add_ideas = red_king_die
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			SOV = {
+				  promote_character = SOV_anastasius
+			}
+		}
+	}
+}
+country_event = {
+	id = vatican.119
+	title = "Czechoslovakia Agrees to Join Us"
+	desc = "The Czechoslovakian government has wisely agreed to align with us, and many are speculating that our new union may deter Germany from further expansion into Czech lands."
+	picture = GFX_report_event_cze_divided_nation
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Our governments shall make a joint declaration of mutual defence."
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = "Germany will not pursue the annexation of Czechoslovakia."
+		VAT = { add_to_faction = CZE }
+		GER = { country_event = EdenDiplo.15 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "It is foolish to antagonise Hitler."
+		ai_chance = { factor = 0 }
+		VAT = { add_to_faction = CZE }
+		add_war_support = 0.1
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.120
+	title = "Fidei Defensor"
+	desc = vatican.120.d
+	picture = GFX_report_event_generic_sign_treaty2
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "A new crusader age begins."
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = "Our kingdom shall officially become Roman Catholic."
+		add_ideas = papal_infallibility
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			set_country_flag = catholicism
+		}
+	}
+}
+country_event = {
+	id = vatican.121
+	title = "Strip the Altars"
+	desc = vatican.121.d
+	picture = GFX_report_event_generic_riot
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "It is time for reform."
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = "Our kingdom shall officially become Protestant."
+			add_advisor_role = {
+ 			 Character = VAT_luther
+			  advisor = {
+ 			   slot = political_advisor
+			    cost = 150
+				idea_token = luther
+			    traits = {
+			        ideological_crusader
+			    }
+ 			   allowed = {
+			        always = yes
+			    }
+			  }
+			   activate = no
+			}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			set_country_flag = protestantism
+		}
+	}
+}
+country_event = {
+	id = vatican.122
+	title = "Pius Condemns Fascism"
+	desc = "A recent thesis published by His Holiness Pope Pius XI condemns the rise of fascism on the continent, stirring the hearts of our countrymen. If we are unprepared, this could lead to upheaval."
+	picture = GFX_report_event_generic_riot
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "We will keep an eye on it."
+		ai_chance = { factor = 10 }
+		diplomatic_relation = {
+		    country = VAT
+		    relation = guarantee
+		    active = no
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "It is laughable to think he has any influence."
+		ai_chance = { factor = 0 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.123
+	title = "[From.GetNameDefCap] Eagerly Agrees to Closer Ties"
+	desc = "The faithful people of [From.GetNameDefCap] have made the wise decision to embrace the Son as their saviour. The bond between us shall certainly open the way to closer union in the future."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Wonderful!"
+		ai_chance = { factor = 1 }
+		FROM = { add_opinion_modifier = { modifier = medium_increase target = VAT } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			if = { limit = { FROM = { tag = IRE } } set_country_flag = IRE_integration country_event = { id = vatican.127 days = 5 } }
+			if = { limit = { FROM = { tag = POR } } set_country_flag = POR_integration }
+			if = { limit = { FROM = { tag = SPR } } set_country_flag = SPR_integration }
+		}
+	}
+}
+country_event = {
+	id = vatican.124
+	title = "[From.GetNameDefCap] Remains Suspicious"
+	desc = "Unfortunately, the government of [From.GetNameDefCap] remains unsure of our authenticity and intentions. They have hinted that they would prefer a distant relationship, at least for now."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Very well."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.125
+	title = "Malta Demands Freedom from Britain"
+	desc = "Since the hour of the Son's grand return, the faithful people of Malta have desperately sought our leadership and guidance. No longer will they accept their secular, British masters."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Let them come, one and all."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			set_country_flag = MLT_integration
+		}
+	}
+}
+country_event = {
+	id = vatican.126
+	title = "Britain Blocks Maltese Integration"
+	desc = "Despite Malta's adamance to unite with our holy nation, Britain has intervened and scorned us for disrespecting their territorial sovereignty. It seems Malta shall stay with them... for now."
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Disappointing."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.127
+	title = "Éamon de Valera Visits the Vatican"
+	desc = vatican.127.d
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "They still have much to learn."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.128
+	title = "An Allied Delegation Visits Rome"
+	desc = vatican.128.d
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "A warm welcome..."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.129 days = 2 }
+		}
+	}
+}
+country_event = {
+	id = vatican.129
+	title = "Of the Meek and the Flabby"
+	desc = vatican.129.d
+	picture = GFX_report_event_german_inspect_troops
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Hm."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.130 days = 3 }
+		}
+	}
+}
+country_event = {
+	id = vatican.130
+	title = "News of the Second Coming Stretches Far"
+	desc = vatican.130.d
+	picture = GFX_report_event_stalin_01
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "We cannot expect to please everyone."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.131 days = 2 }
+		}
+	}
+}
+country_event = {
+	id = vatican.131
+	title = "A Monopoly on Truth"
+	desc = vatican.131.d
+	picture = GFX_report_event_generic_usa_treaty
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "We will take our time."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.132 days = 3 }
+		}
+	}
+}
+country_event = {
+	id = vatican.132
+	title = "Worlds Collide"
+	desc = vatican.132.d
+	picture = GFX_report_event_japanese_reply
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Unfortunate."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.133
+	title = "Meeting the Neighbours"
+	desc = vatican.133.d
+	picture = GFX_report_event_spr_civil_war_faction_defeated
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Wait. Come back."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.134 days = 2 }
+		}
+	}
+}
+country_event = {
+	id = vatican.134
+	title = "Mediterranean Posturing"
+	desc = vatican.134.d
+	picture = GFX_report_event_ast_navy
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "We'll keep an eye on them."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.135 days = 4 }
+		}
+	}
+}
+country_event = {
+	id = vatican.135
+	title = "Hitler Runs for the Hills"
+	desc = vatican.135.d
+	picture = GFX_report_event_radar_01
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Was it something we said?"
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.136 days = 3 }
+		}
+	}
+}
+country_event = {
+	id = vatican.136
+	title = "The Man in Moscow"
+	desc = vatican.136.d
+	picture = GFX_report_event_stalin_meeting
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Lovely."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.137
+	title = "[GER.GetLeader] Found Dead"
+	desc = vatican.137.d
+	picture = GFX_report_event_ger_civil_war
+	trigger = {
+		tag = VAT
+		has_war_with = GER
+		GER = { surrender_progress > 0.6 }
+		has_government = communism
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	#is_triggered_only = no
+	immediate = {
+	}
+	option = {
+		name = "But it has only just begun."
+		ai_chance = { factor = 1 }
+		GER = { add_stability = -0.15 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			GER = { retire_character = GER_adolf_hitler promote_character = GER_heinrich_himmler }
+		}
+	}
+}
+country_event = {
+	id = vatican.138
+	title = "The British Junta Veers Towards Secularism"
+	desc = vatican.138.d
+	picture = GFX_report_event_eng_blackshirt_march
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Was this worth it?"
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.139 days = 4 }
+		}
+	}
+}
+country_event = {
+	id = vatican.139
+	title = "The Crown in Crisis"
+	desc = vatican.139.d
+	picture = GFX_report_event_eng_royal_family
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { ENG = { NOT = { has_government = neutrality } } }
+				ENG = {
+					every_enemy_country = {
+						limit = { controls_state = 132 has_civil_war = yes has_government = neutrality }
+						set_country_leader_portrait = {
+							ideology = neutrality
+							portrait = GFX_portrait_Fallen_Government
+						}
+						set_country_leader_name = {
+							ideology = neutrality
+							name = "British Rump Council"
+						}
+					}
+				} else = {
+					ENG = {
+						set_country_leader_portrait = {
+							ideology = neutrality
+							portrait = GFX_portrait_Fallen_Government
+						}
+						set_country_leader_name = {
+							ideology = neutrality
+							name = "British Rump Council"
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "The island has utterly collapsed."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.140
+	title = "The White House Hosts the Son of Man"
+	desc = vatican.140.d
+	picture = GFX_report_event_usa_election_generic
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "The future remains to be written - but once we put pen to paper, the words cannot be erased."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.141 days = 10 }
+		}
+	}
+}
+country_event = {
+	id = vatican.141
+	title = "The American Ecumenical Conference of [GetYear]"
+	desc = vatican.141.d
+	picture = GFX_report_event_gre_megali_conference_signing
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "... Or any worse."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.142 days = 3 }
+		}
+	}
+}
+country_event = {
+	id = vatican.142
+	title = "“His Word or Damnation!”"
+	desc = vatican.142.d
+	picture = GFX_report_event_gathering_protest
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "They will not relent."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.143 days = 5 }
+		}
+	}
+}
+country_event = {
+	id = vatican.143
+	title = "The Christian Front is on the March"
+	desc = vatican.143.d
+	picture = GFX_report_event_eng_blackshirt_march
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "The floodgates have opened."
+		ai_chance = { factor = 1 }
+		USA = { add_stability = -0.05 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.144 days = 2 }
+		}
+	}
+}
+country_event = {
+	id = vatican.144
+	title = "Utah Breaks Away"
+	desc = vatican.144.d
+	picture = GFX_report_event_election_vote
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			USA = {
+				create_dynamic_country = {	# Mormons
+					original_tag = MRM
+					set_politics = { ruling_party = democratic }
+					set_popularities = { democratic = 55 neutrality = 45 fascism = 0 communism = 0 }
+					set_country_leader_portrait = { portrait = GFX_Portrait_heber_large }
+					set_country_leader_name = { name = "Heber J. Grant" }
+					set_country_leader_ideology = conservatism
+					copy_tag = USA
+					add_political_power = 100
+					transfer_state = 380	# Rockies
+					set_rule = { can_join_factions = no }
+					set_rule = { can_create_factions = no }
+					set_cosmetic_tag = MRM_UTAH
+				}
+			}
+		}
+	}
+	option = {
+		name = "Have we only made things worse?"
+		ai_chance = { factor = 1 }
+		USA = { add_war_support = 0.05 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.145 days = 4 }
+		}
+	}
+}
+country_event = {
+	id = vatican.145
+	title = "American Turmoil Reaches a Fever Pitch"
+	desc = vatican.145.d
+	picture = GFX_report_event_generic_parliament
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			USA = {
+				create_dynamic_country = {	# HIS WORD
+					original_tag = HRD
+					set_politics = { ruling_party = democratic }
+					set_popularities = { democratic = 75 neutrality = 20 fascism = 5 communism = 0 }
+					set_country_leader_portrait = { portrait = GFX_Portrait_scarborough_large }
+					set_country_leader_name = { name = "Lee Rutland Scarborough" }
+					set_country_leader_ideology = conservatism
+					copy_tag = USA
+					add_political_power = 100
+					transfer_state = 364
+					transfer_state = 363
+					set_rule = { can_join_factions = no }
+					set_rule = { can_create_factions = no }
+					set_cosmetic_tag = HRD_CAROLINA
+				}
+				MRM = {
+					transfer_state = 379
+					transfer_state = 387
+					transfer_state = 388
+					transfer_state = 381
+					drop_cosmetic_tag = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = "The United Churches must prevail!"
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "We will support the United Churches of America when the civil war begins. They have a presence in New England and on the West Coast."
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.146 days = 3 }
+			set_country_flag = VATICAN_USA
+		}
+	}
+	option = {
+		name = "Evangelical Protestantism is the path forwards."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "We will support His Word when the civil war begins. They have a presence in the South and parts of the Midwest. If we are officially Catholic, we will suffer instability."
+		if = {
+			limit = { has_country_flag = catholicism }
+			add_timed_idea = { idea = betraying_our_ideals days = 250 }
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.146 days = 3 }
+			set_country_flag = VATICAN_HRD
+		}
+	}
+	option = {
+		name = "Militant Catholicism is our only option."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "We will support the Christian Front when the civil war begins. They have a presence in parts of the Midwest. If we are officially Protestant, we will suffer instability."
+		if = {
+			limit = { has_country_flag = protestantism }
+			add_timed_idea = { idea = betraying_our_ideals days = 250 }
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.146 days = 3 }
+			set_country_flag = VATICAN_CRF
+		}
+	}
+	option = {
+		name = "Choose the right."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "We will support the Serene Republic of Deseret when the civil war begins. They have a presence in Utah, Wyoming, Nevada, and Idaho. While strong in will, they are hardly strong in numbers."
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.146 days = 3 }
+			set_country_flag = VATICAN_MRM
+		}
+	}
+}
+country_event = {
+	id = vatican.146
+	title = "[GetDateText]..."
+	desc = vatican.146.d
+	picture = GFX_report_event_ger_civil_war
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_country_flag = CIVIL_WAR_USA
+			USA = {
+				remove_ideas = { great_depression great_depression_2 great_depression_3 USA_limited_intervention USA_neutrality_act }
+																					###################
+																					### BREAK-AWAYS ###
+																					###################
+				leave_faction = yes
+				diplomatic_relation = {
+					country = PHI
+					relation = puppet
+					active = no
+				}
+				
+				set_cosmetic_tag = VAT_USA	# UNITED CHURCHES
+				set_politics = { ruling_party = democratic }
+				add_popularity = { ideology = democratic popularity = 1 }
+				set_country_leader_portrait = { portrait = GFX_Portrait_AEC_large }
+				set_country_leader_name = { name = "American Ecumenical Congress" }
+				set_country_leader_ideology = liberalism
+				set_rule = { can_join_factions = no }
+				set_rule = { can_create_factions = no }
+				set_country_flag = USA_WAR_PARTICIPANT
+				load_focus_tree = generic_focus
+				
+				create_dynamic_country = {	# CHRISTIAN FRONT
+					original_tag = CRF
+					set_politics = { ruling_party = democratic }
+					set_popularities = { democratic = 60 neutrality = 10 fascism = 30 communism = 0 }
+					set_country_leader_portrait = { portrait = GFX_Portrait_coughlin_large }
+					set_country_leader_name = { name = "Fr. Charles Coughlin" }
+					set_country_leader_ideology = conservatism
+					copy_tag = USA
+					add_political_power = 100
+					transfer_state = 393	# Midwest
+					transfer_state = 396
+					transfer_state = 394
+					transfer_state = 395
+					transfer_state = 391
+					transfer_state = 392
+					transfer_state = 389
+					transfer_state = 390
+					set_rule = { can_join_factions = no }
+					set_rule = { can_create_factions = no }
+				}
+				HRD = {	# HIS WORD
+					transfer_state = 362	# South
+					transfer_state = 816
+					transfer_state = 369
+					transfer_state = 368
+					transfer_state = 365
+					transfer_state = 366
+					transfer_state = 367
+					transfer_state = 370
+					transfer_state = 371
+					transfer_state = 372
+					transfer_state = 373
+					transfer_state = 375
+					transfer_state = 374
+					transfer_state = 383
+					transfer_state = 384
+					transfer_state = 382
+					transfer_state = 376
+					transfer_state = 377
+					drop_cosmetic_tag = yes
+				}
+																					######################
+																					### UNIT TRANSFERS ###
+																					######################
+				transfer_units_fraction= {
+					target = HRD
+					size = 0.3
+					stockpile_ratio = 0.3
+					army_ratio = 0.3
+					navy_ratio = 0.3
+					air_ratio = 0.3
+				}
+				transfer_units_fraction= {
+					target = CRF
+					size = 0.3
+					stockpile_ratio = 0.3
+					army_ratio = 0.3
+					navy_ratio = 0.3
+					air_ratio = 0.3
+				}
+				transfer_units_fraction= {
+					target = MRM
+					size = 0.3
+					stockpile_ratio = 0.3
+					army_ratio = 0.3
+					navy_ratio = 0.3
+					air_ratio = 0.3
+				}
+																					###########
+																					### WAR ###
+																					###########
+												declare_war_on = {
+													target = HRD
+													type = annex_everything
+												}
+												add_civil_war_target = HRD
+												declare_war_on = {
+													target = CRF
+													type = annex_everything
+												}
+												add_civil_war_target = CRF
+												declare_war_on = {
+													target = MRM
+													type = annex_everything
+												}
+												add_civil_war_target = MRM
+				HRD = {
+					declare_war_on = {
+						target = CRF
+						type = annex_everything
+					}
+					add_civil_war_target = CRF
+					set_country_flag = USA_WAR_PARTICIPANT
+				}
+				CRF = {
+					declare_war_on = {
+						target = MRM
+						type = annex_everything
+					}
+					add_civil_war_target = MRM
+					set_country_flag = USA_WAR_PARTICIPANT
+				}
+				MRM = {
+					declare_war_on = {
+						target = HRD
+						type = annex_everything
+					}
+					add_civil_war_target = HRD
+					set_country_flag = USA_WAR_PARTICIPANT
+				}
+			}
+		}
+	}
+	option = {
+		name = "The old America is dead; we must help to forge a new one."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "If our ally wins the civil war, they will become our puppet."
+		if = { limit = { has_country_flag = VATICAN_USA } declare_war_on = { target = HRD type = annex_everything } declare_war_on = { target = MRM type = annex_everything } declare_war_on = { target = CRF type = annex_everything } }
+		if = { limit = { has_country_flag = VATICAN_HRD } declare_war_on = { target = USA type = annex_everything } declare_war_on = { target = MRM type = annex_everything } declare_war_on = { target = CRF type = annex_everything } }
+		if = { limit = { has_country_flag = VATICAN_MRM } declare_war_on = { target = HRD type = annex_everything } declare_war_on = { target = USA type = annex_everything } declare_war_on = { target = CRF type = annex_everything } }
+		if = { limit = { has_country_flag = VATICAN_CRF } declare_war_on = { target = HRD type = annex_everything } declare_war_on = { target = MRM type = annex_everything } declare_war_on = { target = USA type = annex_everything } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			set_country_flag = USA_CIVIL_WAR_INVOLVED
+			country_event = { id = vatican.147 days = 2 }
+			if = { limit = { has_country_flag = VATICAN_CRF } CRF = { set_country_flag = puppetofvatican } }
+			if = { limit = { has_country_flag = VATICAN_USA } USA = { set_country_flag = puppetofvatican } }
+			if = { limit = { has_country_flag = VATICAN_HRD } HRD = { set_country_flag = puppetofvatican } }
+			if = { limit = { has_country_flag = VATICAN_MRM } MRM = { set_country_flag = puppetofvatican } }
+		}
+	}
+	option = {
+		name = "We are not ready to join. They will have to rely on us from a distance."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "If our ally wins the civil war, they will become our puppet."
+		add_stability = -0.05
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.147 days = 2 }
+			if = { limit = { has_country_flag = VATICAN_CRF } CRF = { set_country_flag = puppetofvatican } }
+			if = { limit = { has_country_flag = VATICAN_USA } USA = { set_country_flag = puppetofvatican } }
+			if = { limit = { has_country_flag = VATICAN_HRD } HRD = { set_country_flag = puppetofvatican } }
+			if = { limit = { has_country_flag = VATICAN_MRM } MRM = { set_country_flag = puppetofvatican } }
+		}
+	}
+}
+country_event = {
+	id = vatican.147
+	title = "The West Coast Declares Autonomy"
+	desc = vatican.147.d
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			USA = {
+				create_dynamic_country = {	# Provisional Californian Freestate
+					original_tag = PCF
+					copy_tag = USA
+					set_politics = { ruling_party = democratic }
+					set_popularities = { democratic = 80 neutrality = 5 fascism = 0 communism = 15 }
+					set_country_leader_portrait = { portrait = GFX_Portrait_olson_large }
+					set_country_leader_name = { name = "Culbert Olson" }
+					set_country_leader_ideology = liberalism
+					add_political_power = 100
+					transfer_state = 378	# West Coast
+					set_rule = { can_join_factions = no }
+					set_rule = { can_create_factions = no }
+					set_country_flag = USA_WAR_PARTICIPANT
+				}
+				transfer_units_fraction= {
+					target = PCF
+					size = 0.3
+					stockpile_ratio = 0.3
+					army_ratio = 0.3
+					navy_ratio = 0.3
+					air_ratio = 0.3
+				}
+				USA = {
+					declare_war_on = {
+						target = PCF
+						type = annex_everything
+					}
+					add_civil_war_target = PCF
+				}
+				CRF = {
+					declare_war_on = {
+						target = PCF
+						type = annex_everything
+					}
+					add_civil_war_target = PCF
+				}
+				HRD = {
+					declare_war_on = {
+						target = PCF
+						type = annex_everything
+					}
+					add_civil_war_target = PCF
+				}
+				MRM = {
+					declare_war_on = {
+						target = PCF
+						type = annex_everything
+					}
+					add_civil_war_target = PCF
+				}
+			}
+			if = {
+				limit = { has_country_flag = USA_CIVIL_WAR_INVOLVED }
+				declare_war_on = {
+					target = PCF
+					type = annex_everything
+				}
+			}
+		}
+	}
+	option = {
+		name = "Oh God."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.148
+	title = "Unity Restored!"
+	desc = "We have witnessed a Second Civil War more hateful and bloody than the first, a conflict that has torn Americans apart quite possibly for centuries to come. It is a relief now that the last gunshots have been fired."
+	picture = GFX_report_event_usa_election_generic
+	trigger = {
+		tag = VAT
+		VAT = { has_country_flag = CIVIL_WAR_USA }
+		any_country = {
+			has_country_flag = USA_WAR_PARTICIPANT
+			has_country_flag = puppetofvatican
+			has_capitulated = no
+			NOT = {
+				any_enemy_country = {
+					has_country_flag = USA_WAR_PARTICIPANT
+					has_capitulated = no
+				}
+			}
+		}
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = no
+	immediate = {
+	}
+	option = {
+		name = "Time to rebuild."
+		ai_chance = { factor = 1 }
+		if = { limit = { has_country_flag = VATICAN_USA } puppet = USA USA = { add_timed_idea = { idea = post_war_recovery days = 360 } } }
+		if = { limit = { has_country_flag = VATICAN_HRD } puppet = HRD HRD = { add_timed_idea = { idea = post_war_recovery days = 360 } } }
+		if = { limit = { has_country_flag = VATICAN_CRF } puppet = CRF CRF = { add_timed_idea = { idea = post_war_recovery days = 360 } } }
+		if = { limit = { has_country_flag = VATICAN_MRM } puppet = MRM MRM = { add_timed_idea = { idea = post_war_recovery days = 360 } } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			PCF = { set_rule = { can_join_factions = yes } }
+			USA = { set_rule = { can_join_factions = yes } }
+			MRM = { set_rule = { can_join_factions = yes } }
+			CRF = { set_rule = { can_join_factions = yes } }
+			HRD = { set_rule = { can_join_factions = yes } }
+		}
+	}
+}
+country_event = {
+	id = vatican.149
+	title = "America in Ruins"
+	desc = "Despite our attempts to unify the nation, the USA was simply too big for us to handle. Now, in its place, a fervent government with only disdain for us has taken over!"
+	picture = GFX_report_event_usa_election_generic
+	trigger = {
+		tag = VAT
+		VAT = { has_country_flag = CIVIL_WAR_USA }
+		any_country = {
+			has_country_flag = USA_WAR_PARTICIPANT
+			NOT = { has_country_flag = puppetofvatican }
+			has_capitulated = no
+			NOT = {
+				any_enemy_country = {
+					has_country_flag = USA_WAR_PARTICIPANT
+					has_capitulated = no
+				}
+			}
+		}
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = no
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { country_exists = PCF }
+				PCF = { set_cosmetic_tag = PCF_VIC }
+			}
+			PCF = { set_rule = { can_join_factions = yes } }
+			USA = { set_rule = { can_join_factions = yes } }
+			MRM = { set_rule = { can_join_factions = yes } }
+			CRF = { set_rule = { can_join_factions = yes } }
+			HRD = { set_rule = { can_join_factions = yes } }
+		}
+	}
+	option = {
+		name = "We must fight on!"
+		ai_chance = { factor = 1 }
+		trigger = {
+			OR = {
+				has_war_with = USA
+				has_war_with = HRD
+				has_war_with = CRF
+				has_war_with = MRM
+				has_war_with = PCF
+			}
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "We have to negotiate a peace... it's over."
+		ai_chance = { factor = 1 }
+		trigger = {
+			OR = {
+				has_war_with = USA
+				has_war_with = HRD
+				has_war_with = CRF
+				has_war_with = MRM
+				has_war_with = PCF
+			}
+		}
+		if = { limit = { NOT = { has_country_flag = VATICAN_USA } country_exists = USA USA = { has_war_with = VAT } } white_peace = USA	USA = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		if = { limit = { NOT = { has_country_flag = VATICAN_HRD } country_exists = HRD HRD = { has_war_with = VAT } } white_peace = HRD	HRD = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		if = { limit = { NOT = { has_country_flag = VATICAN_CRF } country_exists = CRF CRF = { has_war_with = VAT } } white_peace = CRF	CRF = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		if = { limit = { NOT = { has_country_flag = VATICAN_MRM } country_exists = CRF MRM = { has_war_with = VAT } } white_peace = MRM	MRM = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		if = { limit = { country_exists = PCF PCF = { has_war_with = VAT } } white_peace = PCF	PCF = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "We cannot let that stand."
+		ai_chance = { factor = 1 }
+		trigger = {
+			NOT = {
+				has_war_with = USA
+				has_war_with = HRD
+				has_war_with = CRF
+				has_war_with = MRM
+				has_war_with = PCF
+			}
+		}
+		if = { limit = { NOT = { has_country_flag = VATICAN_USA } country_exists = USA } create_wargoal = { type = puppet_wargoal_focus target = USA}		USA = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		if = { limit = { NOT = { has_country_flag = VATICAN_HRD } country_exists = HRD } create_wargoal = { type = puppet_wargoal_focus target = HRD}		HRD = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		if = { limit = { NOT = { has_country_flag = VATICAN_CRF } country_exists = CRF } create_wargoal = { type = puppet_wargoal_focus target = CRF}		CRF = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		if = { limit = { NOT = { has_country_flag = VATICAN_MRM } country_exists = MRM } create_wargoal = { type = puppet_wargoal_focus target = MRM}		MRM = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		if = { limit = { country_exists = PCF } create_wargoal = { type = puppet_wargoal_focus target = PCF}		PCF = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "A tragedy, but the bloodshed ends here."
+		ai_chance = { factor = 1 }
+		trigger = {
+			NOT = {
+				has_war_with = USA
+				has_war_with = HRD
+				has_war_with = CRF
+				has_war_with = MRM
+				has_war_with = PCF
+			}
+		}
+		if = { limit = { NOT = { has_country_flag = VATICAN_USA } country_exists = USA } USA = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		if = { limit = { NOT = { has_country_flag = VATICAN_HRD } country_exists = HRD } HRD = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		if = { limit = { NOT = { has_country_flag = VATICAN_CRF } country_exists = CRF } CRF = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		if = { limit = { NOT = { has_country_flag = VATICAN_MRM } country_exists = MRM } MRM = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		if = { limit = { country_exists = PCF } PCF = { add_opinion_modifier = { target = VAT modifier = large_decrease } } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.150
+	title = "A Deceiver?"
+	desc = vatican.150.d
+	picture = GFX_report_event_military_planning
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Don't jinx it."
+		ai_chance = { factor = 1 }
+		IRQ = { add_ideas = allahs_light }
+		PER = { add_ideas = allahs_light }
+		SAU = { add_ideas = allahs_light }
+		AFG = { add_ideas = allahs_light }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.151 days = 30 }
+			IRQ = { add_research_slot = 1 }
+			PER = { add_research_slot = 1 }
+			SAU = { add_research_slot = 1 }
+			AFG = { add_research_slot = 1 }
+			SAU = {
+				set_rule = { can_create_factions = no }
+				set_rule = { can_join_factions = no }
+					add_opinion_modifier = {
+						target = VAT
+						modifier = large_decrease
+					}
+			}
+		}
+	}
+}
+country_event = {
+	id = vatican.151
+	title = "The Treaty of Tehran"
+	desc = vatican.151.d
+	picture = GFX_report_event_fascist_speech
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			676 = { add_core_of = PER }
+			675 = { add_core_of = PER }
+			291 = { add_core_of = PER }
+			415 = { add_core_of = PER }
+			267 = { add_core_of = PER }
+			PER = { annex_country = { target = IRQ transfer_troops = yes } annex_country = { target = AFG transfer_troops = yes } set_cosmetic_tag = PER_PUS }
+		}
+	}
+	option = {
+		name = "At least our cartographers are happy."
+		ai_chance = { factor = 1 }
+		PER = { add_stability = 0.05 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.152 days = 7 }
+		}
+	}
+}
+country_event = {
+	id = vatican.152
+	title = "Arabia Anew"
+	desc = vatican.152.d
+	picture = GFX_report_event_tur_cakmak_general_staff
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			293 = { add_core_of = SAU }
+			294 = { add_core_of = SAU }
+			SAU = { annex_country = { target = YEM transfer_troops = yes } annex_country = { target = OMA transfer_troops = yes } set_cosmetic_tag = SAU_ARABIA }
+		}
+	}
+	option = {
+		name = "Indeed."
+		ai_chance = { factor = 1 }
+		SAU = { add_stability = 0.05 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.153 days = 2 }
+		}
+	}
+}
+country_event = {
+	id = vatican.153
+	title = "Ummat al-Islām"
+	desc = vatican.153.d
+	picture = GFX_report_event_crowd_in_prague
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			293 = { add_core_of = SAU }
+			294 = { add_core_of = SAU }
+			679 = { add_core_of = SAU }
+			292 = { add_core_of = SAU }
+			678 = { add_core_of = SAU }
+			SAU = {
+				annex_country = { target = PER transfer_troops = yes } set_cosmetic_tag = SAU_YAWM
+				set_country_leader_portrait = {
+					ideology = neutrality
+					portrait = GFX_Portrait_muslim_large
+				}
+				set_country_leader_portrait = {
+					ideology = democratic
+					portrait = GFX_Portrait_muslim_large
+				}
+				set_country_leader_name = {
+					ideology = neutrality
+					name = "Al-Majlis al-Islām"
+				}
+				set_country_leader_name = {
+					ideology = democratic
+					name = "Al-Majlis al-Islām"
+				}
+				set_party_name = { 
+					ideology = neutrality
+					name = "Al-Majlis al-Islām"
+				}
+				set_party_name = { 
+					ideology = democratic
+					name = "Al-Majlis al-Islām"
+				}
+			}
+		}
+	}
+	option = {
+		name = "... Things are going to get a lot worse before they get any better."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			SAU = { swap_ideas = { remove_idea = allahs_light add_idea = allahs_light_2 } }
+		}
+	}
+}
+country_event = {
+	id = vatican.154
+	title = "Kurdish Territories Lost"
+	desc = vatican.154.d
+	picture = GFX_report_event_SOV_tank_column
+	trigger = {
+		has_government = democratic
+		has_war_with = TUR
+		TUR = { NOT = { is_puppet_of = VAT } }
+		SAU = { has_cosmetic_tag = SAU_YAWM }
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = no
+	immediate = {
+		hidden_effect = {
+			353 = { add_core_of = SAU transfer_state_to = SAU }
+			800 = { add_core_of = SAU transfer_state_to = SAU }
+			352 = { add_core_of = SAU transfer_state_to = SAU }
+			350 = { add_core_of = SAU transfer_state_to = SAU }
+		}
+	}
+	option = {
+		name = "Disconcerting."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.154 days = 12 }
+		}
+	}
+}
+country_event = {
+	id = vatican.155
+	title = "The Crusade Loses Momentum"
+	desc = vatican.155.d
+	picture = GFX_report_event_gre_city_siege
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Our foes put up a strong fight."
+		ai_chance = { factor = 1 }
+		remove_ideas = deus_id_vult
+		add_ideas = crusader_exhaustion
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.158 days = 15 }
+		}
+	}
+}
+
+#			country_event = {
+#				id = vatican.156
+#				title = "VATICAN.156"
+#				desc = "This event should not be visible."
+#				picture = GFX_
+#				trigger = {
+#					VAT = { has_completed_focus = VAT_forgeaneweden	NOT = { has_country_flag = atpeacenow } }
+#					SOV = { has_war_with = SAU }
+#				}
+#				mean_time_to_happen = { days = 1 }
+#				fire_only_once = no
+#				is_triggered_only = no
+#				hidden = yes
+#				immediate = {
+#					SOV = {
+#						white_peace = SAU
+#							remove_wargoal = {
+#								type = all
+#								target = SAU
+#							}
+#					}
+#				}
+#			}
+
+country_event = {
+	id = vatican.157
+	title = "The Armies of Islam Commit to a Jihad"
+	desc = vatican.157.d
+	picture = GFX_report_event_soldiers_marching
+	trigger = {
+		has_war_with = SAU
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			SAU = { add_ideas = the_last_jihad }
+		}
+	}
+	option = {
+		name = "What have we unleashed?"
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+			SAU = { add_ideas = the_last_jihad }
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.158
+	title = "Holy Warriors Desert Us"
+	desc = vatican.158.d
+	trigger = {
+		has_war_with = SAU
+	}
+	picture = GFX_report_event_desertion_poster
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "They demand an end to this conquest."
+		ai_chance = { factor = 1 }
+		add_stability = -0.03
+		add_war_support = -0.04
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.158 days = 15 }
+		}
+	}
+}
+country_event = {
+	id = vatican.159
+	title = "Al-Majlis al-Islām Approaches the Son with a Proposition"
+	desc = vatican.159.d
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+		VAT = { has_war_with = SAU }
+		SAU = { surrender_progress > 0.29 }
+		has_country_flag = third_crusade
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = no
+	immediate = {
+	}
+	option = {
+		name = "They are right, this violence is senseless."
+		ai_chance = { factor = 1 }
+		white_peace = SAU
+		country_event = { id = vatican.160 days = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			set_country_flag = parley
+		}
+	}
+	option = {
+		name = "The Son is just - but he is not a fool."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.160
+	title = "The Baghdad Parley"
+	desc = vatican.160.d
+	picture = GFX_report_event_gre_megali_conference_signing
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Peace has to have a chance."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "Al-Majlis al-Islām receives our suggestion that a treaty of mutual economic and military support be signed to ensure the prosperity of both our peoples."
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.163 days = 7 }
+		}
+	}
+	option = {
+		name = "It is our duty to liberate their people!"
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "Talks break down. Al-Majlis al-Islām receives the demand that any of our territory they occupy is returned, and any of theirs that we hold shall remain in our possession."
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			clr_country_flag = parley
+			random_list = {
+				50 = { country_event = { id = vatican.161 days = 7 } }
+				50 = { country_event = { id = vatican.162 days = 7 } }
+			}
+		}
+	}
+}
+country_event = {
+	id = vatican.161
+	title = "Al-Majlis al-Islām Gives us their Response"		# REFUSE
+	desc = vatican.161.d
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "So it goes."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.162
+	title = "Al-Majlis al-Islām Gives us their Response"		# ACCEPT
+	desc = vatican.162.d
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "No point in wondering what could have been."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		  every_core_state = {
+			limit = { is_owned_by = SAU }
+			transfer_state_to = VAT
+		  }
+		}
+	}
+}
+country_event = {
+	id = vatican.163
+	title = "Al-Majlis al-Islām Gives us their Response"		# DIPLO
+	desc = vatican.163.d
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_country_flag = atpeacenow
+			remove_decision = rally_the_people
+			remove_decision = crusade_begin
+			remove_decision = crusade_END
+			remove_decision = crusades_conclude
+		}
+	}
+	option = {
+		name = "Wonderful!"
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "All of our territories shall be returned to us, and all of theirs shall be returned to them."
+		diplomatic_relation = {
+			country = SAU
+			relation = non_aggression_pact
+			active = yes
+		}
+		SAU = { remove_ideas = the_last_jihad }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.164 days = 10 }
+			country_event = { id = vatican.165 days = 16 }
+			  every_core_state = {
+				limit = { is_controlled_by = SAU }
+				transfer_state_to = VAT
+			  }
+			SAU = {
+			  every_core_state = {
+				limit = { is_controlled_by = VAT }
+				transfer_state_to = SAU
+			  }
+				remove_opinion_modifier = {
+					target = VAT
+					modifier = large_decrease
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = vatican.164
+	title = "The Constantinople Accords of [GetYear]"
+	desc = vatican.164.d
+	picture = GFX_report_event_tur_sultan_in_istanbul
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "We prioritise military cooperation."
+		ai_chance = { factor = 1 }
+		add_war_support = 0.05
+		SAU = {
+			add_opinion_modifier = {
+				target = VAT
+				modifier = large_increase
+			}
+			diplomatic_relation = {
+				country = VAT
+				relation = military_access
+				active = yes
+			}
+			give_guarantee = VAT
+		}
+		diplomatic_relation = {
+			country = SAU
+			relation = military_access
+			active = yes
+		}
+		give_guarantee = SAU
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "We prioritise economic cooperation."
+		ai_chance = { factor = 1 }
+		add_stability = 0.05
+		SAU = {
+			add_opinion_modifier = {
+				target = VAT
+				modifier = large_increase
+			}
+			add_ideas = papal_influence
+		}
+		add_ideas = constantinople_accords
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+country_event = {
+	id = vatican.165
+	title = "Calls for the Transfer of Territories to Yawm al-Qiyāmah"
+	desc = vatican.165.d
+	picture = GFX_report_event_generic_sign_treaty1
+	trigger = {
+	}
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "A painful proposition, but they are right to ask."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "Yawm al-Qiyāmah receives all northern and east Africa territories that we or our puppets own. They also receive any states that we and our puppets own in the Middle East."
+		add_stability = 0.05
+		SAU = {
+			add_opinion_modifier = {
+				target = VAT
+				modifier = medium_increase
+			}
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			every_state = {
+				if = {
+					limit = {
+						OR = {
+							region = 128
+							region = 216
+							region = 17
+							region = 292
+							region = 28
+							region = 196
+							state = 552
+							state = 767
+						}
+						owns_or_subject_of = yes
+					}
+					transfer_state_to = SAU
+				}
+			}
+		}
+	}
+	option = {
+		name = "They may take the Middle East, but Jerusalem will be shared between us."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "Yawm al-Qiyāmah receives any states that we or our puppets own in the Middle East, excluding Palestine which becomes our puppet."
+		SAU = {
+			add_opinion_modifier = {
+				target = VAT
+				modifier = small_increase
+			}
+		}
+		trigger = {
+			454 = {
+				owns_or_subject_of = yes
+			}
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			every_state = {
+				if = {
+					limit = {
+						OR = {
+							region = 28
+							region = 196
+						}
+						NOT = { state = 454 }
+						owns_or_subject_of = yes
+					}
+					transfer_state_to = SAU
+					PAL = { transfer_state = 454 }
+				}
+			}
+			puppet = PAL
+		}
+	}
+	option = {
+		name = "We offer cooperation, they should expect no more than that."
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		SAU = {
+			add_opinion_modifier = {
+				target = VAT
+				modifier = small_decrease
+			}
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.166
+	title = "The Crusade Loses Momentum"		# ACCOUNT FOR MANUAL JUSTIFICATION
+	desc = vatican.155.d
+	picture = GFX_report_event_gre_city_siege
+	trigger = {
+		has_war_with = SAU
+		NOT = { has_country_flag = atpeacenow }
+		NOT = { has_idea = deus_id_vult }
+	}
+	mean_time_to_happen = { days = 10 }
+	fire_only_once = no
+	is_triggered_only = no
+	immediate = {
+	}
+	option = {
+		name = "Our foes put up a strong fight."
+		ai_chance = { factor = 1 }
+		remove_ideas = deus_id_vult
+		add_ideas = crusader_exhaustion
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.168 days = 15 }
+		}
+	}
+}
+country_event = {
+	id = vatican.167
+	title = "The Islamic-Christian Alliance Fails"		# ACCOUNT FOR MANUAL JUSTIFICATION
+	desc = "Despite the tireless efforts of our nations to enact a lasting peace and mutual prosperity, now we know it was all in vain. A beautiful experiment, but it was doomed from the start."
+	picture = GFX_report_event_bul_ff_troops_yugoslavia
+	trigger = {
+		has_war_with = SAU
+		has_country_flag = atpeacenow
+	}
+	mean_time_to_happen = { days = 10 }
+	fire_only_once = no
+	is_triggered_only = no
+	immediate = {
+	}
+	option = {
+		name = "We have failed our people."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.168 days = 15 }
+		}
+	}
+}
+country_event = {
+	id = vatican.168
+	title = "Holy Warriors Desert Us"
+	desc = vatican.158.d
+	trigger = {
+		has_war_with = SAU
+	}
+	picture = GFX_report_event_desertion_poster
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "They demand an end to this conquest."
+		ai_chance = { factor = 1 }
+		add_stability = -0.03
+		add_war_support = -0.04
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.168 days = 15 }
+		}
+	}
+	option = {
+		name = "Put this stupid war to an end."
+		ai_chance = { factor = 1 }
+		add_war_support = -0.1
+		white_peace = SAU
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+country_event = {
+	id = vatican.169
+	title = "Yawm al-Qiyāmah Takes the Initiative"
+	desc = vatican.169.d
+	trigger = {
+		has_government = democratic
+		has_war_with = ENG
+		ENG = { NOT = { is_puppet_of = VAT } }
+		SAU = { has_cosmetic_tag = SAU_YAWM }
+	}
+	picture = GFX_report_event_yugoslavian_cavalry
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = no
+	immediate = {
+		hidden_effect = {
+			656 = {
+				if = { limit = { NOT = { is_controlled_by = VAT } } transfer_state_to = SAU add_core_of = SAU }
+			}
+			765 = {
+				if = { limit = { NOT = { is_controlled_by = VAT } } transfer_state_to = SAU add_core_of = SAU }
+			}
+			658 = {
+				if = { limit = { NOT = { is_controlled_by = VAT } } transfer_state_to = SAU add_core_of = SAU }
+			}
+			659 = {
+				if = { limit = { NOT = { is_controlled_by = VAT } } transfer_state_to = SAU add_core_of = SAU }
+			}
+			country_event = { id = vatican.170 days = 5 }
+		}
+	}
+	option = {
+		name = "Hm."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+country_event = {
+	id = vatican.170
+	title = "Pakistan Explodes"
+	desc = vatican.170.d
+	trigger = {
+		has_government = democratic
+		has_war_with = RAJ
+		RAJ = { NOT = { is_puppet_of = VAT } }
+		SAU = { has_cosmetic_tag = SAU_YAWM }
+	}
+	picture = GFX_report_event_british_artillery
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = no
+	immediate = {
+		hidden_effect = {
+			444 = {
+				if = { limit = { NOT = { is_controlled_by = VAT } } transfer_state_to = SAU add_core_of = SAU }
+			}
+			445 = {
+				if = { limit = { NOT = { is_controlled_by = VAT } } transfer_state_to = SAU add_core_of = SAU }
+			}
+			442 = {
+				if = { limit = { NOT = { is_controlled_by = VAT } } transfer_state_to = SAU add_core_of = SAU }
+			}
+			787 = {
+				if = { limit = { NOT = { is_controlled_by = VAT } } transfer_state_to = SAU add_core_of = SAU }
+			}
+		}
+	}
+	option = {
+		name = "Worrying."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+country_event = {
+	id = vatican.171
+	title = "Night of the Lilite Ascendency"
+	desc = vatican.171.d
+	trigger = {
+	}
+	picture = GFX_report_event_spr_anarchist_uprising2
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Finally."
+		ai_chance = { factor = 1 }
+		kill_country_leader = yes
+		set_party_name = { 
+			ideology = communism
+			long_name = "Danaïdic Court"
+			name = "Danaïdic Court"
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			VAT_lilith = { promote_character = yes }
+		}
+	}
+}
+country_event = {
+	id = vatican.172
+	title = "A Second Chance"
+	desc = vatican.172.d
+	trigger = {
+	}
+	picture = GFX_report_event_merchant_ship_01
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "If he prefers the pit, we will gladly send him back there."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.173 days = 6 }
+		}
+	}
+}
+country_event = {
+	id = vatican.173
+	title = "The Miraculous Deliverance of [GetYear]"
+	desc = vatican.173.d
+	trigger = {
+	}
+	picture = GFX_report_event_usa_election_generic
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Miraculous indeed."
+		ai_chance = { factor = 1 }
+		USA = { add_stability = 0.1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.174 days = 10 }
+		}
+	}
+}
+country_event = {
+	id = vatican.174
+	title = "The First American"
+	desc = vatican.174.d
+	trigger = {
+	}
+	picture = GFX_report_event_gre_megali_conference_signing
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Excellent."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.176 days = 4 }
+		}
+	}
+}
+country_event = {
+	id = vatican.176
+	title = "A Most Unwelcome Development"
+	desc = vatican.176.d
+	trigger = {
+	}
+	picture = GFX_report_event_german_troops_paris
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			USA = {
+				retire_country_leader = yes
+				promote_character = USA_franklin
+				add_popularity = { ideology = democratic popularity = 0.1 }
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = no
+				}
+				add_country_leader_trait = leftist_freemason
+			}
+			set_country_flag = franklin_revived
+		}
+	}
+	option = {
+		name = "If Franklin wants to burn again, we can gladly arrange that."
+		ai_chance = { factor = 1 }
+		add_ideas = rulers_of_the_atlantic
+		create_wargoal = { type = puppet_wargoal_focus target = USA }
+		USA = { USA_franklin = { add_country_leader_trait = anti_communist } }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.177
+	title = "The Second Demise of Benjamin Franklin"
+	desc = vatican.177.d
+	trigger = {
+		has_country_flag = franklin_revived
+		OR = {
+			NOT = { country_exists = USA }
+			USA = { is_puppet_of = VAT }
+		}
+	}
+	picture = GFX_report_event_spr_plane_crash
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = no
+	immediate = {
+	}
+	option = {
+		name = "And stay there."
+		ai_chance = { factor = 1 }
+		USA = {
+			USA_franklin = { retire = yes }
+			add_stability = -0.15
+		}
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.179
+	title = "Our Fallen Sisters"
+	desc = vatican.179.d
+	trigger = {
+	}
+	picture = GFX_report_event_canada_ronnie
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Our night of vengeance shall come."
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.180 days = 6 }
+		}
+	}
+}
+country_event = {
+	id = vatican.180
+	title = "Toil and Trouble"
+	desc = vatican.180.d
+	trigger = {
+	}
+	picture = GFX_report_event_generic_conference
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Our numbers grow."
+		ai_chance = { factor = 1 }
+		USA = { add_stability = -0.1 }
+		357 = { add_resistance = 25 }
+		358 = { add_resistance = 25 }
+		359 = { add_resistance = 25 }
+		360 = { add_resistance = 25 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.181 days = 10 }
+		}
+	}
+}
+country_event = {
+	id = vatican.181
+	title = "The Eve of War"
+	desc = vatican.181.d
+	trigger = {
+	}
+	picture = GFX_report_event_saf_soldiers_2
+	#mean_time_to_happen = { days = 1 }
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = "Let hellfire rain."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "The Coven of Salem will unleash their revolution and we will take them on as a puppet."
+		357 = { add_manpower = 5000 }
+		358 = { add_manpower = 5000 }
+		359 = { add_manpower = 5000 }
+		360 = { add_manpower = 5000 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			create_dynamic_country = {
+				original_tag = SAL
+				copy_tag = USA
+				add_political_power = 100
+				transfer_state = 357
+				transfer_state = 358
+				transfer_state = 359
+				transfer_state = 360
+				set_capital = { state = 357 }
+				set_province_name = {
+					id = 6732
+					name = "Salem"
+				}
+				set_party_name = { 
+					ideology = communism
+					long_name = "Coven of Salem"
+					name = "Coven of Salem"
+				}
+				set_country_leader_name = {
+					ideology = communism
+					name = "Coven of Salem"
+				}
+				set_country_leader_portrait = {
+					ideology = communism
+					portrait = GFX_Portrait_salem_large
+				}
+			}
+			puppet = SAL
+			set_country_flag = salemite_war
+			357 = { cancel_resistance = yes }
+			358 = { cancel_resistance = yes }
+			359 = { cancel_resistance = yes }
+			360 = { cancel_resistance = yes }
+			USA = {
+				every_core_state = {
+					add_core_of = SAL
+				}
+				transfer_units_fraction= {
+					target = SAL
+					size = 0.3
+					stockpile_ratio = 0.25
+					army_ratio = 0.3
+					navy_ratio = 0.1
+					air_ratio = 0.3
+				}
+				declare_war_on = {
+					target = SAL
+					type = annex_everything
+				}
+			}
+			SAL = {
+				add_country_leader_trait = cornered_fox
+			}
+		}
+	}
+	option = {
+		name = "We need more time."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "We will have another opportunity to ignite Salemite revolution in a month's time."
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			country_event = { id = vatican.181 days = 30 }
+		}
+	}
+}
+country_event = {
+	id = vatican.182
+	title = "The Second Culling"
+	desc = vatican.182.d
+	trigger = {
+		has_country_flag = salemite_war
+		has_war_with = USA
+		OR = { SAL = { has_capitulated = yes } SAL = { exists = no } }
+	}
+	picture = GFX_report_event_gre_city_devastated
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = no
+	immediate = {
+	}
+	option = {
+		name = "They won't get away with this; not this time."
+		ai_chance = { factor = 1 }
+		add_war_support = 0.15
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = "Once again, we are helpless."
+		ai_chance = { factor = 1 }
+		white_peace = USA
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			USA = { annex_country = { target = SAL transfer_troops = no } }
+		}
+	}
+}
+country_event = {
+	id = vatican.183
+	title = "Proclamation of the Matriarchal Congress"
+	desc = vatican.183.d
+	trigger = {
+		has_country_flag = salemite_war
+		country_exists = SAL
+		SAL = { NOT = { has_war_with = USA } }
+	}
+	picture = GFX_report_event_pla_in_beijing
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = no
+	immediate = {
+		clr_country_flag = salemite_war
+	}
+	option = {
+		name = "They have earned our boundless respect."
+		ai_chance = { factor = 1 }
+		SAL = {
+			add_stability = 0.05
+			set_party_name = { 
+				ideology = communism
+				long_name = "Matriarchal Congress of America"
+				name = "Matriarchal Congress of America"
+			}
+		}
+		clr_country_flag = salemite_war
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+country_event = {
+	id = vatican.184
+	title = "[USA.GetLeader] Comes Crawling on His Knees"
+	desc = vatican.184.d
+	trigger = {
+		has_country_flag = salemite_war
+		SAL = { has_war_with = USA }
+		USA = { surrender_progress > 0.39 }
+	}
+	picture = GFX_report_event_usa_election_generic
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = no
+	immediate = {
+	}
+	option = {
+		name = "We take what we can get."
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "This brutal war shall end in a stalemate. Any regions of the USA that we or our puppet control shall come under the jurisdiction of the Salemite League."
+		effect_tooltip = {
+		}
+		hidden_effect = {
+			every_controlled_state = {
+				limit = { is_core_of = USA }
+				transfer_state_to = SAL
+			}
+			SAL = {
+				every_controlled_state = {
+					limit = { is_core_of = USA }
+					transfer_state_to = SAL
+				}
+			}
+			white_peace = USA
+		}
+	}
+	option = {
+		name = "Why don't you try fighting like men instead?"
+		ai_chance = { factor = 1 }
+		USA = { add_war_support = -0.15 }
+		effect_tooltip = {
+		}
+		hidden_effect = {
+		}
+	}
+}

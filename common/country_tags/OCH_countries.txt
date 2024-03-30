@@ -1,0 +1,6 @@
+VAT = "countries/Vatican.txt"
+HRD = "countries/His Word.txt"
+CRF = "countries/Christian Front.txt"
+MRM = "countries/Serene Republic of Latter-Day Saints.txt"
+PCF = "countries/Provisional Californian Freestate.txt"
+SAL = "countries/Salemite League.txt"

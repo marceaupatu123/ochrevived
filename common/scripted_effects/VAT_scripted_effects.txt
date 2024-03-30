@@ -1,0 +1,149 @@
+#UI
+update_sin = {
+	if = {
+		limit = {
+			check_variable = { sin = 0 }
+		}
+		set_variable = { sin_counter = 0 }
+		clr_country_flag = summit_of_sin
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=10 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 1 }
+		clr_country_flag = summit_of_sin
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=20 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 2 }
+		clr_country_flag = summit_of_sin
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=30 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 3 }
+		clr_country_flag = summit_of_sin
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=40 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 4 }
+		clr_country_flag = summit_of_sin
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=50 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 5 }
+		clr_country_flag = summit_of_sin
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=60 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 6 }
+		clr_country_flag = summit_of_sin
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=70 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 7 }
+		clr_country_flag = summit_of_sin
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=80 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 8 }
+		clr_country_flag = summit_of_sin
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=99 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 9 }
+		clr_country_flag = summit_of_sin
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=100 compare=greater_than_or_equals }
+		}
+		set_variable = { sin_counter = 10 }
+		set_variable = { sin = 100 }
+		set_country_flag = summit_of_sin
+	}
+}
+d_update_sin = {
+	if = {
+		limit = {
+			check_variable = { sin = 0 }
+		}
+		set_variable = { sin_counter = 0 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=10 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 1 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=20 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 2 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=30 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 3 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=40 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 4 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=50 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 5 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=60 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 6 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=70 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 7 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=80 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 8 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=90 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 9 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { var=sin value=100 compare=less_than_or_equals }
+		}
+		set_variable = { sin_counter = 10 }
+	}
+}
