@@ -6,5 +6,5 @@ tags={
 }
 name="On the Clouds of Heaven Revived"
 picture="thumbnail.png"
-supported_version="1.14.3"
+supported_version="1.16.9"
 remote_file_id="3179620954"

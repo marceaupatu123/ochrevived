@@ -1,0 +1,18 @@
+﻿l_english:
+ papacy:0 "Papacy"
+ papacy_desc:0 "As bishop of Rome, His Holiness the Pope stands as infallible head of the Catholic Church and absolute sovereign of the Vatican City State. Within the walls of this ancient theocratic monarchy, the affairs of the executive, legislative, and judiciary are all subject to his whim. Since the days of St. Peter, the Church enjoyed an increasingly almighty presence on the continent of Europe and beyond, up until its peak many centuries ago. Today, the position of the Church in all affairs is questioned, ideologies emerge to counter and even overthrow the Pope’s divine mandate, and the integrity of the faith has never been more unstable. There is no doubt that these are dark days for the Papacy – but with God as our witness, we shall prevail!"
+
+ VAT_neutrality_party:0 "Papacy"
+ VAT_democratic_party:0 "Pontifical Commission"
+ VAT_fascism_party:0 "Vatican Defence Council"
+ VAT_communism_party:0 "Conciliar Committee"
+ 
+ ITA_neutrality_papal_party:0 "Italian Curia"
+ ITA_communism_papal_party:0 "Communal Magistrate"
+ ITA_democratic_papal_party:0 "Latin Assembly"
+ ITA_fascism_papal_party:0 "Latin Magisterium"
+
+ VAT_communism_divine_party:0 "Sodomic Court"
+ VAT_fascism_divine_party:0 "Infernal Magisterium"
+ VAT_democratic_divine_party:0 "Edenic Commons"
+ VAT_neutrality_divine_party:0 "Throne of Heaven"

@@ -2453,9 +2453,6 @@ country_event = {
 				silent_mule
 				political_chameleon
 			}
-			allowed = {
-				always = yes
-			}
 		  }
 		}
 		effect_tooltip = {
@@ -3086,9 +3083,6 @@ country_event = {
 				idea_token = luther
 			    traits = {
 			        ideological_crusader
-			    }
- 			   allowed = {
-			        always = yes
 			    }
 			  }
 			   activate = no

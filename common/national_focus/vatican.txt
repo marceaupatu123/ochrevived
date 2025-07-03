@@ -206,7 +206,7 @@ focus_tree = {
 				uses = 1
 				category = cat_anti_tank
 			}
-			970 = {
+			1017 = {
 				add_building_construction = {
 					type = anti_air_building
 					level = 2
@@ -712,7 +712,7 @@ focus_tree = {
 				uses = 1
 				category = air_doctrine
 			}
-			970 = {
+			1017 = {
 				add_building_construction = {
 				    type = air_base
 				    level = 2
@@ -729,9 +729,7 @@ focus_tree = {
 						traits = {
 							air_chief_ground_support_2
 						}
-						allowed = {
-							always = yes
-						}
+						
 			  	    }
 			}
 			hidden_effect = {
@@ -879,7 +877,7 @@ focus_tree = {
 				uses = 1
 				category = air_doctrine
 			}
-			970 = {
+			1017 = {
 				add_building_construction = {
 				    type = air_base
 				    level = 1
@@ -969,9 +967,7 @@ focus_tree = {
 							ledger = navy
 							slot = navy_chief
 							idea_token = inigo_campioni
-							allowed = {
-								original_tag = VAT
-							}
+							
 							traits = {
 								navy_chief_decisive_battle_1
 							}
@@ -1723,9 +1719,7 @@ focus_tree = {
 			         feminist_ultranationalist
 			     }
 			 	idea_token = lilith
- 			    allowed = {
-			         always = yes
-			     }
+ 			    
 			   }
 			    activate = no
 			 }
@@ -1747,9 +1741,7 @@ focus_tree = {
 			     traits = {
 			         army_regrouping_2
 			     }
- 			    allowed = {
-			         always = yes
-			     }
+ 			    
 			  }
 			    activate = no
 			 }
@@ -1772,9 +1764,7 @@ focus_tree = {
 			     traits = {
 			         army_chief_offensive_2
 			     }
- 			    allowed = {
-			         always = yes
-			     }
+ 			    
 			   }
 			    activate = no
 			 }
@@ -1796,9 +1786,7 @@ focus_tree = {
 			     traits = {
 			 	driver_of_the_faithful
 			     }
- 			    allowed = {
-			         always = yes
-			     }
+ 			    
 			   }
 			    activate = no
 			 }
@@ -1812,9 +1800,7 @@ focus_tree = {
 			     traits = {
 			         naval_theorist
 			     }
- 			    allowed = {
-			         always = yes
-			     }
+ 			    
 			   }
 			    activate = no
 			 }
@@ -1837,9 +1823,7 @@ focus_tree = {
 			     traits = {
 			         air_warfare_theorist
 			     }
- 			    allowed = {
-			         always = yes
-			     }
+ 			    
 			   }
 			    activate = no
 			 }
@@ -1853,9 +1837,7 @@ focus_tree = {
 			     traits = {
 			         air_chief_ground_support_2
 			     }
- 			    allowed = {
-			         always = yes
-			     }
+ 			    
 			   }
 			    activate = no
 			 }
@@ -1869,9 +1851,7 @@ focus_tree = {
 			     traits = {
 			         navy_chief_decisive_battle_2
 			     }
- 			    allowed = {
-			         always = yes
-			     }
+ 			    
 			    }
 			     activate = no
 			  }
@@ -1885,9 +1865,7 @@ focus_tree = {
 			      traits = {
 			          army_armored_3
 			      }
- 			     allowed = {
-			          always = yes
-			      }
+ 			     
 			    }
 			     activate = no
 			  }
@@ -1910,9 +1888,7 @@ focus_tree = {
 			      traits = {
 			          army_logistics_2
 			      }
- 			     allowed = {
-			          always = yes
-			      }
+ 			     
 			    }
 			     activate = no
 			  }
@@ -1935,9 +1911,7 @@ focus_tree = {
 			      traits = {
 			          air_air_superiority_2
 			      }
- 			     allowed = {
-			          always = yes
-			      }
+ 			     
 			    }
 			     activate = no
 			  }
@@ -1951,9 +1925,7 @@ focus_tree = {
 			      traits = {
 			          air_chief_reform_2
 			      }
- 			     allowed = {
-			          always = yes
-			      }
+ 			     
 			    }
 			     activate = no
 			  }
@@ -1976,9 +1948,7 @@ focus_tree = {
 			      traits = {
 			          army_infantry_2
 			      }
- 			     allowed = {
-			          always = yes
-			      }
+ 			     
 			    }
 			     activate = no
 			  }
@@ -2001,9 +1971,7 @@ focus_tree = {
 			      traits = {
 			          army_concealment_3
 			      }
- 			     allowed = {
-			          always = yes
-			      }
+ 			     
 			    }
 			     activate = no
 			  }
@@ -2025,9 +1993,7 @@ focus_tree = {
 			      traits = {
 			          backroom_backstabber
 			      }
- 			     allowed = {
-			          always = yes
-			      }
+ 			     
 			    }
 			     activate = no
 			  }
@@ -2040,9 +2006,7 @@ focus_tree = {
 			      traits = {
 			          princess_of_terror
 			      }
- 			     allowed = {
-			          always = yes
-			      }
+ 			     
 			    }
 			     activate = no
 			  }
@@ -2055,9 +2019,7 @@ focus_tree = {
 			      traits = {
 			          war_industrialist
 			      }
- 			     allowed = {
-			          always = yes
-			      }
+ 			     
 			    }
 			     activate = no
 			  }
@@ -2071,9 +2033,7 @@ focus_tree = {
 			      traits = {
 			  	navy_chief_maneuver_2
 			      }
- 			     allowed = {
-			          always = yes
-			      }
+ 			     
 			    }
 			    activate = no
 			 }			
@@ -2233,9 +2193,7 @@ focus_tree = {
 						traits = {
 							army_chief_offensive_2
 						}
-					   allowed = {
-							always = yes
-						}
+					   
 					  }
 					   activate = no
 					}
@@ -2345,9 +2303,7 @@ focus_tree = {
 					 	traits = {
 					 		adventurous_daredevil
 					 	}
-					    allowed = {
-					 		always = yes
-					 	}
+					    
 					   }
 					    activate = no
 					 }
@@ -2359,11 +2315,10 @@ focus_tree = {
 					 	idea_token = paul
 					 	traits = {
 					 		author_of_scripture
-					    allowed = {
-					 		always = yes
-					 	}
+					    
 					   }
-					    activate = no
+					   }
+					   activate = no
 					 }
 					 add_advisor_role = {
 					  Character = VAT_raphael
@@ -2374,9 +2329,7 @@ focus_tree = {
 					 	traits = {
 					 		compassionate_gentleman
 					 	}
-					    allowed = {
-					 		always = yes
-					 	}
+					    
 					   }
 					    activate = no
 					 }
@@ -2390,9 +2343,7 @@ focus_tree = {
 					 	traits = {
 					 		air_air_combat_training_2
 					 	}
-					    allowed = {
-					 		always = yes
-					 	}
+					    
 					   }
 					    activate = no
 					 }
@@ -2405,9 +2356,7 @@ focus_tree = {
 					 	traits = {
 					 		war_industrialist
 					 	}
-					    allowed = {
-					 		always = yes
-					 	}
+					    
 					   }
 					    activate = no
 					 }
@@ -2421,9 +2370,7 @@ focus_tree = {
 					 	traits = {
 					 		air_chief_night_operations_2
 					 	}
-					    allowed = {
-					 		always = yes
-					 	}
+					    
 					   }
 					    activate = no
 					 }
@@ -2445,9 +2392,7 @@ focus_tree = {
 					 	traits = {
 					 		air_warfare_theorist
 					 	}
-					    allowed = {
-					 		always = yes
-					 	}
+					    
 					   }
 					    activate = no
 					 }
@@ -2461,9 +2406,7 @@ focus_tree = {
 					 	traits = {
 					 		air_air_combat_training_3
 					 	}
-					    allowed = {
-					 		always = yes
-					 	}
+					    
 					   }
 					    activate = no
 					 }
@@ -2477,9 +2420,7 @@ focus_tree = {
 					 	traits = {
 					 		naval_theorist
 					 	}
-					    allowed = {
-					 		always = yes
-					 	}
+					    
 					   }
 					    activate = no
 					 }
@@ -2493,9 +2434,7 @@ focus_tree = {
 					 	traits = {
 					 		navy_chief_maneuver_2
 					 	}
-					    allowed = {
-					 		always = yes
-					 	}
+					    
 					   }
 					    activate = no
 					 }
@@ -2518,9 +2457,7 @@ focus_tree = {
 					 	traits = {
 					 		army_logistics_3
 					 	}
-					    allowed = {
-					 		always = yes
-					 	}
+					    
 					   }
 					    activate = no
 					 }
@@ -2534,9 +2471,7 @@ focus_tree = {
 					 	traits = {
 					 		army_chief_offensive_2
 					 	}
-					    allowed = {
-					 		always = yes
-					 	}
+					    
 					   }
 					    activate = no
 					 }
@@ -2568,9 +2503,7 @@ focus_tree = {
 					 	traits = {
 					 	   army_infantry_3
 					 	}
-					    allowed = {
-					 		always = yes
-					 	}
+					    
 					   }
 					 }
 					ITA = {
@@ -2755,14 +2688,14 @@ focus_tree = {
 					 	idea_token = marymag
 					 	traits = {
 					 		social_reformer
-					    allowed = {
-					 		always = yes
-					 	}
+					    
 					   }
-		    activate = no
 		 }
+		 activate = no
 		}
 	}
+	}
+	
 	#
 	focus = {
 		id = VAT_INFLUENCE_EAST
@@ -4472,5 +4405,4 @@ focus_tree = {
 			add_ideas = master_race
 		}
 	}
-}
 }

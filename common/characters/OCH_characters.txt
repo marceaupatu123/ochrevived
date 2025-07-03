@@ -24,5 +24,19 @@ characters = {
 					expire="1965.1.1.1"
 				}
 			}
+#USA
+	USA_franklin={
+		name="Franklin D. Roosevelt"
+		portraits={
+			civilian={
+				large="GFX_Portrait_franklin_large"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1965.1.1.1"
+		}
+	}
 #
+	
 }

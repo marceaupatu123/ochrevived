@@ -1,4 +1,4 @@
-﻿capital = 970
+﻿capital = 1017
 
 starting_train_buffer = 4
 
